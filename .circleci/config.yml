@@ -53,17 +53,7 @@ jobs:
       - run:
           name: Authenticate with registry
           command: echo "//npm.pkg.github.com/:_authToken=$GH_TOKEN" > ~/repo/.npmrc
-      - run: npx semantic-release
-  push:
-    docker:
-      - image: circleci/node:lts
-    working_directory: ~/repo
-    steps:
-      - attach_workspace:
-          at: ~/repo
-      - run:
-          name: Authenticate with registry
-          command: echo "//npm.pkg.github.com/:_authToken=$GH_TOKEN" > ~/repo/.npmrc      
+      - run: npx semantic-release        
 
 
 workflows:
@@ -82,14 +72,4 @@ workflows:
           context: tag
           <<: *only-master
           requires:
-            - test
-  deploy:
-    jobs:
-      - test:
-          context: test
-          <<: *tag-only
-      - push:
-          context: tag
-          <<: *tag-only
-          requires:
-            - test
+            - test  
