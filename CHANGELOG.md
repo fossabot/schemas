@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/retracedgmbh/schemas/compare/v1.0.5...v1.0.6) (2019-10-15)
+
+
+### Bug Fixes
+
+* no publish on push ([ff6e006](https://github.com/retracedgmbh/schemas/commit/ff6e00640fa8026737f11e0317ebdbda1fe76b29))
+
 ## [1.0.5](https://github.com/retracedgmbh/schemas/compare/v1.0.4...v1.0.5) (2019-10-15)
 
 
