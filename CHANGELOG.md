@@ -1,3 +1,10 @@
+## [1.0.8](https://github.com/retracedgmbh/schemas/compare/v1.0.7...v1.0.8) (2019-10-15)
+
+
+### Bug Fixes
+
+* not auto publish when releasing ([5c1a9bf](https://github.com/retracedgmbh/schemas/commit/5c1a9bfab7ba5423f5f2f3cada6c452a944852a8))
+
 ## [1.0.7](https://github.com/retracedgmbh/schemas/compare/v1.0.6...v1.0.7) (2019-10-15)
 
 
