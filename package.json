@@ -1,7 +1,6 @@
 {
   "name": "@retracedgmbh/schemas",
-  "version": "1.0.0-semantic-release",
-  "private": true,
+  "version": "1.0.0-semantic-release",  
   "license": "UNLICENSED",
   "homepage": "http://retraced.co",
   "repository": "retracedgmbh/schemas",
