@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/retracedgmbh/schemas/compare/v1.0.6...v1.0.7) (2019-10-15)
+
+
+### Bug Fixes
+
+* no push flow ([aec83f0](https://github.com/retracedgmbh/schemas/commit/aec83f0a447fa9e4eebbc38ea5f29ec742b15012))
+
 ## [1.0.6](https://github.com/retracedgmbh/schemas/compare/v1.0.5...v1.0.6) (2019-10-15)
 
 
