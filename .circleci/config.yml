@@ -32,10 +32,7 @@ jobs:
           - v1-dependencies-
 
       - run: npm install
-      - run:
-          name: Run test
-          command: npm run test
-      - run: npx semantic-release
+      - run: npm run test
 
       - save_cache:
           paths:
@@ -45,7 +42,13 @@ jobs:
       - persist_to_workspace:
           root: ~/repo
           paths: .
-  deploy:
+  tag:
+    docker:
+      - image: circleci/node:lts
+    steps:
+      - checkout
+      - run: npx semantic-release
+  push:
     docker:
       - image: circleci/node:lts
     working_directory: ~/repo
@@ -58,22 +61,32 @@ jobs:
       - run:
           name: Publish package
           command: npm publish
-            
+
+
 workflows:
   version: 2
-  test-deploy:
+  test:
     jobs:
       - test:
           context: test
-          filters:
-            tags:
-              only: /^v.*/
-      - deploy:
+          <<: *not-master
+  tag:
+    jobs:
+      - test:
+          context: test
+          <<: *only-master
+      - tag:
           context: tag
+          <<: *only-master
           requires:
             - test
-          filters:
-            tags:
-              only: /^v.*/
-            branches:
-              ignore: /.*/
+  deploy:
+    jobs:
+      - test:
+          context: test
+          <<: *tag-only
+      - push:
+          context: tag
+          <<: *tag-only
+          requires:
+            - test
