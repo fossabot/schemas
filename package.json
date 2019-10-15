@@ -93,7 +93,9 @@
           "successComment": false,
           "releasedLabels": false
         }
-      ]
+      ],
+      "@semantic-release/npm",
+      "@semantic-release/git"
     ]
   },
   "devDependencies": {
