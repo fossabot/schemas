@@ -1,4 +1,4 @@
-const Picture = {
+const PictureSchema = {
 	type: 'object',
 	required: ['id'],
 	additionalProperties: false,
@@ -7,12 +7,12 @@ const Picture = {
 	}
 }
 
-const Pictures = {
+const PicturesSchema = {
 	type: 'array',
-	items: Picture
+	items: PictureSchema
 }
 
 module.exports = {
-	Picture,
-	Pictures
+	PictureSchema,
+	PicturesSchema
 }
