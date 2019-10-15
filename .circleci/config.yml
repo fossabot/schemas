@@ -64,10 +64,12 @@ workflows:
   test-deploy:
     jobs:
       - test:
+          context: test
           filters:
             tags:
               only: /^v.*/
       - deploy:
+          context: tag
           requires:
             - test
           filters:
