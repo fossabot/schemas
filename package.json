@@ -1,6 +1,6 @@
 {
-  "name": "@retraced/schemas",
-  "version": "1.0.0",
+  "name": "@retracedgmbh/schemas",
+  "version": "0.0.1",
   "description": "All schemas used for validation that are shared between our projects",
   "scripts": {
     "test": "xo && best --verbose",
@@ -8,7 +8,7 @@
     "autofix": "xo --fix"
   },
   "repository": "retracedgmbh/schemas",
-  "author": "",
+  "author": "Retraced GmbH",
   "license": "MIT",
   "husky": {
     "hooks": {
@@ -53,5 +53,8 @@
     "husky": "^3.0.9",
     "prettier": "^1.18.2",
     "xo": "^0.25.3"
+  },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com/"
   }
 }
