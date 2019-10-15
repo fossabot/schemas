@@ -1,6 +1,6 @@
 {
   "name": "@retracedgmbh/schemas",
-  "version": "1.0.0-semantic-release",  
+  "version": "1.0.0-semantic-release",
   "license": "UNLICENSED",
   "homepage": "http://retraced.co",
   "repository": "retracedgmbh/schemas",
@@ -93,12 +93,12 @@
           "successComment": false,
           "releasedLabels": false
         }
-      ],
-      "@semantic-release/npm",
+      ],      
       "@semantic-release/git"
     ]
   },
   "devDependencies": {
+    "@semantic-release/git": "^7.0.16",
     "@zeit/best": "^0.6.1",
     "ajv": "^6.10.2",
     "husky": "^3.0.9",
@@ -106,6 +106,6 @@
     "xo": "^0.25.3"
   },
   "publishConfig": {
-    "registry":"https://npm.pkg.github.com/"
+    "registry": "https://npm.pkg.github.com/"
   }
 }
