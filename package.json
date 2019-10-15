@@ -97,10 +97,8 @@
       "@semantic-release/git"
     ]
   },
-  "dependencies": {
-    "@semantic-release/git": "^7.0.16"
-  },
   "devDependencies": {
+    "@semantic-release/git": "^7.0.16",
     "@zeit/best": "^0.6.1",
     "ajv": "^6.10.2",
     "husky": "^3.0.9",
