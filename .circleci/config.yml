@@ -46,14 +46,23 @@ jobs:
   tag:
     docker:
       - image: circleci/node:lts
-    working_directory: ~/repo
     steps:
       - checkout
       - run: npm install
+      - run: npx semantic-release
+  push:
+    docker:
+      - image: circleci/node:lts
+    working_directory: ~/repo
+    steps:
+      - attach_workspace:
+          at: ~/repo
       - run:
           name: Authenticate with registry
           command: echo "//npm.pkg.github.com/:_authToken=$GH_TOKEN" > ~/repo/.npmrc
-      - run: npx semantic-release        
+      - run:
+          name: Publish package
+          command: npm publish
 
 
 workflows:
@@ -72,4 +81,14 @@ workflows:
           context: tag
           <<: *only-master
           requires:
-            - test  
+            - test
+  deploy:
+    jobs:
+      - test:
+          context: test
+          <<: *tag-only
+      - push:
+          context: tag
+          <<: *tag-only
+          requires:
+            - test
