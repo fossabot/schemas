@@ -9,5 +9,6 @@ exports.testInvalidUserCreation = () => {
 		firstName: 'Test',
 		lastName: 'User'
 	})
+
 	assert.strictEqual(isValid, false)
 }
