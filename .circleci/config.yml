@@ -36,6 +36,7 @@ jobs:
       - run:
           name: Run test
           command: npm run test
+      - run: npx semantic-release
 
       - save_cache:
           paths:
