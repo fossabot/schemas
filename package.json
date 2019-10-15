@@ -94,15 +94,23 @@
           "releasedLabels": false
         }
       ],
+      ["@semantic-release/npm",{"npmPublish":true}],
+      "@semantic-release/changelog",
       "@semantic-release/git"
-    ]
+    ],
+    "branch": "master"
   },
   "devDependencies": {
+    "@semantic-release/changelog": "^3.0.4",
+    "@semantic-release/commit-analyzer": "^6.3.0",
     "@semantic-release/git": "^7.0.16",
+    "@semantic-release/npm": "^5.2.0",
+    "@semantic-release/release-notes-generator": "^7.3.0",
     "@zeit/best": "^0.6.1",
     "ajv": "^6.10.2",
     "husky": "^3.0.9",
     "prettier": "^1.18.2",
+    "semantic-release": "^15.13.24",
     "xo": "^0.25.3"
   },
   "publishConfig": {
