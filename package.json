@@ -93,7 +93,7 @@
           "successComment": false,
           "releasedLabels": false
         }
-      ],      
+      ],
       "@semantic-release/git"
     ]
   },
