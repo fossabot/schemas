@@ -2,7 +2,7 @@ const {PictureListSchema} = require('../picture')
 const generator = require('../generator')
 const {ProductVariationListSchema} = require('./variation')
 
-const ProductAttributeValueSchema = {
+const ProductUpdateAttributeValueSchema = {
 	type: 'object',
 	required: [],
 	additionalProperties: false,
@@ -15,7 +15,7 @@ const ProductAttributeValueSchema = {
 	}
 }
 
-const ProductAttributeSchema = {
+const ProductUpdateAttributeSchema = {
 	type: 'object',
 	required: [],
 	additionalProperties: false,
@@ -27,7 +27,7 @@ const ProductAttributeSchema = {
 		}),
 		values: {
 			type: 'array',
-			items: ProductAttributeValueSchema
+			items: ProductUpdateAttributeValueSchema
 		}
 	}
 }
@@ -46,7 +46,7 @@ const ProductUpdateSchema = {
 		}),
 		attributes: {
 			type: 'array',
-			items: ProductAttributeSchema,
+			items: ProductUpdateAttributeSchema,
 			default: []
 		},
 		variations: ProductVariationListSchema
@@ -54,5 +54,6 @@ const ProductUpdateSchema = {
 }
 
 module.exports = {
+	ProductUpdateAttributeSchema,
 	ProductUpdateSchema
 }
