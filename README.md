@@ -13,5 +13,11 @@ Add the dependency to your `package.json` with:
 1. Require the schemas:
 
    ```javascript
-   const { UserCreationSchema } = require("@retracedbmbh/schemas/user")
+   const schemas = require("@retracedbmbh/schemas")
+   ```
+
+2. Access schema:
+
+   ```javascript
+   schemas.company.create
    ```
