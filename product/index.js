@@ -36,8 +36,7 @@ const update = {
 		}),
 		attributes: {
 			type: 'array',
-			items: attribute.update,
-			default: []
+			items: attribute.update
 		},
 		variations: variation.list
 	}
