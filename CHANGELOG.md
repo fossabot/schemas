@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/retracedgmbh/schemas/compare/v1.1.0...v1.1.1) (2019-10-16)
+
+
+### Bug Fixes
+
+* expose attribute schema ([caaa5a2](https://github.com/retracedgmbh/schemas/commit/caaa5a2c0ae87684d000abff426cb743cd5b7750))
+
 # [1.1.0](https://github.com/retracedgmbh/schemas/compare/v1.0.8...v1.1.0) (2019-10-16)
 
 
