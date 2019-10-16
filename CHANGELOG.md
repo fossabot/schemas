@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/retracedgmbh/schemas/compare/v1.0.8...v1.1.0) (2019-10-16)
+
+
+### Features
+
+* add schemas + tests ([#2](https://github.com/retracedgmbh/schemas/issues/2)) ([bb6dcf1](https://github.com/retracedgmbh/schemas/commit/bb6dcf131d7ad40a94b869af32295ae7ca1c9681))
+
 ## [1.0.8](https://github.com/retracedgmbh/schemas/compare/v1.0.7...v1.0.8) (2019-10-15)
 
 
