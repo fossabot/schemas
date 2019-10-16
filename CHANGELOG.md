@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/retracedgmbh/schemas/compare/v1.1.1...v1.1.2) (2019-10-16)
+
+
+### Bug Fixes
+
+* refactoring name convention ([#3](https://github.com/retracedgmbh/schemas/issues/3)) ([ac26da8](https://github.com/retracedgmbh/schemas/commit/ac26da815072bb77482c4c6801a35d972f30677f))
+
 ## [1.1.1](https://github.com/retracedgmbh/schemas/compare/v1.1.0...v1.1.1) (2019-10-16)
 
 
