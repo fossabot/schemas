@@ -1,8 +1,8 @@
-const constants = require('../constants')
-const generator = require('../generator')
-const {PictureListSchema} = require('../picture')
+const constants = require('../lib/constants')
+const generator = require('../lib/generator')
+const picture = require('../picture')
 
-const CompanyCreateSchema = {
+const create = {
 	type: 'object',
 	required: ['taxNo', 'officialName', 'country', 'longitude', 'latitude', 'i18n', 'pictures'],
 	additionalProperties: false,
@@ -25,10 +25,35 @@ const CompanyCreateSchema = {
 		i18n: generator.i18n({
 			description: {type: 'string', minLength: 1}
 		}),
-		pictures: PictureListSchema
+		pictures: picture.list
+	}
+}
+
+const update = {
+	type: 'object',
+	required: [],
+	additionalProperties: false,
+	properties: {
+		name: {type: ['string', 'null'], minLength: 1},
+		county: {type: ['string', 'null'], minLength: 1},
+		city: {type: ['string', 'null'], minLength: 1},
+		zipCode: {type: ['string', 'null'], minLength: 1},
+		addressLine1: {type: ['string', 'null'], minLength: 1},
+		addressLine2: {type: ['string', 'null'], minLength: 1},
+		phone1: {type: ['string', 'null'], minLength: 1},
+		phone2: {type: ['string', 'null'], minLength: 1},
+		email: {type: ['string', 'null'], minLength: 1},
+		website: {type: ['string', 'null'], minLength: 1},
+		longitude: {type: 'number'},
+		latitude: {type: 'number'},
+		i18n: generator.i18n({
+			description: {type: 'string', minLength: 1}
+		}),
+		pictures: picture.list
 	}
 }
 
 module.exports = {
-	CompanyCreateSchema
+	create,
+	update
 }

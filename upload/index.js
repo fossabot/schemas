@@ -1,6 +1,6 @@
-const constants = require('../constants')
+const constants = require('../lib/constants')
 
-const UploadUrlSchema = {
+const url = {
 	type: 'object',
 	required: ['filename'],
 	additionalProperties: false,
@@ -18,5 +18,5 @@ const UploadUrlSchema = {
 	}
 }
 module.exports = {
-	UploadUrlSchema
+	url
 }

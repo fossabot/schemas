@@ -1,24 +1,25 @@
-const {PictureListSchema} = require('../picture')
-const generator = require('../generator')
-const {SupplyChainEmployeeSchema} = require('./employee')
+const generator = require('../../../lib/generator')
+const picture = require('../../../picture')
+const employee = require('./employee')
 
-const SupplyChainStepSchema = {
+const single = {
 	type: 'object',
 	required: ['pictures', 'i18n', 'employees'],
 	additionalProperties: false,
 	properties: {
-		pictures: PictureListSchema,
+		pictures: picture.list,
 		i18n: generator.i18n({
 			shortDescription: {type: 'string', minLength: 1},
 			longDescription: {type: 'string', minLength: 1}
 		}),
 		employees: {
 			type: 'array',
-			items: SupplyChainEmployeeSchema
+			items: employee.single
 		}
 	}
 }
 
 module.exports = {
-	SupplyChainStepSchema
+	single,
+	employee
 }

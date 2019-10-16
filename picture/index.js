@@ -1,4 +1,4 @@
-const PictureSchema = {
+const single = {
 	type: 'object',
 	required: ['id'],
 	additionalProperties: false,
@@ -7,12 +7,12 @@ const PictureSchema = {
 	}
 }
 
-const PictureListSchema = {
+const list = {
 	type: 'array',
-	items: PictureSchema
+	items: single
 }
 
 module.exports = {
-	PictureSchema,
-	PictureListSchema
+	single,
+	list
 }

@@ -1,4 +1,4 @@
-const ProductVariationSchema = {
+const single = {
 	type: 'object',
 	required: ['id'],
 	additionalProperties: false,
@@ -8,12 +8,12 @@ const ProductVariationSchema = {
 	}
 }
 
-const ProductVariationListSchema = {
+const list = {
 	type: 'array',
-	items: ProductVariationSchema
+	items: single
 }
 
 module.exports = {
-	ProductVariationSchema,
-	ProductVariationListSchema
+	single,
+	list
 }

@@ -1,4 +1,4 @@
-const ItemCreateSchema = {
+const create = {
 	type: 'object',
 	required: ['lineId', 'ids'],
 	additionalProperties: false,
@@ -18,5 +18,5 @@ const ItemCreateSchema = {
 }
 
 module.exports = {
-	ItemCreateSchema
+	create
 }

@@ -1,4 +1,4 @@
-const SupplyChainEmployeeSchema = {
+const single = {
 	type: 'object',
 	required: ['id'],
 	additionalProperties: false,
@@ -8,5 +8,5 @@ const SupplyChainEmployeeSchema = {
 }
 
 module.exports = {
-	SupplyChainEmployeeSchema
+	single
 }

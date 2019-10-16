@@ -1,14 +1,11 @@
 const assert = require('assert')
 const AJV = require('ajv')
-const {SupplyChainEmployeeSchema} = require('../supplychain/employee')
-const {SupplyChainStepSchema} = require('../supplychain/step')
-const {SupplyChainCreateSchema} = require('../supplychain/create')
-const {SupplyChainUpdateSchema} = require('../supplychain/update')
+const schemas = require('..')
 
 const ajv = new AJV({allErrors: true})
 
 exports.testSupplyChainEmployeeSchema = () => {
-	const isValid = ajv.validate(SupplyChainEmployeeSchema, {
+	const isValid = ajv.validate(schemas.supplychain.node.step.employee.single, {
 		id: 'id'
 	})
 
@@ -16,13 +13,13 @@ exports.testSupplyChainEmployeeSchema = () => {
 }
 
 exports.testSupplyChainEmployeeSchemaWithoutId = () => {
-	const isValid = ajv.validate(SupplyChainEmployeeSchema, {})
+	const isValid = ajv.validate(schemas.supplychain.node.step.employee.single, {})
 
 	assert.strictEqual(isValid, false)
 }
 
 exports.testSupplyChainStepSchema = () => {
-	const isValid = ajv.validate(SupplyChainStepSchema, {
+	const isValid = ajv.validate(schemas.supplychain.node.step.single, {
 		pictures: [
 			{
 				id: 'FILE-ID'
@@ -46,7 +43,7 @@ exports.testSupplyChainStepSchema = () => {
 }
 
 exports.testSupplyChainStepSchemaWithoutPictures = () => {
-	const isValid = ajv.validate(SupplyChainStepSchema, {
+	const isValid = ajv.validate(schemas.supplychain.node.step.single, {
 		i18n: [
 			{
 				language: 'en',
@@ -65,7 +62,7 @@ exports.testSupplyChainStepSchemaWithoutPictures = () => {
 }
 
 exports.testSupplyChainCreateSchema = () => {
-	const isValid = ajv.validate(SupplyChainCreateSchema, {
+	const isValid = ajv.validate(schemas.supplychain.create, {
 		name: 'name',
 		entrySupplyNodeId: 'node-Cano',
 		nodes: [
@@ -124,7 +121,7 @@ exports.testSupplyChainCreateSchema = () => {
 }
 
 exports.testInvalidSupplyChainCreateSchema = () => {
-	const isValid = ajv.validate(SupplyChainCreateSchema, {
+	const isValid = ajv.validate(schemas.supplychain.create, {
 		name: 'name',
 		entrySupplyNodeId: 'node-Cano',
 		nodes: [
@@ -182,7 +179,7 @@ exports.testInvalidSupplyChainCreateSchema = () => {
 }
 
 exports.testSupplyChainUpdateSchema = () => {
-	const isValid = ajv.validate(SupplyChainUpdateSchema, {
+	const isValid = ajv.validate(schemas.supplychain.update, {
 		name: 'name update',
 		nodes: [
 			{

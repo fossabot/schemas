@@ -1,11 +1,11 @@
 const assert = require('assert')
 const AJV = require('ajv')
-const {ItemCreateSchema} = require('../item/create')
+const schemas = require('..')
 
 const ajv = new AJV({allErrors: true})
 
 exports.testItemCreateSchema = () => {
-	const isValid = ajv.validate(ItemCreateSchema, {
+	const isValid = ajv.validate(schemas.item.create, {
 		lineId: 'line-id',
 		ids: ['id', 'id1']
 	})
@@ -14,7 +14,7 @@ exports.testItemCreateSchema = () => {
 }
 
 exports.testItemCreateSchemaWithoutIds = () => {
-	const isValid = ajv.validate(ItemCreateSchema, {
+	const isValid = ajv.validate(schemas.item.create, {
 		lineId: 'line-id'
 	})
 
@@ -22,7 +22,7 @@ exports.testItemCreateSchemaWithoutIds = () => {
 }
 
 exports.testItemCreateSchemaWithoutLineId = () => {
-	const isValid = ajv.validate(ItemCreateSchema, {
+	const isValid = ajv.validate(schemas.item.create, {
 		ids: ['id', 'id1']
 	})
 

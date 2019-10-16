@@ -1,7 +1,6 @@
-const {PictureListSchema} = require('../picture')
-const generator = require('../generator')
+const generator = require('../lib/generator')
 
-const ProductAttributeValueSchema = {
+const addAttributeValue = {
 	type: 'object',
 	required: ['value', 'i18n'],
 	additionalProperties: false,
@@ -13,7 +12,20 @@ const ProductAttributeValueSchema = {
 	}
 }
 
-const ProductAttributeSchema = {
+const updateAttributeValue = {
+	type: 'object',
+	required: [],
+	additionalProperties: false,
+	properties: {
+		id: {type: 'string', minLength: 1},
+		value: {type: 'string', minLength: 1},
+		i18n: generator.i18n({
+			name: {type: 'string', minLength: 1}
+		})
+	}
+}
+
+const create = {
 	type: 'object',
 	required: ['key', 'i18n', 'values'],
 	additionalProperties: false,
@@ -24,30 +36,29 @@ const ProductAttributeSchema = {
 		}),
 		values: {
 			type: 'array',
-			items: ProductAttributeValueSchema
+			items: addAttributeValue
 		}
 	}
 }
 
-const ProductCreateSchema = {
+const update = {
 	type: 'object',
-	required: ['supplyChainId', 'name', 'pictures', 'attributes'],
+	required: [],
 	additionalProperties: false,
 	properties: {
-		supplyChainId: {type: 'string', minLength: 1},
-		name: {type: 'string', minLength: 1, maxLength: 60},
-		pictures: PictureListSchema,
+		id: {type: 'string', minLength: 1},
+		key: {type: 'string', minLength: 1},
 		i18n: generator.i18n({
-			description: {type: 'string', minLength: 1}
+			name: {type: 'string', minLength: 1}
 		}),
-		attributes: {
+		values: {
 			type: 'array',
-			items: ProductAttributeSchema,
-			default: []
+			items: updateAttributeValue
 		}
 	}
 }
 
 module.exports = {
-	ProductCreateSchema
+	create,
+	update
 }

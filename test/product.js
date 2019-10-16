@@ -1,13 +1,11 @@
 const assert = require('assert')
 const AJV = require('ajv')
-const {ProductCreateSchema} = require('../product/create')
-const {ProductUpdateSchema} = require('../product/update')
-const {ProductVariationSchema} = require('../product/variation')
+const schemas = require('..')
 
 const ajv = new AJV({allErrors: true})
 
 exports.testProductVariationSchema = () => {
-	const isValid = ajv.validate(ProductVariationSchema, {
+	const isValid = ajv.validate(schemas.product.variation.single, {
 		id: 'variation-id',
 		sku: 'sku'
 	})
@@ -16,7 +14,7 @@ exports.testProductVariationSchema = () => {
 }
 
 exports.testProductVariationSchemaWithoutId = () => {
-	const isValid = ajv.validate(ProductVariationSchema, {
+	const isValid = ajv.validate(schemas.product.variation.single, {
 		sku: 'sku'
 	})
 
@@ -24,7 +22,7 @@ exports.testProductVariationSchemaWithoutId = () => {
 }
 
 exports.testProductCreateSchemaWithoutAttributes = () => {
-	const isValid = ajv.validate(ProductCreateSchema, {
+	const isValid = ajv.validate(schemas.product.create, {
 		supplyChainId: 'supplychain-id',
 		name: 'name',
 		pictures: [
@@ -45,7 +43,7 @@ exports.testProductCreateSchemaWithoutAttributes = () => {
 }
 
 exports.testProductCreateSchemaWithAttributes = () => {
-	const isValid = ajv.validate(ProductCreateSchema, {
+	const isValid = ajv.validate(schemas.product.create, {
 		supplyChainId: 'supplychain-id',
 		name: 'name',
 		pictures: [
@@ -87,7 +85,7 @@ exports.testProductCreateSchemaWithAttributes = () => {
 }
 
 exports.testProductCreateSchemaWithInValidAttributes = () => {
-	const isValid = ajv.validate(ProductCreateSchema, {
+	const isValid = ajv.validate(schemas.product.create, {
 		supplyChainId: 'supplychain-id',
 		name: 'name',
 		pictures: [
@@ -118,7 +116,7 @@ exports.testProductCreateSchemaWithInValidAttributes = () => {
 }
 
 exports.testProductUpdateSchema = () => {
-	const isValid = ajv.validate(ProductUpdateSchema, {
+	const isValid = ajv.validate(schemas.product.update, {
 		name: 'product update'
 	})
 

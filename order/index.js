@@ -1,4 +1,4 @@
-const OrderCreateSchema = {
+const create = {
 	type: 'object',
 	required: ['variations'],
 	additionalProperties: false,
@@ -19,6 +19,17 @@ const OrderCreateSchema = {
 	}
 }
 
+const status = {
+	type: 'object',
+	required: ['updatedAt'],
+	additionalProperties: false,
+	properties: {
+		fileId: {type: ['string', 'null'], minLength: 1},
+		updatedAt: {type: ['string', 'null'], format: 'date-time'}
+	}
+}
+
 module.exports = {
-	OrderCreateSchema
+	create,
+	status
 }

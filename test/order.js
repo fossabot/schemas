@@ -1,12 +1,11 @@
 const assert = require('assert')
 const AJV = require('ajv')
-const {OrderCreateSchema} = require('../order/create')
-const {OrderStatusUpdateSchema} = require('../order/status')
+const schemas = require('..')
 
 const ajv = new AJV({allErrors: true})
 
 exports.testOrderCreateSchema = () => {
-	const isValid = ajv.validate(OrderCreateSchema, {
+	const isValid = ajv.validate(schemas.order.create, {
 		variations: [
 			{
 				id: 'id',
@@ -19,7 +18,7 @@ exports.testOrderCreateSchema = () => {
 }
 
 exports.testOrderCreateSchemaWithNonDigitQuantity = () => {
-	const isValid = ajv.validate(OrderCreateSchema, {
+	const isValid = ajv.validate(schemas.order.create, {
 		variations: [
 			{
 				id: 'id',
@@ -32,13 +31,13 @@ exports.testOrderCreateSchemaWithNonDigitQuantity = () => {
 }
 
 exports.testInvalidOrderCreateSchema = () => {
-	const isValid = ajv.validate(OrderCreateSchema, {})
+	const isValid = ajv.validate(schemas.order.create, {})
 
 	assert.strictEqual(isValid, false, 'no variations provided')
 }
 
 exports.testOrderStatusUpdateSchema = () => {
-	const isValid = ajv.validate(OrderStatusUpdateSchema, {
+	const isValid = ajv.validate(schemas.order.status, {
 		fileId: 'FILE-ID',
 		updatedAt: '2019-10-13T20:20:39+00:00'
 	})
@@ -47,7 +46,7 @@ exports.testOrderStatusUpdateSchema = () => {
 }
 
 exports.testOrderStatusUpdateSchemaWithNoUpdatedAt = () => {
-	const isValid = ajv.validate(OrderStatusUpdateSchema, {
+	const isValid = ajv.validate(schemas.order.status, {
 		fileId: 'FILE-ID'
 	})
 
@@ -55,7 +54,7 @@ exports.testOrderStatusUpdateSchemaWithNoUpdatedAt = () => {
 }
 
 exports.testOrderStatusUpdateSchemaWithInCorrectUpdatedAt = () => {
-	const isValid = ajv.validate(OrderStatusUpdateSchema, {
+	const isValid = ajv.validate(schemas.order.status, {
 		fileId: 'FILE-ID',
 		updatedAt: 'this-is-time'
 	})

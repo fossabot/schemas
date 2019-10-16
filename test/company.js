@@ -1,12 +1,11 @@
 const assert = require('assert')
 const AJV = require('ajv')
-const {CompanyCreateSchema} = require('../company/create')
-const {CompanyUpdateSchema} = require('../company/update')
+const schemas = require('..')
 
 const ajv = new AJV({allErrors: true})
 
 exports.testCompanyCreateSchema = () => {
-	const isValid = ajv.validate(CompanyCreateSchema, {
+	const isValid = ajv.validate(schemas.company.create, {
 		taxNo: 'tax',
 		officialName: 'official name',
 		country: 'VI',
@@ -29,7 +28,7 @@ exports.testCompanyCreateSchema = () => {
 }
 
 exports.testCompanyCreateSchemaWithoutCountryInformation = () => {
-	const isValid = ajv.validate(CompanyCreateSchema, {
+	const isValid = ajv.validate(schemas.company.create, {
 		taxNo: 'tax',
 		officialName: 'official name',
 		longitude: 1,
@@ -51,7 +50,7 @@ exports.testCompanyCreateSchemaWithoutCountryInformation = () => {
 }
 
 exports.testCompanyCreateSchemaWithIncorrectCountryCodeInformation = () => {
-	const isValid = ajv.validate(CompanyCreateSchema, {
+	const isValid = ajv.validate(schemas.company.create, {
 		taxNo: 'tax',
 		officialName: 'official name',
 		country: 'AP',
@@ -74,7 +73,7 @@ exports.testCompanyCreateSchemaWithIncorrectCountryCodeInformation = () => {
 }
 
 exports.testCompanyUpdateSchema = () => {
-	const isValid = ajv.validate(CompanyUpdateSchema, {
+	const isValid = ajv.validate(schemas.company.update, {
 		longitude: 1,
 		latitude: 1,
 		i18n: [
