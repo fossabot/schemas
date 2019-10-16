@@ -1,8 +1,8 @@
 const constants = require('../constants')
 const generator = require('../generator')
-const {PicturesSchema} = require('../picture')
+const {PictureListSchema} = require('../picture')
 
-const CompanyCreationSchema = {
+const CompanyCreateSchema = {
 	type: 'object',
 	required: ['taxNo', 'officialName', 'country', 'longitude', 'latitude', 'i18n', 'pictures'],
 	additionalProperties: false,
@@ -25,10 +25,10 @@ const CompanyCreationSchema = {
 		i18n: generator.i18n({
 			description: {type: 'string', minLength: 1}
 		}),
-		pictures: PicturesSchema
+		pictures: PictureListSchema
 	}
 }
 
 module.exports = {
-	CompanyCreationSchema
+	CompanyCreateSchema
 }

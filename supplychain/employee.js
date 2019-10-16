@@ -1,4 +1,4 @@
-const PictureSchema = {
+const SupplyChainEmployeeSchema = {
 	type: 'object',
 	required: ['id'],
 	additionalProperties: false,
@@ -7,12 +7,6 @@ const PictureSchema = {
 	}
 }
 
-const PictureListSchema = {
-	type: 'array',
-	items: PictureSchema
-}
-
 module.exports = {
-	PictureSchema,
-	PictureListSchema
+	SupplyChainEmployeeSchema
 }

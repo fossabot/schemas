@@ -1,8 +1,8 @@
-const {PicturesSchema} = require('../picture')
+const {PictureListSchema} = require('../picture')
 const constants = require('../constants')
 const generator = require('../generator')
 
-const UserCreationSchema = {
+const UserCreateSchema = {
 	type: 'object',
 	description: 'Users',
 	required: ['companyId', 'firstName', 'lastName', 'role', 'i18n', 'pictures'],
@@ -21,7 +21,7 @@ const UserCreationSchema = {
 		i18n: generator.i18n({
 			description: {type: 'string', minLength: 1}
 		}),
-		pictures: PicturesSchema
+		pictures: PictureListSchema
 	}
 }
 
@@ -42,11 +42,35 @@ const UserUpdateSchema = {
 		i18n: generator.i18n({
 			description: {type: 'string', minLength: 1}
 		}),
-		pictures: PicturesSchema
+		pictures: PictureListSchema
+	}
+}
+
+const UserProfileSchema = {
+	type: 'object',
+	required: [],
+	additionalProperties: false,
+	properties: {
+		firstName: {
+			type: ['string', 'null'],
+			minLength: 1
+		},
+		middleName: {
+			type: ['string', 'null'],
+			minLength: 1
+		},
+		lastName: {
+			type: ['string', 'null'],
+			minLength: 1
+		},
+		lang: {
+			enum: constants.LANGUAGES
+		}
 	}
 }
 
 module.exports = {
-	UserCreationSchema,
-	UserUpdateSchema
+	UserCreateSchema,
+	UserUpdateSchema,
+	UserProfileSchema
 }
