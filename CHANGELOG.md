@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/retracedgmbh/schemas/compare/v1.2.0...v1.2.1) (2019-10-17)
+
+
+### Bug Fixes
+
+* refactoring name ([1d39452](https://github.com/retracedgmbh/schemas/commit/1d39452c0f45a9da086a46b558ee09a291ea3752))
+
 # [1.2.0](https://github.com/retracedgmbh/schemas/compare/v1.1.4...v1.2.0) (2019-10-17)
 
 
