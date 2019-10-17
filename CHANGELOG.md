@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/retracedgmbh/schemas/compare/v1.1.3...v1.1.4) (2019-10-16)
+
+
+### Bug Fixes
+
+* attribute update schema ([3a484a0](https://github.com/retracedgmbh/schemas/commit/3a484a0fb190e163a6fafc736d80f38fa652f6d2))
+
 ## [1.1.3](https://github.com/retracedgmbh/schemas/compare/v1.1.2...v1.1.3) (2019-10-16)
 
 ## [1.1.2](https://github.com/retracedgmbh/schemas/compare/v1.1.1...v1.1.2) (2019-10-16)
