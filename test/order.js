@@ -61,3 +61,53 @@ exports.testOrderStatusUpdateSchemaWithInCorrectUpdatedAt = () => {
 
 	assert.strictEqual(isValid, false, 'updatedAt is in wrong date-time format')
 }
+
+exports.testQuerystringOrderlines = () => {
+	const isValid = ajv.validate(schemas.order.querystring.listOrderLines, {
+		orderId: 'FILE-ID',
+		status: 'to-seperate'
+	})
+
+	assert.strictEqual(isValid, true)
+}
+
+exports.testQuerystringOrderlinesWithoutOrderId = () => {
+	const isValid = ajv.validate(schemas.order.querystring.listOrderLines, {
+		status: 'to-seperate'
+	})
+
+	assert.strictEqual(isValid, false, 'orderID must be provided')
+}
+
+exports.testQuerystringOrderlinesInvalidStatus = () => {
+	const isValid = ajv.validate(schemas.order.querystring.listOrderLines, {
+		orderId: 'FILE-ID',
+		status: 'to-seperate1'
+	})
+
+	assert.strictEqual(isValid, false, 'status is not valid')
+}
+
+exports.testQuerystringGet = () => {
+	const isValid = ajv.validate(schemas.order.querystring.get, {
+		deep: true
+	})
+
+	assert.strictEqual(isValid, true)
+}
+
+exports.testQuerystringList = () => {
+	const isValid = ajv.validate(schemas.order.querystring.list, {
+		status: 'history'
+	})
+
+	assert.strictEqual(isValid, true)
+}
+
+exports.testQuerystringListInvalidStatus = () => {
+	const isValid = ajv.validate(schemas.order.querystring.list, {
+		status: 'history1'
+	})
+
+	assert.strictEqual(isValid, false, 'status in list is not valid')
+}

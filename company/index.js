@@ -1,6 +1,7 @@
 const constants = require('../lib/constants')
 const generator = require('../lib/generator')
 const picture = require('../picture')
+const querystring = require('./querystring')
 
 const create = {
 	type: 'object',
@@ -55,5 +56,6 @@ const update = {
 
 module.exports = {
 	create,
-	update
+	update,
+	querystring
 }

@@ -1,3 +1,5 @@
+const querystring = require('./querystring')
+
 const create = {
 	type: 'object',
 	required: ['lineId', 'ids'],
@@ -18,5 +20,6 @@ const create = {
 }
 
 module.exports = {
-	create
+	create,
+	querystring
 }

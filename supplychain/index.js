@@ -1,5 +1,6 @@
 const node = require('./node')
 const link = require('./link')
+const querystring = require('./querystring')
 
 const create = {
 	type: 'object',
@@ -40,5 +41,6 @@ module.exports = {
 	create,
 	update,
 	node,
-	link
+	link,
+	querystring
 }

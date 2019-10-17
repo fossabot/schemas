@@ -1,3 +1,5 @@
+const querystring = require('./querystring')
+
 const create = {
 	type: 'object',
 	required: ['variations'],
@@ -31,5 +33,6 @@ const status = {
 
 module.exports = {
 	create,
-	status
+	status,
+	querystring
 }

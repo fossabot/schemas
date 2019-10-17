@@ -91,3 +91,39 @@ exports.testCompanyUpdateSchema = () => {
 
 	assert.strictEqual(isValid, true)
 }
+
+exports.testQuerystringFind = () => {
+	const isValid = ajv.validate(schemas.company.querystring.find, {
+		country: 'VI',
+		taxNo: 'taxNo'
+	})
+
+	assert.strictEqual(isValid, true)
+}
+
+exports.testQuerystringFindInvalid = () => {
+	const isValid = ajv.validate(schemas.company.querystring.find, {
+		country: 'AP',
+		taxNo: 'taxNo'
+	})
+
+	assert.strictEqual(isValid, false, 'country code is not valid')
+}
+
+exports.testQuerystringFindWithoutTax = () => {
+	const isValid = ajv.validate(schemas.company.querystring.find, {
+		country: 'VI'
+	})
+
+	assert.strictEqual(isValid, false, 'tax code is not provided')
+}
+
+exports.testQuerystringList = () => {
+	const isValid = ajv.validate(schemas.company.querystring.list, {
+		page: 1,
+		count: 10,
+		dropdownlist: true
+	})
+
+	assert.strictEqual(isValid, true)
+}

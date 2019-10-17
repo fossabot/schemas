@@ -1,5 +1,7 @@
 const constants = require('../lib/constants')
 
+const querystring = require('./querystring')
+
 const url = {
 	type: 'object',
 	required: ['filename'],
@@ -18,5 +20,6 @@ const url = {
 	}
 }
 module.exports = {
-	url
+	url,
+	querystring
 }

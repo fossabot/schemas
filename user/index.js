@@ -1,6 +1,7 @@
 const picture = require('../picture')
 const constants = require('../lib/constants')
 const generator = require('../lib/generator')
+const querystring = require('./querystring')
 
 const create = {
 	type: 'object',
@@ -72,5 +73,6 @@ const profile = {
 module.exports = {
 	create,
 	update,
-	profile
+	profile,
+	querystring
 }

@@ -28,3 +28,38 @@ exports.testItemCreateSchemaWithoutLineId = () => {
 
 	assert.strictEqual(isValid, false, 'line-id is not provided')
 }
+
+exports.testQuerystringGet = () => {
+	const isValid = ajv.validate(schemas.item.querystring.get, {
+		existence: true
+	})
+
+	assert.strictEqual(isValid, true)
+}
+
+exports.testQuerystringGetWithAdditionalProperties = () => {
+	const isValid = ajv.validate(schemas.item.querystring.get, {
+		existence: true,
+		additional: 'ok'
+	})
+
+	assert.strictEqual(isValid, false, 'not allow additional properties')
+}
+
+exports.testQuerystringRandom = () => {
+	const isValid = ajv.validate(schemas.item.querystring.random, {
+		productId: 'product',
+		sku: 'sku'
+	})
+
+	assert.strictEqual(isValid, true)
+}
+
+exports.testQuerystringRandomInvalid = () => {
+	const isValid = ajv.validate(schemas.item.querystring.random, {
+		productId: 123,
+		sku: 'sku'
+	})
+
+	assert.strictEqual(isValid, false, 'product id must be a string')
+}

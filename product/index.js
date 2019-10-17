@@ -2,6 +2,7 @@ const picture = require('../picture')
 const generator = require('../lib/generator')
 const attribute = require('./attribute')
 const variation = require('./variation')
+const querystring = require('./querystring')
 
 const create = {
 	type: 'object',
@@ -46,5 +47,6 @@ module.exports = {
 	attribute,
 	create,
 	update,
-	variation
+	variation,
+	querystring
 }
