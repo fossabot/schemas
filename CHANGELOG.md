@@ -1,3 +1,11 @@
+# [1.2.0](https://github.com/retracedgmbh/schemas/compare/v1.1.4...v1.2.0) (2019-10-17)
+
+
+### Features
+
+* add querystring schema tests ([52af37b](https://github.com/retracedgmbh/schemas/commit/52af37ba8cc91e1372bac419c4174400f77412c2))
+* add queystring schema ([0cb8d1d](https://github.com/retracedgmbh/schemas/commit/0cb8d1d547a9f70af04a5e3462c1571179e47f3e))
+
 ## [1.1.4](https://github.com/retracedgmbh/schemas/compare/v1.1.3...v1.1.4) (2019-10-16)
 
 
