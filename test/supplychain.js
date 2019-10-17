@@ -62,7 +62,7 @@ exports.testSupplyChainStepSchemaWithoutPictures = () => {
 }
 
 exports.testSupplyChainCreateSchema = () => {
-	const isValid = ajv.validate(schemas.supplychain.create, {
+	const isValid = ajv.validate(schemas.supplychain.create.body, {
 		name: 'name',
 		entrySupplyNodeId: 'node-Cano',
 		nodes: [
@@ -121,7 +121,7 @@ exports.testSupplyChainCreateSchema = () => {
 }
 
 exports.testInvalidSupplyChainCreateSchema = () => {
-	const isValid = ajv.validate(schemas.supplychain.create, {
+	const isValid = ajv.validate(schemas.supplychain.create.body, {
 		name: 'name',
 		entrySupplyNodeId: 'node-Cano',
 		nodes: [
@@ -179,7 +179,7 @@ exports.testInvalidSupplyChainCreateSchema = () => {
 }
 
 exports.testSupplyChainUpdateSchema = () => {
-	const isValid = ajv.validate(schemas.supplychain.update, {
+	const isValid = ajv.validate(schemas.supplychain.update.body, {
 		name: 'name update',
 		nodes: [
 			{
@@ -234,7 +234,7 @@ exports.testSupplyChainUpdateSchema = () => {
 }
 
 exports.testQuerystringList = () => {
-	const isValid = ajv.validate(schemas.supplychain.querystring.list, {
+	const isValid = ajv.validate(schemas.supplychain.list.querystring, {
 		dropdownlist: true
 	})
 
@@ -242,7 +242,7 @@ exports.testQuerystringList = () => {
 }
 
 exports.testQuerystringListInvalidDropdown = () => {
-	const isValid = ajv.validate(schemas.supplychain.querystring.list, {
+	const isValid = ajv.validate(schemas.supplychain.list.querystring, {
 		dropdownlist: 'string'
 	})
 

@@ -5,7 +5,7 @@ const schemas = require('..')
 const ajv = new AJV({allErrors: true})
 
 exports.testCompanyCreateSchema = () => {
-	const isValid = ajv.validate(schemas.company.create, {
+	const isValid = ajv.validate(schemas.company.create.body, {
 		taxNo: 'tax',
 		officialName: 'official name',
 		country: 'VI',
@@ -28,7 +28,7 @@ exports.testCompanyCreateSchema = () => {
 }
 
 exports.testCompanyCreateSchemaWithoutCountryInformation = () => {
-	const isValid = ajv.validate(schemas.company.create, {
+	const isValid = ajv.validate(schemas.company.create.body, {
 		taxNo: 'tax',
 		officialName: 'official name',
 		longitude: 1,
@@ -50,7 +50,7 @@ exports.testCompanyCreateSchemaWithoutCountryInformation = () => {
 }
 
 exports.testCompanyCreateSchemaWithIncorrectCountryCodeInformation = () => {
-	const isValid = ajv.validate(schemas.company.create, {
+	const isValid = ajv.validate(schemas.company.create.body, {
 		taxNo: 'tax',
 		officialName: 'official name',
 		country: 'AP',
@@ -73,7 +73,7 @@ exports.testCompanyCreateSchemaWithIncorrectCountryCodeInformation = () => {
 }
 
 exports.testCompanyUpdateSchema = () => {
-	const isValid = ajv.validate(schemas.company.update, {
+	const isValid = ajv.validate(schemas.company.update.body, {
 		longitude: 1,
 		latitude: 1,
 		i18n: [
@@ -93,7 +93,7 @@ exports.testCompanyUpdateSchema = () => {
 }
 
 exports.testQuerystringFind = () => {
-	const isValid = ajv.validate(schemas.company.querystring.find, {
+	const isValid = ajv.validate(schemas.company.find.querystring, {
 		country: 'VI',
 		taxNo: 'taxNo'
 	})
@@ -102,7 +102,7 @@ exports.testQuerystringFind = () => {
 }
 
 exports.testQuerystringFindInvalid = () => {
-	const isValid = ajv.validate(schemas.company.querystring.find, {
+	const isValid = ajv.validate(schemas.company.find.querystring, {
 		country: 'AP',
 		taxNo: 'taxNo'
 	})
@@ -111,7 +111,7 @@ exports.testQuerystringFindInvalid = () => {
 }
 
 exports.testQuerystringFindWithoutTax = () => {
-	const isValid = ajv.validate(schemas.company.querystring.find, {
+	const isValid = ajv.validate(schemas.company.find.querystring, {
 		country: 'VI'
 	})
 
@@ -119,7 +119,7 @@ exports.testQuerystringFindWithoutTax = () => {
 }
 
 exports.testQuerystringList = () => {
-	const isValid = ajv.validate(schemas.company.querystring.list, {
+	const isValid = ajv.validate(schemas.company.list.querystring, {
 		page: 1,
 		count: 10,
 		dropdownlist: true

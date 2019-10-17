@@ -22,7 +22,7 @@ exports.testProductVariationSchemaWithoutId = () => {
 }
 
 exports.testProductCreateSchemaWithoutAttributes = () => {
-	const isValid = ajv.validate(schemas.product.create, {
+	const isValid = ajv.validate(schemas.product.create.body, {
 		supplyChainId: 'supplychain-id',
 		name: 'name',
 		pictures: [
@@ -43,7 +43,7 @@ exports.testProductCreateSchemaWithoutAttributes = () => {
 }
 
 exports.testProductCreateSchemaWithAttributes = () => {
-	const isValid = ajv.validate(schemas.product.create, {
+	const isValid = ajv.validate(schemas.product.create.body, {
 		supplyChainId: 'supplychain-id',
 		name: 'name',
 		pictures: [
@@ -85,7 +85,7 @@ exports.testProductCreateSchemaWithAttributes = () => {
 }
 
 exports.testProductCreateSchemaWithInValidAttributes = () => {
-	const isValid = ajv.validate(schemas.product.create, {
+	const isValid = ajv.validate(schemas.product.create.body, {
 		supplyChainId: 'supplychain-id',
 		name: 'name',
 		pictures: [
@@ -116,7 +116,7 @@ exports.testProductCreateSchemaWithInValidAttributes = () => {
 }
 
 exports.testProductUpdateSchema = () => {
-	const isValid = ajv.validate(schemas.product.update, {
+	const isValid = ajv.validate(schemas.product.update.body, {
 		name: 'product update'
 	})
 
@@ -124,7 +124,7 @@ exports.testProductUpdateSchema = () => {
 }
 
 exports.testQuerystringList = () => {
-	const isValid = ajv.validate(schemas.product.querystring.list, {
+	const isValid = ajv.validate(schemas.product.list.querystring, {
 		dropdownlist: true
 	})
 
@@ -132,7 +132,7 @@ exports.testQuerystringList = () => {
 }
 
 exports.testQuerystringListInvalidDropdown = () => {
-	const isValid = ajv.validate(schemas.product.querystring.list, {
+	const isValid = ajv.validate(schemas.product.list.querystring, {
 		dropdownlist: 'string'
 	})
 

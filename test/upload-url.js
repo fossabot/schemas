@@ -5,14 +5,14 @@ const schemas = require('..')
 const ajv = new AJV({allErrors: true})
 
 exports.testUploadUrlSchema = () => {
-	const isValid = ajv.validate(schemas.upload.url, {
+	const isValid = ajv.validate(schemas.uploadUrl.create.body, {
 		filename: 'test.jpg'
 	})
 	assert.strictEqual(isValid, true)
 }
 
 exports.testInvalidUploadUrlSchema = () => {
-	const isValid = ajv.validate(schemas.upload.url, {
+	const isValid = ajv.validate(schemas.uploadUrl.create.body, {
 		filename: 'test.doc'
 	})
 	assert.strictEqual(isValid, false)

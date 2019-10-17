@@ -5,7 +5,7 @@ const schemas = require('..')
 const ajv = new AJV({allErrors: true})
 
 exports.userCreateSchema = () => {
-	const isValid = ajv.validate(schemas.user.create, {
+	const isValid = ajv.validate(schemas.user.create.body, {
 		companyId: 'COM-Cano',
 		firstName: 'Test',
 		lastName: 'User',
@@ -27,7 +27,7 @@ exports.userCreateSchema = () => {
 }
 
 exports.testInvalidUserCreateSchema = () => {
-	const isValid = ajv.validate(schemas.user.create, {
+	const isValid = ajv.validate(schemas.user.create.body, {
 		firstName: 'Test',
 		lastName: 'User'
 	})
@@ -36,7 +36,7 @@ exports.testInvalidUserCreateSchema = () => {
 }
 
 exports.testInvalidUserRole = () => {
-	const isValid = ajv.validate(schemas.user.update, {
+	const isValid = ajv.validate(schemas.user.update.body, {
 		role: 'USER'
 	})
 

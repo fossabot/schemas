@@ -5,7 +5,7 @@ const schemas = require('..')
 const ajv = new AJV({allErrors: true})
 
 exports.testItemCreateSchema = () => {
-	const isValid = ajv.validate(schemas.item.create, {
+	const isValid = ajv.validate(schemas.item.create.body, {
 		lineId: 'line-id',
 		ids: ['id', 'id1']
 	})
@@ -14,7 +14,7 @@ exports.testItemCreateSchema = () => {
 }
 
 exports.testItemCreateSchemaWithoutIds = () => {
-	const isValid = ajv.validate(schemas.item.create, {
+	const isValid = ajv.validate(schemas.item.create.body, {
 		lineId: 'line-id'
 	})
 
@@ -22,7 +22,7 @@ exports.testItemCreateSchemaWithoutIds = () => {
 }
 
 exports.testItemCreateSchemaWithoutLineId = () => {
-	const isValid = ajv.validate(schemas.item.create, {
+	const isValid = ajv.validate(schemas.item.create.body, {
 		ids: ['id', 'id1']
 	})
 
@@ -30,7 +30,7 @@ exports.testItemCreateSchemaWithoutLineId = () => {
 }
 
 exports.testQuerystringGet = () => {
-	const isValid = ajv.validate(schemas.item.querystring.get, {
+	const isValid = ajv.validate(schemas.item.get.querystring, {
 		existence: true
 	})
 
@@ -38,7 +38,7 @@ exports.testQuerystringGet = () => {
 }
 
 exports.testQuerystringGetWithAdditionalProperties = () => {
-	const isValid = ajv.validate(schemas.item.querystring.get, {
+	const isValid = ajv.validate(schemas.item.get.querystring, {
 		existence: true,
 		additional: 'ok'
 	})
@@ -47,7 +47,7 @@ exports.testQuerystringGetWithAdditionalProperties = () => {
 }
 
 exports.testQuerystringRandom = () => {
-	const isValid = ajv.validate(schemas.item.querystring.random, {
+	const isValid = ajv.validate(schemas.item.random.querystring, {
 		productId: 'product',
 		sku: 'sku'
 	})
@@ -56,7 +56,7 @@ exports.testQuerystringRandom = () => {
 }
 
 exports.testQuerystringRandomInvalid = () => {
-	const isValid = ajv.validate(schemas.item.querystring.random, {
+	const isValid = ajv.validate(schemas.item.random.querystring, {
 		productId: 123,
 		sku: 'sku'
 	})

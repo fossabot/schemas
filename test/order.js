@@ -5,7 +5,7 @@ const schemas = require('..')
 const ajv = new AJV({allErrors: true})
 
 exports.testOrderCreateSchema = () => {
-	const isValid = ajv.validate(schemas.order.create, {
+	const isValid = ajv.validate(schemas.order.create.body, {
 		variations: [
 			{
 				id: 'id',
@@ -18,7 +18,7 @@ exports.testOrderCreateSchema = () => {
 }
 
 exports.testOrderCreateSchemaWithNonDigitQuantity = () => {
-	const isValid = ajv.validate(schemas.order.create, {
+	const isValid = ajv.validate(schemas.order.create.body, {
 		variations: [
 			{
 				id: 'id',
@@ -31,13 +31,13 @@ exports.testOrderCreateSchemaWithNonDigitQuantity = () => {
 }
 
 exports.testInvalidOrderCreateSchema = () => {
-	const isValid = ajv.validate(schemas.order.create, {})
+	const isValid = ajv.validate(schemas.order.create.body, {})
 
 	assert.strictEqual(isValid, false, 'no variations provided')
 }
 
 exports.testOrderStatusUpdateSchema = () => {
-	const isValid = ajv.validate(schemas.order.status, {
+	const isValid = ajv.validate(schemas.order.accept.body, {
 		fileId: 'FILE-ID',
 		updatedAt: '2019-10-13T20:20:39+00:00'
 	})
@@ -46,7 +46,7 @@ exports.testOrderStatusUpdateSchema = () => {
 }
 
 exports.testOrderStatusUpdateSchemaWithNoUpdatedAt = () => {
-	const isValid = ajv.validate(schemas.order.status, {
+	const isValid = ajv.validate(schemas.order.accept.body, {
 		fileId: 'FILE-ID'
 	})
 
@@ -54,7 +54,7 @@ exports.testOrderStatusUpdateSchemaWithNoUpdatedAt = () => {
 }
 
 exports.testOrderStatusUpdateSchemaWithInCorrectUpdatedAt = () => {
-	const isValid = ajv.validate(schemas.order.status, {
+	const isValid = ajv.validate(schemas.order.accept.body, {
 		fileId: 'FILE-ID',
 		updatedAt: 'this-is-time'
 	})
@@ -62,34 +62,8 @@ exports.testOrderStatusUpdateSchemaWithInCorrectUpdatedAt = () => {
 	assert.strictEqual(isValid, false, 'updatedAt is in wrong date-time format')
 }
 
-exports.testQuerystringOrderlines = () => {
-	const isValid = ajv.validate(schemas.order.querystring.listOrderLines, {
-		orderId: 'FILE-ID',
-		status: 'to-seperate'
-	})
-
-	assert.strictEqual(isValid, true)
-}
-
-exports.testQuerystringOrderlinesWithoutOrderId = () => {
-	const isValid = ajv.validate(schemas.order.querystring.listOrderLines, {
-		status: 'to-seperate'
-	})
-
-	assert.strictEqual(isValid, false, 'orderID must be provided')
-}
-
-exports.testQuerystringOrderlinesInvalidStatus = () => {
-	const isValid = ajv.validate(schemas.order.querystring.listOrderLines, {
-		orderId: 'FILE-ID',
-		status: 'to-seperate1'
-	})
-
-	assert.strictEqual(isValid, false, 'status is not valid')
-}
-
 exports.testQuerystringGet = () => {
-	const isValid = ajv.validate(schemas.order.querystring.get, {
+	const isValid = ajv.validate(schemas.order.get.querystring, {
 		deep: true
 	})
 
@@ -97,7 +71,7 @@ exports.testQuerystringGet = () => {
 }
 
 exports.testQuerystringList = () => {
-	const isValid = ajv.validate(schemas.order.querystring.list, {
+	const isValid = ajv.validate(schemas.order.list.querystring, {
 		status: 'history'
 	})
 
@@ -105,7 +79,7 @@ exports.testQuerystringList = () => {
 }
 
 exports.testQuerystringListInvalidStatus = () => {
-	const isValid = ajv.validate(schemas.order.querystring.list, {
+	const isValid = ajv.validate(schemas.order.list.querystring, {
 		status: 'history1'
 	})
 

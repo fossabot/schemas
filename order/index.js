@@ -1,27 +1,29 @@
 const querystring = require('./querystring')
 
 const create = {
-	type: 'object',
-	required: ['variations'],
-	additionalProperties: false,
-	properties: {
-		variations: {
-			type: 'array',
-			minLength: 1,
-			items: {
-				type: 'object',
-				required: ['id', 'quantity'],
-				additionalProperties: false,
-				properties: {
-					id: {type: 'string', minLength: 1},
-					quantity: {type: 'number', exclusiveMinimum: 0, multipleOf: 1}
+	body: {
+		type: 'object',
+		required: ['variations'],
+		additionalProperties: false,
+		properties: {
+			variations: {
+				type: 'array',
+				minLength: 1,
+				items: {
+					type: 'object',
+					required: ['id', 'quantity'],
+					additionalProperties: false,
+					properties: {
+						id: {type: 'string', minLength: 1},
+						quantity: {type: 'number', exclusiveMinimum: 0, multipleOf: 1}
+					}
 				}
 			}
 		}
 	}
 }
 
-const status = {
+const statusChange = {
 	type: 'object',
 	required: ['updatedAt'],
 	additionalProperties: false,
@@ -31,8 +33,46 @@ const status = {
 	}
 }
 
+const accept = {
+	body: statusChange
+}
+
+const issue = {
+	body: statusChange
+}
+
+const receive = {
+	body: statusChange
+}
+
+const reject = {
+	body: statusChange
+}
+
+const ship = {
+	body: statusChange
+}
+
+const skip = {
+	body: statusChange
+}
+
+const get = {
+	querystring: querystring.get
+}
+
+const list = {
+	querystring: querystring.list
+}
+
 module.exports = {
 	create,
-	status,
-	querystring
+	accept,
+	issue,
+	receive,
+	skip,
+	ship,
+	reject,
+	get,
+	list
 }

@@ -1,15 +1,5 @@
 const generator = require('../lib/generator')
 
-const listOrderLines = {
-	type: 'object',
-	additionalProperties: false,
-	required: ['orderId'],
-	properties: {
-		orderId: {type: 'string'},
-		status: {enum: ['to-seperate']}
-	}
-}
-
 const get = {
 	type: 'object',
 	properties: {
@@ -31,7 +21,6 @@ const list = {
 }
 
 module.exports = {
-	listOrderLines,
 	get,
 	list
 }

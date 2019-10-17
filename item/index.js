@@ -1,19 +1,29 @@
 const querystring = require('./querystring')
 
+const get = {
+	querystring: querystring.get
+}
+
+const random = {
+	querystring: querystring.random
+}
+
 const create = {
-	type: 'object',
-	required: ['lineId', 'ids'],
-	additionalProperties: false,
-	properties: {
-		lineId: {
-			type: 'string',
-			minLength: 1
-		},
-		ids: {
-			type: 'array',
-			items: {
+	body: {
+		type: 'object',
+		required: ['lineId', 'ids'],
+		additionalProperties: false,
+		properties: {
+			lineId: {
 				type: 'string',
 				minLength: 1
+			},
+			ids: {
+				type: 'array',
+				items: {
+					type: 'string',
+					minLength: 1
+				}
 			}
 		}
 	}
@@ -21,5 +31,6 @@ const create = {
 
 module.exports = {
 	create,
-	querystring
+	get,
+	random
 }
