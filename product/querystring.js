@@ -19,7 +19,7 @@ const list = {
 		},
 		dropdownlist: {
 			type: 'boolean',
-			default: 'false'
+			default: false
 		}
 	}
 }

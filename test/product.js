@@ -122,3 +122,19 @@ exports.testProductUpdateSchema = () => {
 
 	assert.strictEqual(isValid, true)
 }
+
+exports.testQuerystringList = () => {
+	const isValid = ajv.validate(schemas.product.querystring.list, {
+		dropdownlist: true
+	})
+
+	assert.strictEqual(isValid, true)
+}
+
+exports.testQuerystringListInvalidDropdown = () => {
+	const isValid = ajv.validate(schemas.product.querystring.list, {
+		dropdownlist: 'string'
+	})
+
+	assert.strictEqual(isValid, false, 'dropdownlist value must be boolean type')
+}
