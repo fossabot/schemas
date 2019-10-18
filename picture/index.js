@@ -3,7 +3,8 @@ const single = {
 	required: ['id'],
 	additionalProperties: false,
 	properties: {
-		id: {type: 'string', minLength: 1}
+		id: {type: 'string', minLength: 1},
+		url: {type: 'string', minLength: 1}
 	}
 }
 
