@@ -123,6 +123,33 @@ exports.testProductUpdateSchema = () => {
 	assert.strictEqual(isValid, true)
 }
 
+exports.testProductUpdateSchemaWithVariations = () => {
+	const isValid = ajv.validate(schemas.product.update.body, {
+		variations: [
+			{
+				id: 'variation-id',
+				sku: 'variation-sku',
+				pictures: [
+					{
+						id: 'FILE-VARIATION-ID'
+					}
+				]
+			},
+			{
+				id: 'variation-id-2',
+				sku: 'variation-sku-2',
+				pictures: [
+					{
+						id: 'FILE-VARIATION-ID-2'
+					}
+				]
+			}
+		]
+	})
+
+	assert.strictEqual(isValid, true)
+}
+
 exports.testQuerystringList = () => {
 	const isValid = ajv.validate(schemas.product.list.querystring, {
 		dropdownlist: true
