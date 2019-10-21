@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/retracedgmbh/schemas/compare/v1.3.0...v1.4.0) (2019-10-21)
+
+
+### Features
+
+* separate request & response schema ([#5](https://github.com/retracedgmbh/schemas/issues/5)) ([2dcee45](https://github.com/retracedgmbh/schemas/commit/2dcee45a691a7d9c884c2570da3fd05ffc27044c))
+
 # [1.3.0](https://github.com/retracedgmbh/schemas/compare/v1.2.2...v1.3.0) (2019-10-21)
 
 
