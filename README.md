@@ -16,8 +16,8 @@ Add the dependency to your `package.json` with:
    const schemas = require("@retracedbmbh/schemas")
    ```
 
-2. Access schema:
+2. Access request schema:
 
    ```javascript
-   schemas.company.create
+   schemas.request.company.create
    ```
