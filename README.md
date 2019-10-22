@@ -35,3 +35,4 @@ Add the dependency to your `package.json` with:
    ```javascript
    schemas.request.company.create
    ```
+   
