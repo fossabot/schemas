@@ -2,7 +2,7 @@ const node = require('./node')
 const link = require('./link')
 const querystring = require('./querystring')
 
-const create = {
+module.exports.create = {
 	body: {
 		type: 'object',
 		required: ['name', 'entrySupplyNodeId', 'nodes', 'links'],
@@ -22,7 +22,7 @@ const create = {
 	}
 }
 
-const update = {
+module.exports.update = {
 	body: {
 		type: 'object',
 		required: [],
@@ -41,19 +41,13 @@ const update = {
 	}
 }
 
-const get = {
+module.exports.get = {
 	querystring: querystring.get
 }
 
-const list = {
+module.exports.list = {
 	querystring: querystring.list
 }
+module.exports.node = node
 
-module.exports = {
-	create,
-	update,
-	get,
-	list,
-	node,
-	link
-}
+module.exports.link = link

@@ -1,6 +1,6 @@
 const querystring = require('./querystring')
 
-const create = {
+module.exports.create = {
 	body: {
 		type: 'object',
 		required: ['variations'],
@@ -23,7 +23,7 @@ const create = {
 	}
 }
 
-const statusChange = {
+module.exports.statusChange = {
 	type: 'object',
 	required: ['updatedAt'],
 	additionalProperties: false,
@@ -33,46 +33,34 @@ const statusChange = {
 	}
 }
 
-const accept = {
-	body: statusChange
+module.exports.accept = {
+	body: exports.statusChange
 }
 
-const issue = {
-	body: statusChange
+module.exports.issue = {
+	body: exports.statusChange
 }
 
-const receive = {
-	body: statusChange
+module.exports.receive = {
+	body: exports.statusChange
 }
 
-const reject = {
-	body: statusChange
+module.exports.reject = {
+	body: exports.statusChange
 }
 
-const ship = {
-	body: statusChange
+module.exports.ship = {
+	body: exports.statusChange
 }
 
-const skip = {
-	body: statusChange
+module.exports.skip = {
+	body: exports.statusChange
 }
 
-const get = {
+module.exports.get = {
 	querystring: querystring.get
 }
 
-const list = {
+module.exports.list = {
 	querystring: querystring.list
-}
-
-module.exports = {
-	create,
-	accept,
-	issue,
-	receive,
-	skip,
-	ship,
-	reject,
-	get,
-	list
 }

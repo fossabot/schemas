@@ -1,6 +1,6 @@
 const generator = require('../../lib/generator')
 
-const get = {
+module.exports.get = {
 	type: 'object',
 	properties: {
 		deep: {type: 'boolean', default: false},
@@ -9,7 +9,7 @@ const get = {
 	}
 }
 
-const list = {
+module.exports.list = {
 	type: 'object',
 	additionalProperties: false,
 	properties: {
@@ -19,9 +19,4 @@ const list = {
 			default: false
 		}
 	}
-}
-
-module.exports = {
-	get,
-	list
 }

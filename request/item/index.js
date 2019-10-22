@@ -1,14 +1,14 @@
 const querystring = require('./querystring')
 
-const get = {
+module.exports.get = {
 	querystring: querystring.get
 }
 
-const random = {
+module.exports.random = {
 	querystring: querystring.random
 }
 
-const create = {
+module.exports.create = {
 	body: {
 		type: 'object',
 		required: ['lineId', 'ids'],
@@ -27,10 +27,4 @@ const create = {
 			}
 		}
 	}
-}
-
-module.exports = {
-	create,
-	get,
-	random
 }

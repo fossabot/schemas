@@ -1,8 +1,4 @@
-const Request = require('./request')
-
-const Schemas = {
-	request: Request
+module.exports = {
+	request: require('./request')
 	// Response schema here
 }
-
-module.exports = Schemas

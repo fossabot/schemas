@@ -1,7 +1,7 @@
 const constants = require('../../../lib/constants')
 const generator = require('../../../lib/generator')
 
-const single = {
+module.exports.single = {
 	type: 'object',
 	required: ['quantity', 'unit', 'buyerNodeId', 'sellerNodeId', 'i18n'],
 	additionalProperties: false,
@@ -16,7 +16,7 @@ const single = {
 	}
 }
 
-const singleUpdate = {
+module.exports.singleUpdate = {
 	type: 'object',
 	required: ['id', 'i18n'],
 	additionalProperties: false,
@@ -26,9 +26,4 @@ const singleUpdate = {
 			asset: {type: 'string', minLength: 1}
 		})
 	}
-}
-
-module.exports = {
-	single,
-	singleUpdate
 }

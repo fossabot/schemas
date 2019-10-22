@@ -3,23 +3,23 @@ const generator = require('../../lib/generator')
 const picture = require('../picture')
 const querystring = require('./querystring')
 
-const get = {
+module.exports.get = {
 	querystring: querystring.get
 }
 
-const deletion = {
-	querystring: querystring.deletion
+module.exports.delete = {
+	querystring: querystring.delete
 }
 
-const list = {
+module.exports.list = {
 	querystring: querystring.list
 }
 
-const find = {
+module.exports.find = {
 	querystring: querystring.find
 }
 
-const create = {
+module.exports.create = {
 	body: {
 		type: 'object',
 		required: ['taxNo', 'officialName', 'country', 'longitude', 'latitude', 'i18n', 'pictures'],
@@ -48,7 +48,7 @@ const create = {
 	}
 }
 
-const update = {
+module.exports.update = {
 	body: {
 		type: 'object',
 		required: [],
@@ -73,14 +73,3 @@ const update = {
 		}
 	}
 }
-
-const company = {
-	create,
-	update,
-	get,
-	delete: deletion,
-	find,
-	list
-}
-
-module.exports = company

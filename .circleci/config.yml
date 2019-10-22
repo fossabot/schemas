@@ -11,14 +11,12 @@ aliases:
       branches:
         only: master
 
-
   - &not-master
     filters:
       branches:
         ignore: master
 
 version: 2.1
-
 jobs:
   test:
     docker:
@@ -33,7 +31,8 @@ jobs:
           - v1-dependencies-
 
       - run: npm install
-      - run: npm run test
+      - run: npm run test-ci
+      - run: npm run report-coverage
 
       - save_cache:
           paths:
@@ -63,7 +62,6 @@ jobs:
       - run:
           name: Publish package
           command: npm publish
-
 
 workflows:
   version: 2

@@ -4,7 +4,7 @@ const attribute = require('./attribute')
 const variation = require('./variation')
 const querystring = require('./querystring')
 
-const create = {
+module.exports.create = {
 	body: {
 		type: 'object',
 		required: ['supplyChainId', 'name', 'pictures', 'attributes'],
@@ -25,7 +25,7 @@ const create = {
 	}
 }
 
-const update = {
+module.exports.update = {
 	body: {
 		type: 'object',
 		required: [],
@@ -47,19 +47,12 @@ const update = {
 	}
 }
 
-const get = {
+module.exports.get = {
 	querystring: querystring.get
 }
 
-const list = {
+module.exports.list = {
 	querystring: querystring.list
 }
-
-module.exports = {
-	attribute,
-	create,
-	update,
-	get,
-	list,
-	variation
-}
+module.exports.attribute = attribute
+module.exports.variation = variation

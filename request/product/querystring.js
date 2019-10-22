@@ -1,6 +1,6 @@
 const generator = require('../../lib/generator')
 
-const get = {
+module.exports.get = {
 	type: 'object',
 	properties: {
 		deep: {type: 'boolean', default: false},
@@ -10,7 +10,7 @@ const get = {
 	}
 }
 
-const list = {
+module.exports.list = {
 	type: 'object',
 	properties: {
 		...generator.paginationParams,
@@ -22,9 +22,4 @@ const list = {
 			default: false
 		}
 	}
-}
-
-module.exports = {
-	get,
-	list
 }

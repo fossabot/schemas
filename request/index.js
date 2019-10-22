@@ -8,6 +8,7 @@ const Setting = require('./setting')
 const SupplyChain = require('./supplychain')
 const User = require('./user')
 const UploadUrl = require('./upload-url')
+const material = require('./material')
 
 const Request = {
 	company: Company,
@@ -19,7 +20,8 @@ const Request = {
 	setting: Setting,
 	supplychain: SupplyChain,
 	user: User,
-	uploadUrl: UploadUrl
+	uploadUrl: UploadUrl,
+	material
 }
 
 module.exports = Request

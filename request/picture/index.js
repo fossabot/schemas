@@ -1,4 +1,4 @@
-const single = {
+module.exports.single = {
 	type: 'object',
 	required: ['id'],
 	additionalProperties: false,
@@ -7,12 +7,7 @@ const single = {
 	}
 }
 
-const list = {
+module.exports.list = {
 	type: 'array',
-	items: single
-}
-
-module.exports = {
-	single,
-	list
+	items: exports.single
 }

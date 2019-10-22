@@ -3,7 +3,7 @@ const generator = require('../../lib/generator')
 const picture = require('../picture')
 const querystring = require('./querystring')
 
-const create = {
+module.exports.create = {
 	body: {
 		type: 'object',
 		description: 'Users',
@@ -28,7 +28,7 @@ const create = {
 	}
 }
 
-const update = {
+module.exports.update = {
 	body: {
 		type: 'object',
 		description: 'Users',
@@ -51,7 +51,7 @@ const update = {
 	}
 }
 
-const profile = {
+module.exports.profile = {
 	body: {
 		type: 'object',
 		description: 'Users',
@@ -74,13 +74,6 @@ const profile = {
 	}
 }
 
-const list = {
+module.exports.list = {
 	querystring: querystring.list
-}
-
-module.exports = {
-	create,
-	update,
-	profile,
-	list
 }

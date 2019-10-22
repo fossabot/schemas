@@ -25,7 +25,7 @@ const updateAttributeValue = {
 	}
 }
 
-const create = {
+module.exports.create = {
 	type: 'object',
 	required: ['key', 'i18n', 'values'],
 	additionalProperties: false,
@@ -41,7 +41,7 @@ const create = {
 	}
 }
 
-const update = {
+module.exports.update = {
 	type: 'object',
 	required: [],
 	additionalProperties: false,
@@ -56,9 +56,4 @@ const update = {
 			items: updateAttributeValue
 		}
 	}
-}
-
-module.exports = {
-	create,
-	update
 }

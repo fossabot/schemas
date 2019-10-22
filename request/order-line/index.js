@@ -1,9 +1,5 @@
 const querystring = require('./querystring')
 
-const list = {
+module.exports.list = {
 	querystring: querystring.list
-}
-
-module.exports = {
-	list
 }

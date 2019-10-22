@@ -1,4 +1,4 @@
-const list = {
+module.exports.list = {
 	type: 'object',
 	additionalProperties: false,
 	required: ['orderId'],
@@ -6,8 +6,4 @@ const list = {
 		orderId: {type: 'string'},
 		status: {enum: ['to-seperate']}
 	}
-}
-
-module.exports = {
-	list
 }

@@ -2,7 +2,7 @@ const generator = require('../../../lib/generator')
 const picture = require('../../picture')
 const step = require('./step')
 
-const single = {
+module.exports.single = {
 	type: 'object',
 	required: ['id', 'companyId', 'pictures', 'i18n', 'steps'],
 	additionalProperties: false,
@@ -21,7 +21,7 @@ const single = {
 	}
 }
 
-const singleUpdate = {
+module.exports.singleUpdate = {
 	type: 'object',
 	required: ['id'],
 	additionalProperties: false,
@@ -40,8 +40,4 @@ const singleUpdate = {
 	}
 }
 
-module.exports = {
-	single,
-	singleUpdate,
-	step
-}
+module.exports.step = step

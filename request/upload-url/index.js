@@ -1,7 +1,7 @@
 const constants = require('../../lib/constants')
 const querystring = require('./querystring')
 
-const create = {
+module.exports.create = {
 	querystring: querystring.create,
 	body: {
 		type: 'object',
@@ -20,7 +20,4 @@ const create = {
 			}
 		}
 	}
-}
-module.exports = {
-	create
 }

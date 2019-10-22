@@ -2,7 +2,7 @@ const generator = require('../../../../lib/generator')
 const picture = require('../../../picture')
 const employee = require('./employee')
 
-const single = {
+module.exports.single = {
 	type: 'object',
 	required: ['pictures', 'i18n', 'employees'],
 	additionalProperties: false,
@@ -18,8 +18,4 @@ const single = {
 		}
 	}
 }
-
-module.exports = {
-	single,
-	employee
-}
+module.exports.employee = employee

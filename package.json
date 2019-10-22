@@ -7,7 +7,9 @@
   "author": "Retraced GmbH",
   "description": "All schemas used for validation that are shared between our projects",
   "scripts": {
-    "test": "xo && best --verbose",
+    "test": "ava -v",
+    "test-ci": "nyc ava -v",
+    "report-coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov -t 1abc86ce-bb1e-4152-9d4b-4178dd93ef90",
     "lint": "xo",
     "autofix": "xo --fix"
   },
@@ -16,7 +18,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run test"
+      "pre-commit": "npm run lint"
     }
   },
   "prettier": {
@@ -24,32 +26,15 @@
     "singleQuote": true,
     "bracketSpacing": false,
     "printWidth": 120,
-    "useTabs": true,
-    "jsxBracketSameLine": true
+    "useTabs": true
   },
   "xo": {
-    "prettier": true,
-    "rules": {
-      "no-unused-vars": [
-        "error",
-        {
-          "vars": "all",
-          "args": "none",
-          "ignoreRestSiblings": false
-        }
-      ],
-      "ava/no-ignored-test-files": [
-        "off",
-        {
-          "files": [
-            "lib/**/*.test.js",
-            "utils/**/*.test.js"
-          ]
-        }
-      ],
-      "node/prefer-promises/fs": "off",
-      "complexity": "off"
-    }
+    "prettier": true
+  },
+  "ava": {
+    "files": [
+      "test/**/*.test.js"
+    ]
   },
   "release": {
     "plugins": [
@@ -105,23 +90,25 @@
     ],
     "branch": "master"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "dependencies": {
+    "ajv": "^6.10.2",
+    "i18n-iso-countries": "^4.3.1"
+  },
   "devDependencies": {
     "@semantic-release/changelog": "^3.0.4",
     "@semantic-release/commit-analyzer": "^6.3.0",
     "@semantic-release/git": "^7.0.16",
     "@semantic-release/npm": "^5.2.0",
     "@semantic-release/release-notes-generator": "^7.3.0",
-    "@zeit/best": "^0.6.1",
-    "ajv": "^6.10.2",
+    "ava": "^2.4.0",
+    "codecov": "^3.6.1",
     "husky": "^3.0.9",
+    "nyc": "^14.1.1",
     "prettier": "^1.18.2",
     "semantic-release": "^15.13.24",
     "xo": "^0.25.3"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
-  "dependencies": {
-    "i18n-iso-countries": "^4.3.1"
   }
 }

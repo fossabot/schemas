@@ -1,4 +1,4 @@
-const get = {
+module.exports.get = {
 	type: 'object',
 	additionalProperties: false,
 	properties: {
@@ -6,16 +6,11 @@ const get = {
 	}
 }
 
-const random = {
+module.exports.random = {
 	type: 'object',
 	additionalProperties: false,
 	properties: {
 		productId: {type: 'string'},
 		sku: {type: 'string'}
 	}
-}
-
-module.exports = {
-	get,
-	random
 }

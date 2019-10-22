@@ -1,6 +1,6 @@
 const generator = require('../../lib/generator')
 
-const list = {
+module.exports.list = {
 	type: 'object',
 	properties: {
 		...generator.paginationParams,
@@ -8,8 +8,4 @@ const list = {
 		role: {type: ['string', 'null']},
 		companyId: {type: ['string', 'null']}
 	}
-}
-
-module.exports = {
-	list
 }
