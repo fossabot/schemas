@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/retracedgmbh/schemas/compare/v1.0.1...v1.0.2) (2019-10-22)
+
+
+### Bug Fixes
+
+* Skip npm in first tag run and then push public package ([ab2ba25](https://github.com/retracedgmbh/schemas/commit/ab2ba25f9f1c1a334d766901bf28744c41b9e9f2))
+
 ## [1.0.1](https://github.com/retracedgmbh/schemas/compare/v1.0.0...v1.0.1) (2019-10-22)
 
 
