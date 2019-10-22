@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/retracedgmbh/schemas/compare/v1.4.0...v1.5.0) (2019-10-22)
+
+
+### Features
+
+* Add materials schemas + AVA runner + module.exports ([#7](https://github.com/retracedgmbh/schemas/issues/7)) ([3627884](https://github.com/retracedgmbh/schemas/commit/36278842ee6f99b1074c63764e6e198fb166021d))
+
 # [1.4.0](https://github.com/retracedgmbh/schemas/compare/v1.3.0...v1.4.0) (2019-10-21)
 
 
