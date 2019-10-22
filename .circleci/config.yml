@@ -58,7 +58,7 @@ jobs:
           at: ~/repo
       - run:
           name: Publish package
-          command: npm publish
+          command: npm publish --access public
 
 workflows:
   version: 2

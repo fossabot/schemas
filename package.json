@@ -1,6 +1,6 @@
 {
   "name": "@retracedgmbh/schemas",
-  "version": "1.0.0",
+  "version": "1.5.1",
   "license": "UNLICENSED",
   "homepage": "http://retraced.co",
   "repository": "retracedgmbh/schemas",
@@ -79,7 +79,12 @@
           "releasedLabels": false
         }
       ],
-      "@semantic-release/npm",
+      [
+        "@semantic-release/npm",
+        {
+          "npmPublish": false
+        }
+      ],
       "@semantic-release/changelog",
       "@semantic-release/git"
     ],
