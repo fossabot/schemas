@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/retracedgmbh/schemas/compare/v1.0.0...v1.0.1) (2019-10-22)
+
+
+### Bug Fixes
+
+* Deply to npm rather than github packages ([#2](https://github.com/retracedgmbh/schemas/issues/2)) ([c7e054e](https://github.com/retracedgmbh/schemas/commit/c7e054e12321cf34fdcb0cadd84fe6952a8ddfe8))
+
 # 1.0.0 (2019-10-22)
 
 
