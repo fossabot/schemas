@@ -79,19 +79,11 @@
           "releasedLabels": false
         }
       ],
-      [
-        "@semantic-release/npm",
-        {
-          "npmPublish": false
-        }
-      ],
+      "@semantic-release/npm",
       "@semantic-release/changelog",
       "@semantic-release/git"
     ],
     "branch": "master"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
   },
   "dependencies": {
     "ajv": "^6.10.2",
