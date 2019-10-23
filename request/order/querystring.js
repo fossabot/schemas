@@ -3,6 +3,7 @@ const generator = require('../../lib/generator')
 module.exports.get = {
 	type: 'object',
 	properties: {
+		print: {type: 'boolean', default: false},
 		deep: {type: 'boolean', default: false},
 		lines: {type: 'boolean', default: false}
 	}
