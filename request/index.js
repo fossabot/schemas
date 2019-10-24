@@ -9,8 +9,9 @@ const SupplyChain = require('./supplychain')
 const User = require('./user')
 const UploadUrl = require('./upload-url')
 const material = require('./material')
+const search = require('./search')
 
-const Request = {
+module.exports = {
 	company: Company,
 	item: Item,
 	orderLine: OrderLine,
@@ -21,7 +22,6 @@ const Request = {
 	supplychain: SupplyChain,
 	user: User,
 	uploadUrl: UploadUrl,
-	material
+	material,
+	search
 }
-
-module.exports = Request
