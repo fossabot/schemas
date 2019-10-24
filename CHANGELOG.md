@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/retracedgmbh/schemas/compare/v1.1.0...v1.2.0) (2019-10-24)
+
+
+### Features
+
+* Add prepush hook to run tests locally before pushing ([#5](https://github.com/retracedgmbh/schemas/issues/5)) ([ab950c8](https://github.com/retracedgmbh/schemas/commit/ab950c8a88b239f243b27f3e101d60d3bd8b671c))
+
 # [1.1.0](https://github.com/retracedgmbh/schemas/compare/v1.0.4...v1.1.0) (2019-10-24)
 
 
