@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/retracedgmbh/schemas/compare/v1.0.4...v1.1.0) (2019-10-24)
+
+
+### Features
+
+* Search endpoint ([#3](https://github.com/retracedgmbh/schemas/issues/3)) ([d87b04c](https://github.com/retracedgmbh/schemas/commit/d87b04c0754b21560ad7804d10dd582422d5c3a1))
+
 ## [1.0.4](https://github.com/retracedgmbh/schemas/compare/v1.0.3...v1.0.4) (2019-10-23)
 
 ## [1.0.3](https://github.com/retracedgmbh/schemas/compare/v1.0.2...v1.0.3) (2019-10-22)
