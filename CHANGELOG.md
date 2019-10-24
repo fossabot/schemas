@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/retracedgmbh/schemas/compare/v1.2.0...v1.3.0) (2019-10-24)
+
+
+### Features
+
+* Certificate endpoints ([#4](https://github.com/retracedgmbh/schemas/issues/4)) ([aa63fcc](https://github.com/retracedgmbh/schemas/commit/aa63fcc75a371c8f7105989a25fbc8454c4e00e2))
+
 # [1.2.0](https://github.com/retracedgmbh/schemas/compare/v1.1.0...v1.2.0) (2019-10-24)
 
 
