@@ -9,6 +9,7 @@ const SupplyChain = require('./supplychain')
 const User = require('./user')
 const UploadUrl = require('./upload-url')
 const material = require('./material')
+const certificate = require('./certificate')
 const search = require('./search')
 
 module.exports = {
@@ -23,5 +24,6 @@ module.exports = {
 	user: User,
 	uploadUrl: UploadUrl,
 	material,
+	certificate,
 	search
 }
