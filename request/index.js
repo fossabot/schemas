@@ -1,29 +1,16 @@
-const Company = require('./company')
-const Item = require('./item')
-const OrderLine = require('./order-line')
-const Order = require('./order')
-const Picture = require('./picture')
-const Product = require('./product')
-const Setting = require('./setting')
-const SupplyChain = require('./supplychain')
-const User = require('./user')
-const UploadUrl = require('./upload-url')
-const material = require('./material')
-const certificate = require('./certificate')
-const search = require('./search')
-
 module.exports = {
-	company: Company,
-	item: Item,
-	orderLine: OrderLine,
-	order: Order,
-	picture: Picture,
-	product: Product,
-	setting: Setting,
-	supplychain: SupplyChain,
-	user: User,
-	uploadUrl: UploadUrl,
-	material,
-	certificate,
-	search
+	company: require('./company'),
+	item: require('./item'),
+	orderLine: require('./order-line'),
+	order: require('./order'),
+	picture: require('./picture'),
+	product: require('./product'),
+	setting: require('./setting'),
+	supplychain: require('./supplychain'),
+	user: require('./user'),
+	uploadUrl: require('./upload-url'),
+	material: require('./material'),
+	search: require('./search'),
+	certificate: require('./certificate'),
+	configuration: require('./configuration')
 }
