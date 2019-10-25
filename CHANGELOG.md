@@ -1,3 +1,11 @@
+# [1.4.0](https://github.com/retracedgmbh/schemas/compare/v1.3.0...v1.4.0) (2019-10-25)
+
+
+### Features
+
+* Certificate and material listing ([#8](https://github.com/retracedgmbh/schemas/issues/8)) ([3c7ff47](https://github.com/retracedgmbh/schemas/commit/3c7ff4782ebecbb4d00fb15e073c96765fb6e6ae))
+* Confguration update schema ([#7](https://github.com/retracedgmbh/schemas/issues/7)) ([6eefcdc](https://github.com/retracedgmbh/schemas/commit/6eefcdc50ddfb33940839eed399352f0b41365c3))
+
 # [1.3.0](https://github.com/retracedgmbh/schemas/compare/v1.2.0...v1.3.0) (2019-10-24)
 
 
