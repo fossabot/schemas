@@ -1,4 +1,5 @@
 const picture = require('../picture')
+const querystring = require('./querystring')
 
 module.exports.create = {
 	body: {
@@ -25,4 +26,8 @@ module.exports.update = {
 			pictures: picture.list
 		}
 	}
+}
+
+module.exports.list = {
+	querystring: querystring.list
 }
