@@ -12,5 +12,6 @@ module.exports = {
 	material: require('./material'),
 	search: require('./search'),
 	certificate: require('./certificate'),
-	configuration: require('./configuration')
+	configuration: require('./configuration'),
+	qrCodes: require('./qr-codes')
 }
