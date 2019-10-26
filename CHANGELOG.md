@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/retracedgmbh/schemas/compare/v1.4.0...v1.5.0) (2019-10-26)
+
+
+### Features
+
+* QR code printing ([#9](https://github.com/retracedgmbh/schemas/issues/9)) ([2d093a7](https://github.com/retracedgmbh/schemas/commit/2d093a78e7e8eafad1259a702bc18cc97c2cf9a3))
+
 # [1.4.0](https://github.com/retracedgmbh/schemas/compare/v1.3.0...v1.4.0) (2019-10-25)
 
 
