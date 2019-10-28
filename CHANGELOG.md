@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/retracedgmbh/schemas/compare/v1.7.0...v1.7.1) (2019-10-28)
+
+
+### Bug Fixes
+
+* Limit page to be at least size of 2 as otherwise code will break for just one element (object instead of array) ([#13](https://github.com/retracedgmbh/schemas/issues/13)) ([54131bc](https://github.com/retracedgmbh/schemas/commit/54131bcbd1c6a4229226fe55156f19939b405f6e))
+
 # [1.7.0](https://github.com/retracedgmbh/schemas/compare/v1.6.0...v1.7.0) (2019-10-28)
 
 
