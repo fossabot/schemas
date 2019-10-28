@@ -1,4 +1,5 @@
 module.exports = {
-	request: require('./request')
-	// Response schema here
+	request: require('./request'),
+	constants: require('./lib/constants'),
+	generator: require('./lib/generator')
 }
