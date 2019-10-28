@@ -13,7 +13,8 @@ test('List querystring is valid', t => {
 		ajv.validate(schemas.request.material.list.querystring, {
 			page: 1,
 			count: 10,
-			status: 'APPROVED'
+			status: 'APPROVED',
+			sort: 'status:DESC'
 		})
 	)
 })
@@ -25,7 +26,15 @@ test('List can called without anything', t => {
 test('Status can also be an array', t => {
 	t.true(
 		ajv.validate(schemas.request.material.list.querystring, {
-			status: ['APPROVED']
+			status: 'APPROVED,REQUESTED'
+		})
+	)
+})
+
+test('Sort columns can be an array', t => {
+	t.true(
+		ajv.validate(schemas.request.material.list.querystring, {
+			sort: 'status:DESC,updatedAt:ASC'
 		})
 	)
 })
@@ -34,6 +43,22 @@ test('Status must contain a valid approval status', t => {
 	t.false(
 		ajv.validate(schemas.request.material.list.querystring, {
 			status: 'NO STATUS'
+		})
+	)
+})
+
+test('Sort columns must be valid columns', t => {
+	t.false(
+		ajv.validate(schemas.request.material.list.querystring, {
+			sort: 'notAvailable:DESC'
+		})
+	)
+})
+
+test('Sort columns must be valid sort order', t => {
+	t.false(
+		ajv.validate(schemas.request.material.list.querystring, {
+			sort: 'status:CRUX'
 		})
 	)
 })

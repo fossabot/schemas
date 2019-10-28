@@ -9,13 +9,6 @@ test.before(() => {
 })
 
 test('Configuration update schema', t => {
-	console.log(
-		ajv.validate(schemas.request.configuration.update.body, {
-			consumerAppMinVersion: 'v1.0.0',
-			businessAppMinVersion: 'v1.0.0',
-			imgHost: 'https://retraced-dev.imgix.net/'
-		})
-	)
 	t.true(
 		ajv.validate(schemas.request.configuration.update.body, {
 			consumerAppMinVersion: 'v1.0.0',
