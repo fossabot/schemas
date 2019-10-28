@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/retracedgmbh/schemas/compare/v1.5.1...v1.6.0) (2019-10-28)
+
+
+### Features
+
+* Add status filter query for material and certificate list ([#11](https://github.com/retracedgmbh/schemas/issues/11)) ([25bb05e](https://github.com/retracedgmbh/schemas/commit/25bb05e08f0f7a112a3fc51e1c952b64e0eb5b5d))
+
 ## [1.5.1](https://github.com/retracedgmbh/schemas/compare/v1.5.0...v1.5.1) (2019-10-28)
 
 
