@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/retracedgmbh/schemas/compare/v1.5.0...v1.5.1) (2019-10-28)
+
+
+### Bug Fixes
+
+* Revert dropdown for materials and certificates, since that will be added with search ([#10](https://github.com/retracedgmbh/schemas/issues/10)) ([ed0f149](https://github.com/retracedgmbh/schemas/commit/ed0f149b99630d7f213b766d98c02aa8cabb3120))
+
 # [1.5.0](https://github.com/retracedgmbh/schemas/compare/v1.4.0...v1.5.0) (2019-10-26)
 
 
