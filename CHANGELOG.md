@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/retracedgmbh/schemas/compare/v1.6.0...v1.7.0) (2019-10-28)
+
+
+### Features
+
+* Certificate and materials sorting and status filter (array inline) ([#12](https://github.com/retracedgmbh/schemas/issues/12)) ([bca40c2](https://github.com/retracedgmbh/schemas/commit/bca40c2bd20f96418feca39a8ad9325adbe810cf))
+
 # [1.6.0](https://github.com/retracedgmbh/schemas/compare/v1.5.1...v1.6.0) (2019-10-28)
 
 
