@@ -10,7 +10,7 @@ test.before(() => {
 
 test('Returns a valid full number of QR codes', t => {
 	t.true(
-		ajv.validate(schemas.request.qrCodes.get.querystring, {
+		ajv.validate(schemas.request.qrCode.get.querystring, {
 			quantity: 10
 		})
 	)

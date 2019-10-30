@@ -13,5 +13,7 @@ module.exports = {
 	search: require('./search'),
 	certificate: require('./certificate'),
 	configuration: require('./configuration'),
-	qrCodes: require('./qr-codes')
+	qrCode: require('./qr-code'),
+	badge: require('./badge'),
+	claim: require('./claim')
 }
