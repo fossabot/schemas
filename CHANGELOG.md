@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/retracedgmbh/schemas/compare/v1.7.2...v1.8.0) (2019-10-30)
+
+
+### Features
+
+* Add claims and badges + rename qr-codes to qr-code ([#15](https://github.com/retracedgmbh/schemas/issues/15)) ([0b2c240](https://github.com/retracedgmbh/schemas/commit/0b2c2404d5df8a508f802d0433fe9f315b43346a))
+
 ## [1.7.2](https://github.com/retracedgmbh/schemas/compare/v1.7.1...v1.7.2) (2019-10-30)
 
 ## [1.7.1](https://github.com/retracedgmbh/schemas/compare/v1.7.0...v1.7.1) (2019-10-28)
