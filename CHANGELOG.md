@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/retracedgmbh/schemas/compare/v1.8.0...v1.9.0) (2019-10-31)
+
+
+### Features
+
+* Search for badges ([#16](https://github.com/retracedgmbh/schemas/issues/16)) ([1e9f509](https://github.com/retracedgmbh/schemas/commit/1e9f50976e174b7acfe2833e8d758225d5f3e798))
+
 # [1.8.0](https://github.com/retracedgmbh/schemas/compare/v1.7.2...v1.8.0) (2019-10-30)
 
 
