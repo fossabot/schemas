@@ -3,7 +3,6 @@ const generator = require('../../lib/generator')
 module.exports.SORT_COLUMNS_ENUM = {
 	title: 'title',
 	category: 'category',
-	description: 'description',
 	updatedAt: 'updatedAt'
 }
 
