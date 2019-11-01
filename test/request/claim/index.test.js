@@ -40,7 +40,6 @@ test('Valid extensive certificate claim', t => {
 			referenceBadge: 'other-badge-id',
 			otherCompanyId: 'company-id',
 			statusComment: 'Would love to have it!',
-			status: 'DRAFT',
 			files: [{id: 'file-id'}]
 		})
 	)

@@ -22,7 +22,6 @@ module.exports.create = {
 					otherCompanyId: {type: 'string', minLength: 1},
 					statusComment: {type: 'string', minLength: 1},
 					type: {type: 'string', const: constants.CLAIM_TYPE_ENUM.BADGE},
-					status: {type: 'string', const: constants.APPROVALSTATUS_ENUM.DRAFT},
 					files: picture.list
 				}
 			},
@@ -42,7 +41,6 @@ module.exports.create = {
 					otherCompanyId: {type: 'string', minLength: 1},
 					statusComment: {type: 'string', minLength: 1},
 					type: {type: 'string', const: constants.CLAIM_TYPE_ENUM.CERTIFICATE},
-					status: {type: 'string', const: constants.APPROVALSTATUS_ENUM.DRAFT},
 					files: picture.list
 				}
 			}
