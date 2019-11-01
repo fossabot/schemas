@@ -1,3 +1,10 @@
+## [1.9.1](https://github.com/retracedgmbh/schemas/compare/v1.9.0...v1.9.1) (2019-11-01)
+
+
+### Bug Fixes
+
+* Correct sort columns for claim listing ([#17](https://github.com/retracedgmbh/schemas/issues/17)) ([024b0b2](https://github.com/retracedgmbh/schemas/commit/024b0b26e6d4a5f9af4963911aa5c3c591609f7a))
+
 # [1.9.0](https://github.com/retracedgmbh/schemas/compare/v1.8.0...v1.9.0) (2019-10-31)
 
 
