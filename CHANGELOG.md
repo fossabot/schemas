@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/retracedgmbh/schemas/compare/v1.11.0...v1.12.0) (2019-11-01)
+
+
+### Features
+
+* Approval status transitions ([7d22727](https://github.com/retracedgmbh/schemas/commit/7d227275525352902a2ac72789d77a81691b152f))
+
 # [1.11.0](https://github.com/retracedgmbh/schemas/compare/v1.10.0...v1.11.0) (2019-11-01)
 
 
