@@ -13,8 +13,8 @@ test('List querystring find valid schema check', t => {
 		ajv.validate(schemas.request.claim.list.querystring, {
 			page: 1,
 			count: 10,
-			status: 'DRAFT',
-			sort: 'title:ASC'
+			status: 'DRAFT,REQUESTED',
+			sort: 'type:ASC'
 		})
 	)
 
