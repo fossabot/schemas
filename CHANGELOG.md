@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/retracedgmbh/schemas/compare/v1.10.0...v1.11.0) (2019-11-01)
+
+
+### Features
+
+* Remove status for claim creation ([#20](https://github.com/retracedgmbh/schemas/issues/20)) ([a7ba6d1](https://github.com/retracedgmbh/schemas/commit/a7ba6d1259daddf05c93a8067814128505efed51))
+
 # [1.10.0](https://github.com/retracedgmbh/schemas/compare/v1.9.1...v1.10.0) (2019-11-01)
 
 
