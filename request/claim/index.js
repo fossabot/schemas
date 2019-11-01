@@ -11,6 +11,7 @@ module.exports.create = {
 				required: ['type', 'referenceBadge'],
 				additionalProperties: false,
 				properties: {
+					claimantId: {type: 'string', minLength: 1},
 					geojson: generator.geoJSON,
 					explanation: {type: 'string', minLength: 1},
 					referenceClaimId: {type: 'string', minLength: 1},
@@ -30,6 +31,7 @@ module.exports.create = {
 				required: ['type', 'referenceCertificateId', 'referenceCertificateVersion'],
 				additionalProperties: false,
 				properties: {
+					claimantId: {type: 'string', minLength: 1},
 					geojson: generator.geoJSON,
 					explanation: {type: 'string', minLength: 1},
 					referenceClaimId: {type: 'string', minLength: 1},

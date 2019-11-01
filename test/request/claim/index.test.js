@@ -30,6 +30,7 @@ test('Valid minimal certificate claim', t => {
 test('Valid extensive certificate claim', t => {
 	t.true(
 		ajv.validate(schemas.request.claim.create.body, {
+			claimantId: 'claimant-id',
 			type: 'CERTIFICATE',
 			referenceCertificateId: 'certificate-id',
 			referenceCertificateVersion: 1,
