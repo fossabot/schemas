@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/retracedgmbh/schemas/compare/v1.9.1...v1.10.0) (2019-11-01)
+
+
+### Features
+
+* Add claimant to claim creation (possible if one can see other companies) ([#19](https://github.com/retracedgmbh/schemas/issues/19)) ([7a311e1](https://github.com/retracedgmbh/schemas/commit/7a311e15f9f244fac2fa38d08d9192acc975e1bf))
+
 ## [1.9.1](https://github.com/retracedgmbh/schemas/compare/v1.9.0...v1.9.1) (2019-11-01)
 
 
