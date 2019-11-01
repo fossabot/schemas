@@ -15,5 +15,6 @@ module.exports = {
 	configuration: require('./configuration'),
 	qrCode: require('./qr-code'),
 	badge: require('./badge'),
-	claim: require('./claim')
+	claim: require('./claim'),
+	file: require('./file')
 }
