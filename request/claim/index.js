@@ -17,8 +17,6 @@ module.exports.create = {
 					referenceClaimId: {type: 'string', minLength: 1},
 					referenceClaimVersion: {type: 'number', minimum: 1, multipleOf: 1},
 					referenceBadge: {type: 'string', minLength: 1},
-					referenceCertificateId: {type: 'string', minLength: 1},
-					referenceCertificateVersion: {type: 'number', minimum: 1, multipleOf: 1},
 					otherCompanyId: {type: 'string', minLength: 1},
 					statusComment: {type: 'string', minLength: 1},
 					type: {type: 'string', const: constants.CLAIM_TYPE_ENUM.BADGE},
@@ -35,7 +33,6 @@ module.exports.create = {
 					explanation: {type: 'string', minLength: 1},
 					referenceClaimId: {type: 'string', minLength: 1},
 					referenceClaimVersion: {type: 'number', minimum: 1, multipleOf: 1},
-					referenceBadge: {type: 'string', minLength: 1},
 					referenceCertificateId: {type: 'string', minLength: 1},
 					referenceCertificateVersion: {type: 'number', minimum: 1, multipleOf: 1},
 					otherCompanyId: {type: 'string', minLength: 1},
@@ -50,22 +47,39 @@ module.exports.create = {
 
 module.exports.update = {
 	body: {
-		type: 'object',
-		required: [],
-		additionalProperties: false,
-		properties: {
-			geojson: generator.geoJSON,
-			explanation: {type: 'string', minLength: 1},
-			referenceClaimId: {type: 'string', minLength: 1},
-			referenceClaimVersion: {type: 'number', minimum: 1, multipleOf: 1},
-			referenceBadge: {type: 'string', minLength: 1},
-			referenceCertificateId: {type: 'string', minLength: 1},
-			referenceCertificateVersion: {type: 'number', minimum: 1, multipleOf: 1},
-			otherCompanyId: {type: 'string', minLength: 1},
-			statusComment: {type: 'string', minLength: 1},
-			status: {type: 'string', enum: constants.APPROVALSTATUS},
-			files: picture.list
-		}
+		oneOf: [
+			{
+				type: 'object',
+				required: ['referenceBadge'],
+				additionalProperties: false,
+				properties: {
+					geojson: generator.geoJSON,
+					explanation: {type: 'string', minLength: 1},
+					referenceClaimId: {type: 'string', minLength: 1},
+					referenceClaimVersion: {type: 'number', minimum: 1, multipleOf: 1},
+					referenceBadge: {type: 'string', minLength: 1},
+					otherCompanyId: {type: 'string', minLength: 1},
+					statusComment: {type: 'string', minLength: 1},
+					files: picture.list
+				}
+			},
+			{
+				type: 'object',
+				required: ['referenceCertificateId', 'referenceCertificateVersion'],
+				additionalProperties: false,
+				properties: {
+					geojson: generator.geoJSON,
+					explanation: {type: 'string', minLength: 1},
+					referenceClaimId: {type: 'string', minLength: 1},
+					referenceClaimVersion: {type: 'number', minimum: 1, multipleOf: 1},
+					referenceCertificateId: {type: 'string', minLength: 1},
+					referenceCertificateVersion: {type: 'number', minimum: 1, multipleOf: 1},
+					otherCompanyId: {type: 'string', minLength: 1},
+					statusComment: {type: 'string', minLength: 1},
+					files: picture.list
+				}
+			}
+		]
 	}
 }
 
