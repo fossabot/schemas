@@ -1,3 +1,10 @@
+## [1.12.1](https://github.com/retracedgmbh/schemas/compare/v1.12.0...v1.12.1) (2019-11-04)
+
+
+### Bug Fixes
+
+* Lock claim creation and update to distinguish between certificate and badges more clearly ([c105abe](https://github.com/retracedgmbh/schemas/commit/c105abebdf5bdc753b19dabe1bd166d321b3fb77))
+
 # [1.12.0](https://github.com/retracedgmbh/schemas/compare/v1.11.0...v1.12.0) (2019-11-01)
 
 
