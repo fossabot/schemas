@@ -1,3 +1,10 @@
+## [1.13.1](https://github.com/retracedgmbh/schemas/compare/v1.13.0...v1.13.1) (2019-11-05)
+
+
+### Bug Fixes
+
+* Add option to leave body empty for status change for claim ([cea09f5](https://github.com/retracedgmbh/schemas/commit/cea09f52f4fad6bb3a515ca3c2ec9d1f7825110b))
+
 # [1.13.0](https://github.com/retracedgmbh/schemas/compare/v1.12.2...v1.13.0) (2019-11-05)
 
 
