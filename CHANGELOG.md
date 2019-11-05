@@ -1,3 +1,10 @@
+## [1.13.3](https://github.com/retracedgmbh/schemas/compare/v1.13.2...v1.13.3) (2019-11-05)
+
+
+### Bug Fixes
+
+* Rename claiming badge to claiming badge ID ([c58d8b2](https://github.com/retracedgmbh/schemas/commit/c58d8b20b7d6e391d8be30e3e944c7d32ab16e71))
+
 ## [1.13.2](https://github.com/retracedgmbh/schemas/compare/v1.13.1...v1.13.2) (2019-11-05)
 
 
