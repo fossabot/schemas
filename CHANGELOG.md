@@ -1,3 +1,10 @@
+## [1.13.4](https://github.com/retracedgmbh/schemas/compare/v1.13.3...v1.13.4) (2019-11-05)
+
+
+### Bug Fixes
+
+* Do not allow change of certificate or badge reference after claim creation ([97537d1](https://github.com/retracedgmbh/schemas/commit/97537d1c95b74e1682cd74960d0aaeebec15a7ca))
+
 ## [1.13.3](https://github.com/retracedgmbh/schemas/compare/v1.13.2...v1.13.3) (2019-11-05)
 
 
