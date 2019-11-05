@@ -1,3 +1,10 @@
+## [1.13.2](https://github.com/retracedgmbh/schemas/compare/v1.13.1...v1.13.2) (2019-11-05)
+
+
+### Bug Fixes
+
+* Rename referenced claim and cert to claiming ones ([44a08cf](https://github.com/retracedgmbh/schemas/commit/44a08cf06a6b0fc7907bb4c525cad0c0be424081))
+
 ## [1.13.1](https://github.com/retracedgmbh/schemas/compare/v1.13.0...v1.13.1) (2019-11-05)
 
 
