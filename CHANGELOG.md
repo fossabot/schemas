@@ -1,3 +1,10 @@
+## [1.12.2](https://github.com/retracedgmbh/schemas/compare/v1.12.1...v1.12.2) (2019-11-05)
+
+
+### Bug Fixes
+
+* Made claim creation and update body simpler and put logic into API code ([c52f56f](https://github.com/retracedgmbh/schemas/commit/c52f56f47d1e4f94558a57783a66c4800affda2a))
+
 ## [1.12.1](https://github.com/retracedgmbh/schemas/compare/v1.12.0...v1.12.1) (2019-11-04)
 
 
