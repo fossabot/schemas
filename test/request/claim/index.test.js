@@ -12,7 +12,7 @@ test('Valid minimal badge claim', t => {
 	t.true(
 		ajv.validate(schemas.request.claim.create.body, {
 			type: 'BADGE',
-			claimingBadge: 'badge-id'
+			claimingBadgeId: 'badge-id'
 		})
 	)
 })
@@ -49,7 +49,7 @@ test('Valid extensive badge claim', t => {
 		ajv.validate(schemas.request.claim.create.body, {
 			claimantId: 'claimant-id',
 			type: 'BADGE',
-			claimingBadge: 'badge-id',
+			claimingBadgeId: 'badge-id',
 			explanation: 'E',
 			referenceClaimId: 'other-claim-id',
 			referenceClaimVersion: 1,
@@ -66,7 +66,7 @@ test('Valid extensive certificate claim update', t => {
 			explanation: 'e',
 			claimingCertificateId: 'certificate-id',
 			claimingCertificateVersion: 1,
-			claimingBadge: 'badge-id',
+			claimingBadgeId: 'badge-id',
 			statusComment: 'Would love to have it!',
 			files: [{id: 'file-id'}]
 		})
