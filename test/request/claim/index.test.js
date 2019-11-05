@@ -79,6 +79,10 @@ test('Valid request body', t => {
 			statusComment: 'Please request quickly!'
 		})
 	)
+
+	t.true(ajv.validate(schemas.request.claim.request.body, {}))
+
+	t.true(ajv.validate(schemas.request.claim.request.body, null))
 })
 
 test('Valid approve body', t => {
@@ -87,6 +91,10 @@ test('Valid approve body', t => {
 			statusComment: 'Please approve quickly!'
 		})
 	)
+
+	t.true(ajv.validate(schemas.request.claim.approve.body, {}))
+
+	t.true(ajv.validate(schemas.request.claim.approve.body, null))
 })
 
 test('Valid reject body', t => {
@@ -95,6 +103,10 @@ test('Valid reject body', t => {
 			statusComment: 'Please reject quickly!'
 		})
 	)
+
+	t.true(ajv.validate(schemas.request.claim.reject.body, {}))
+
+	t.true(ajv.validate(schemas.request.claim.reject.body, null))
 })
 
 test('Valid acknowledge body', t => {
@@ -103,6 +115,10 @@ test('Valid acknowledge body', t => {
 			statusComment: 'Please acknowledge quickly!'
 		})
 	)
+
+	t.true(ajv.validate(schemas.request.claim.acknowledge.body, {}))
+
+	t.true(ajv.validate(schemas.request.claim.acknowledge.body, null))
 })
 
 test('Valid abandon body', t => {
@@ -111,4 +127,8 @@ test('Valid abandon body', t => {
 			statusComment: 'Please abandon quickly!'
 		})
 	)
+
+	t.true(ajv.validate(schemas.request.claim.abandon.body, {}))
+
+	t.true(ajv.validate(schemas.request.claim.abandon.body, null))
 })

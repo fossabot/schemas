@@ -46,56 +46,91 @@ module.exports.update = {
 
 module.exports.request = {
 	body: {
-		type: 'object',
-		required: [],
-		additionalProperties: false,
-		properties: {
-			statusComment: {type: 'string', minLength: 1}
-		}
+		oneOf: [
+			{
+				type: 'object',
+				required: [],
+				additionalProperties: false,
+				properties: {
+					statusComment: {type: ['string', 'null'], minLength: 1, default: null}
+				}
+			},
+			{
+				type: 'null'
+			}
+		]
 	}
 }
 
 module.exports.approve = {
 	body: {
-		type: 'object',
-		required: [],
-		additionalProperties: false,
-		properties: {
-			statusComment: {type: 'string', minLength: 1}
-		}
+		oneOf: [
+			{
+				type: 'object',
+				required: [],
+				additionalProperties: false,
+				properties: {
+					statusComment: {type: ['string', 'null'], minLength: 1, default: null}
+				}
+			},
+			{
+				type: 'null'
+			}
+		]
 	}
 }
 
 module.exports.reject = {
 	body: {
-		type: 'object',
-		required: [],
-		additionalProperties: false,
-		properties: {
-			statusComment: {type: 'string', minLength: 1}
-		}
+		oneOf: [
+			{
+				type: 'object',
+				required: [],
+				additionalProperties: false,
+				properties: {
+					statusComment: {type: ['string', 'null'], minLength: 1, default: null}
+				}
+			},
+			{
+				type: 'null'
+			}
+		]
 	}
 }
 
 module.exports.acknowledge = {
 	body: {
-		type: 'object',
-		required: [],
-		additionalProperties: false,
-		properties: {
-			statusComment: {type: 'string', minLength: 1}
-		}
+		oneOf: [
+			{
+				type: 'object',
+				required: [],
+				additionalProperties: false,
+				properties: {
+					statusComment: {type: ['string', 'null'], minLength: 1, default: null}
+				}
+			},
+			{
+				type: 'null'
+			}
+		]
 	}
 }
 
 module.exports.abandon = {
 	body: {
-		type: 'object',
-		required: [],
-		additionalProperties: false,
-		properties: {
-			statusComment: {type: 'string', minLength: 1}
-		}
+		oneOf: [
+			{
+				type: 'object',
+				required: [],
+				additionalProperties: false,
+				properties: {
+					statusComment: {type: ['string', 'null'], minLength: 1, default: null}
+				}
+			},
+			{
+				type: 'null'
+			}
+		]
 	}
 }
 
