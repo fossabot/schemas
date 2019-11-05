@@ -35,9 +35,6 @@ module.exports.update = {
 			explanation: {type: 'string', minLength: 1},
 			referenceClaimId: {type: 'string', minLength: 1},
 			referenceClaimVersion: {type: 'number', minimum: 1, multipleOf: 1},
-			claimingBadgeId: {type: 'string', minLength: 1},
-			claimingCertificateId: {type: 'string', minLength: 1},
-			claimingCertificateVersion: {type: 'number', minimum: 1, multipleOf: 1},
 			statusComment: {type: 'string', minLength: 1},
 			files: picture.list
 		}

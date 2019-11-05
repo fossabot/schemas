@@ -64,9 +64,8 @@ test('Valid extensive certificate claim update', t => {
 	t.true(
 		ajv.validate(schemas.request.claim.update.body, {
 			explanation: 'e',
-			claimingCertificateId: 'certificate-id',
-			claimingCertificateVersion: 1,
-			claimingBadgeId: 'badge-id',
+			referenceClaimId: 'certificate-id',
+			referenceClaimVersion: 1,
 			statusComment: 'Would love to have it!',
 			files: [{id: 'file-id'}]
 		})
