@@ -72,3 +72,43 @@ test('Valid extensive certificate claim update', t => {
 		})
 	)
 })
+
+test('Valid request body', t => {
+	t.true(
+		ajv.validate(schemas.request.claim.request.body, {
+			statusComment: 'Please request quickly!'
+		})
+	)
+})
+
+test('Valid approve body', t => {
+	t.true(
+		ajv.validate(schemas.request.claim.approve.body, {
+			statusComment: 'Please approve quickly!'
+		})
+	)
+})
+
+test('Valid reject body', t => {
+	t.true(
+		ajv.validate(schemas.request.claim.reject.body, {
+			statusComment: 'Please reject quickly!'
+		})
+	)
+})
+
+test('Valid acknowledge body', t => {
+	t.true(
+		ajv.validate(schemas.request.claim.acknowledge.body, {
+			statusComment: 'Please acknowledge quickly!'
+		})
+	)
+})
+
+test('Valid abandon body', t => {
+	t.true(
+		ajv.validate(schemas.request.claim.abandon.body, {
+			statusComment: 'Please abandon quickly!'
+		})
+	)
+})

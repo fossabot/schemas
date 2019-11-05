@@ -44,6 +44,61 @@ module.exports.update = {
 	}
 }
 
+module.exports.request = {
+	body: {
+		type: 'object',
+		required: [],
+		additionalProperties: false,
+		properties: {
+			statusComment: {type: 'string', minLength: 1}
+		}
+	}
+}
+
+module.exports.approve = {
+	body: {
+		type: 'object',
+		required: [],
+		additionalProperties: false,
+		properties: {
+			statusComment: {type: 'string', minLength: 1}
+		}
+	}
+}
+
+module.exports.reject = {
+	body: {
+		type: 'object',
+		required: [],
+		additionalProperties: false,
+		properties: {
+			statusComment: {type: 'string', minLength: 1}
+		}
+	}
+}
+
+module.exports.acknowledge = {
+	body: {
+		type: 'object',
+		required: [],
+		additionalProperties: false,
+		properties: {
+			statusComment: {type: 'string', minLength: 1}
+		}
+	}
+}
+
+module.exports.abandon = {
+	body: {
+		type: 'object',
+		required: [],
+		additionalProperties: false,
+		properties: {
+			statusComment: {type: 'string', minLength: 1}
+		}
+	}
+}
+
 module.exports.list = {
 	querystring: querystring.list
 }
