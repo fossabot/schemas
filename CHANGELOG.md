@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/retracedgmbh/schemas/compare/v1.12.2...v1.13.0) (2019-11-05)
+
+
+### Features
+
+* Add status comment body option for claim status change ([c12b524](https://github.com/retracedgmbh/schemas/commit/c12b5240b596df2efdd1a3bd0236bfc830d3045e))
+
 ## [1.12.2](https://github.com/retracedgmbh/schemas/compare/v1.12.1...v1.12.2) (2019-11-05)
 
 
