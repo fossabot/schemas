@@ -1,3 +1,10 @@
+## [1.13.5](https://github.com/retracedgmbh/schemas/compare/v1.13.4...v1.13.5) (2019-11-06)
+
+
+### Bug Fixes
+
+* No slavery constant was used twice in mapping ([4c1c0dd](https://github.com/retracedgmbh/schemas/commit/4c1c0dd162292845137e46d94906fe164fbf7e04))
+
 ## [1.13.4](https://github.com/retracedgmbh/schemas/compare/v1.13.3...v1.13.4) (2019-11-05)
 
 
