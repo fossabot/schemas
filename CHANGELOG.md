@@ -1,3 +1,10 @@
+## [1.13.6](https://github.com/retracedgmbh/schemas/compare/v1.13.5...v1.13.6) (2019-11-07)
+
+
+### Bug Fixes
+
+* GeoJSON can be nullable ([#21](https://github.com/retracedgmbh/schemas/issues/21)) ([891d3df](https://github.com/retracedgmbh/schemas/commit/891d3df1e812eb95bb9c45819283a190be118677))
+
 ## [1.13.5](https://github.com/retracedgmbh/schemas/compare/v1.13.4...v1.13.5) (2019-11-06)
 
 
