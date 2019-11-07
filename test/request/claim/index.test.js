@@ -31,6 +31,7 @@ test('Valid extensive certificate claim', t => {
 	t.true(
 		ajv.validate(schemas.request.claim.create.body, {
 			claimantId: 'claimant-id',
+			geojson: null,
 			type: 'CERTIFICATE',
 			claimingCertificateId: 'certificate-id',
 			claimingCertificateVersion: 1,
@@ -48,6 +49,7 @@ test('Valid extensive badge claim', t => {
 	t.true(
 		ajv.validate(schemas.request.claim.create.body, {
 			claimantId: 'claimant-id',
+			geojson: null,
 			type: 'BADGE',
 			claimingBadgeId: 'badge-id',
 			explanation: 'E',
