@@ -1,3 +1,10 @@
+## [1.13.7](https://github.com/retracedgmbh/schemas/compare/v1.13.6...v1.13.7) (2019-11-08)
+
+
+### Bug Fixes
+
+* Allow null values for badge rule and add paginated responsed generator ([f667e0f](https://github.com/retracedgmbh/schemas/commit/f667e0f625404172074e5209ff1648d8a6e9436c))
+
 ## [1.13.6](https://github.com/retracedgmbh/schemas/compare/v1.13.5...v1.13.6) (2019-11-07)
 
 
