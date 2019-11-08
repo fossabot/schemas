@@ -26,6 +26,16 @@ test('Creates badge wthout rule', t => {
 			title: 'No Slavery',
 			icon: 'mdi-superb',
 			category: 'ENVIRONMENTAL',
+			description: 'Long lve the king',
+			rule: null
+		})
+	)
+
+	t.true(
+		ajv.validate(schemas.request.badge.create.body, {
+			title: 'No Slavery',
+			icon: 'mdi-superb',
+			category: 'ENVIRONMENTAL',
 			description: 'Long lve the king'
 		})
 	)

@@ -11,7 +11,7 @@ module.exports.create = {
 			icon: {type: 'string', minLength: 1},
 			category: {type: 'string', enum: constants.BADGE_CATEGORY},
 			description: {type: 'string', minLength: 1},
-			rule: {type: 'string', enum: constants.BADGE_RULE}
+			rule: {oneOf: [{type: 'string', enum: constants.BADGE_RULE}, {type: 'null'}]}
 		}
 	}
 }
@@ -26,7 +26,7 @@ module.exports.update = {
 			icon: {type: 'string', minLength: 1},
 			category: {type: 'string', enum: constants.BADGE_CATEGORY},
 			description: {type: 'string', minLength: 1},
-			rule: {type: ['string', 'null'], enum: constants.BADGE_RULE}
+			rule: {oneOf: [{type: 'string', enum: constants.BADGE_RULE}, {type: 'null'}]}
 		}
 	}
 }
