@@ -105,3 +105,72 @@ test('Cannot set title to null in update', t => {
 		})
 	)
 })
+
+test('Can set status comment to null in update', t => {
+	t.true(
+		ajv.validate(schemas.request.certificate.update.body, {
+			statusComment: null
+		})
+	)
+})
+
+test('Valid request body', t => {
+	t.true(
+		ajv.validate(schemas.request.certificate.request.body, {
+			statusComment: 'Please request quickly!'
+		})
+	)
+
+	t.true(ajv.validate(schemas.request.certificate.request.body, {}))
+
+	t.true(ajv.validate(schemas.request.certificate.request.body, null))
+})
+
+test('Valid approve body', t => {
+	t.true(
+		ajv.validate(schemas.request.certificate.approve.body, {
+			statusComment: 'Please approve quickly!'
+		})
+	)
+
+	t.true(ajv.validate(schemas.request.certificate.approve.body, {}))
+
+	t.true(ajv.validate(schemas.request.certificate.approve.body, null))
+})
+
+test('Valid reject body', t => {
+	t.true(
+		ajv.validate(schemas.request.certificate.reject.body, {
+			statusComment: 'Please reject quickly!'
+		})
+	)
+
+	t.true(ajv.validate(schemas.request.certificate.reject.body, {}))
+
+	t.true(ajv.validate(schemas.request.certificate.reject.body, null))
+})
+
+test('Valid acknowledge body', t => {
+	t.true(
+		ajv.validate(schemas.request.certificate.acknowledge.body, {
+			statusComment: 'Please acknowledge quickly!'
+		})
+	)
+
+	t.true(ajv.validate(schemas.request.certificate.acknowledge.body, {}))
+
+	t.true(ajv.validate(schemas.request.certificate.acknowledge.body, null))
+})
+
+test('Valid remove body', t => {
+	t.true(
+		ajv.validate(schemas.request.certificate.remove.body, {
+			statusComment: 'Please abandon quickly!',
+			final: true
+		})
+	)
+
+	t.true(ajv.validate(schemas.request.certificate.remove.body, {}))
+
+	t.true(ajv.validate(schemas.request.certificate.remove.body, null))
+})

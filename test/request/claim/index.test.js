@@ -12,7 +12,16 @@ test('Valid minimal badge claim', t => {
 	t.true(
 		ajv.validate(schemas.request.claim.create.body, {
 			type: 'BADGE',
-			claimingBadgeId: 'badge-id'
+			claimingBadgeId: 'badge-id',
+			statusComment: 'Need this badge'
+		})
+	)
+
+	t.true(
+		ajv.validate(schemas.request.claim.create.body, {
+			type: 'BADGE',
+			claimingBadgeId: 'badge-id',
+			statusComment: null
 		})
 	)
 })
@@ -74,6 +83,14 @@ test('Valid extensive certificate claim update', t => {
 	)
 })
 
+test('Can set status comment to null in update', t => {
+	t.true(
+		ajv.validate(schemas.request.claim.update.body, {
+			statusComment: null
+		})
+	)
+})
+
 test('Valid request body', t => {
 	t.true(
 		ajv.validate(schemas.request.claim.request.body, {
@@ -122,14 +139,15 @@ test('Valid acknowledge body', t => {
 	t.true(ajv.validate(schemas.request.claim.acknowledge.body, null))
 })
 
-test('Valid abandon body', t => {
+test('Valid remove body', t => {
 	t.true(
-		ajv.validate(schemas.request.claim.abandon.body, {
-			statusComment: 'Please abandon quickly!'
+		ajv.validate(schemas.request.claim.remove.body, {
+			statusComment: 'Please abandon quickly!',
+			final: true
 		})
 	)
 
-	t.true(ajv.validate(schemas.request.claim.abandon.body, {}))
+	t.true(ajv.validate(schemas.request.claim.remove.body, {}))
 
-	t.true(ajv.validate(schemas.request.claim.abandon.body, null))
+	t.true(ajv.validate(schemas.request.claim.remove.body, null))
 })

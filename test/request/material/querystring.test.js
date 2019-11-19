@@ -8,27 +8,19 @@ test.before(() => {
 	ajv = new AJV({allErrors: true})
 })
 
-test('List querystring is valid', t => {
+test('List querystring find valid schema check', t => {
 	t.true(
 		ajv.validate(schemas.request.material.list.querystring, {
 			page: 1,
 			count: 10,
-			status: 'APPROVED',
-			sort: 'status:DESC'
+			status: 'DRAFT,REQUESTED',
+			sort: 'version:ASC',
+			isMarkedForRemoval: false,
+			isDropDown: true
 		})
 	)
-})
 
-test('List can called without anything', t => {
 	t.true(ajv.validate(schemas.request.material.list.querystring, {}))
-})
-
-test('Status can also be an array', t => {
-	t.true(
-		ajv.validate(schemas.request.material.list.querystring, {
-			status: 'APPROVED,REQUESTED'
-		})
-	)
 })
 
 test('Sort columns can be an array', t => {

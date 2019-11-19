@@ -13,10 +13,14 @@ test('List querystring is valid', t => {
 		ajv.validate(schemas.request.certificate.list.querystring, {
 			page: 1,
 			count: 10,
-			status: 'APPROVED',
-			sort: 'status:DESC'
+			status: 'DRAFT,REQUESTED',
+			sort: 'version:ASC',
+			isMarkedForRemoval: false,
+			isDropDown: true
 		})
 	)
+
+	t.true(ajv.validate(schemas.request.certificate.list.querystring, {}))
 })
 
 test('List can called without anything', t => {

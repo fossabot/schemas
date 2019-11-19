@@ -3,6 +3,7 @@ const constants = require('../../lib/constants')
 
 module.exports.SORT_COLUMNS_ENUM = {
 	status: 'status',
+	version: 'version',
 	title: 'title',
 	description: 'description',
 	updatedAt: 'updatedAt'
@@ -19,6 +20,9 @@ module.exports.list = {
 			type: 'string',
 			pattern: generator.queryParamArrayPattern(constants.APPROVALSTATUS)
 		},
+		isMarkedForRemoval: {type: 'boolean', default: false},
+		isLatest: {type: 'boolean', default: true},
+		isDropDown: {type: 'boolean', default: false},
 		sort: {
 			type: 'string',
 			pattern: generator.queryParamSortingPattern(exports.SORT_COLUMNS)

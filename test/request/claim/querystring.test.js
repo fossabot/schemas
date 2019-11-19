@@ -14,7 +14,10 @@ test('List querystring find valid schema check', t => {
 			page: 1,
 			count: 10,
 			status: 'DRAFT,REQUESTED',
-			sort: 'type:ASC'
+			sort: 'version:ASC',
+			isMarkedForRemoval: false,
+			isDropDown: true,
+			companyId: 'COM-retraced'
 		})
 	)
 
