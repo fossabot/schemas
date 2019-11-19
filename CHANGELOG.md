@@ -1,3 +1,10 @@
+# [1.14.0](https://github.com/retracedgmbh/schemas/compare/v1.13.7...v1.14.0) (2019-11-19)
+
+
+### Features
+
+* Add common approval process flow to badge, certificate, claim and material ([#22](https://github.com/retracedgmbh/schemas/issues/22)) ([1ee03b2](https://github.com/retracedgmbh/schemas/commit/1ee03b2788a25e7dfb7ddf1efb342ee6aaa5e2cc))
+
 ## [1.13.7](https://github.com/retracedgmbh/schemas/compare/v1.13.6...v1.13.7) (2019-11-08)
 
 
