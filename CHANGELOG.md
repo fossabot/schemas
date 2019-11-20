@@ -1,3 +1,10 @@
+## [1.14.1](https://github.com/retracedgmbh/schemas/compare/v1.14.0...v1.14.1) (2019-11-20)
+
+
+### Bug Fixes
+
+* Remove the final for the remove endpoint, since it is a new PUT endpoint /remove rather than /delete ([9ac8a28](https://github.com/retracedgmbh/schemas/commit/9ac8a2857aebf27f755133c30637cd49824b1ad8))
+
 # [1.14.0](https://github.com/retracedgmbh/schemas/compare/v1.13.7...v1.14.0) (2019-11-19)
 
 
