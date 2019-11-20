@@ -78,8 +78,7 @@ module.exports.remove = {
 				required: [],
 				additionalProperties: false,
 				properties: {
-					statusComment: {type: ['string', 'null'], minLength: 1, default: null},
-					final: {type: 'boolean', default: false}
+					statusComment: {type: ['string', 'null'], minLength: 1, default: null}
 				}
 			},
 			{

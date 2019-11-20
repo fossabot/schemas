@@ -192,8 +192,7 @@ test('Valid acknowledge body', t => {
 test('Valid remove body', t => {
 	t.true(
 		ajv.validate(schemas.request.material.remove.body, {
-			statusComment: 'Please abandon quickly!',
-			final: true
+			statusComment: 'Please abandon quickly!'
 		})
 	)
 
