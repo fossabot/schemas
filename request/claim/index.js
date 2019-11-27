@@ -16,11 +16,10 @@ module.exports.create = {
 			referenceClaimId: {type: 'string', minLength: 1},
 			referenceClaimVersion: {type: 'number', minimum: 1, multipleOf: 1},
 			claimingBadgeId: {type: 'string', minLength: 1},
-			claimingBadgeVersion: {type: 'string', minLength: 1},
+			claimingBadgeVersion: {type: 'number', minimum: 1, multipleOf: 1},
 			claimingCertificateId: {type: 'string', minLength: 1},
 			claimingCertificateVersion: {type: 'number', minimum: 1, multipleOf: 1},
 			otherCompanyId: {type: 'string', minLength: 1},
-			statusComment: {oneOf: [{type: 'string', minLength: 1}, {type: 'null'}]},
 			type: {type: 'string', enum: constants.CLAIM_TYPE},
 			files: picture.list
 		}
@@ -37,7 +36,8 @@ module.exports.update = {
 			explanation: {type: 'string', minLength: 1},
 			referenceClaimId: {type: 'string', minLength: 1},
 			referenceClaimVersion: {type: 'number', minimum: 1, multipleOf: 1},
-			statusComment: {oneOf: [{type: 'string', minLength: 1}, {type: 'null'}]},
+			claimingBadgeVersion: {type: 'number', minimum: 1, multipleOf: 1},
+			claimingCertificateVersion: {type: 'number', minimum: 1, multipleOf: 1},
 			files: picture.list
 		}
 	}
@@ -47,8 +47,8 @@ module.exports.request = defaults.request
 module.exports.approve = defaults.approve
 module.exports.reject = defaults.reject
 module.exports.acknowledge = defaults.acknowledge
-module.exports.remove = defaults.remove
 
 module.exports.list = {
-	querystring: querystring.list
+	querystring: querystring.list,
+	SORT_COLUMNS_ENUM: querystring.SORT_COLUMNS_ENUM
 }

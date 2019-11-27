@@ -21,10 +21,17 @@ test('Accepts certificate creation with all attributes', t => {
 			]
 		})
 	)
+
+	t.true(
+		ajv.validate(schemas.request.certificate.create.body, {
+			title: 't',
+			description: 'd'
+		})
+	)
 })
 
-test('Requires pictures to create certificate', t => {
-	t.false(
+test('Does not require pictures to create certificate', t => {
+	t.true(
 		ajv.validate(schemas.request.certificate.create.body, {
 			title: 'Fantastic certificate 😅',
 			description: 'Description about certificate',
@@ -106,14 +113,6 @@ test('Cannot set title to null in update', t => {
 	)
 })
 
-test('Can set status comment to null in update', t => {
-	t.true(
-		ajv.validate(schemas.request.certificate.update.body, {
-			statusComment: null
-		})
-	)
-})
-
 test('Valid request body', t => {
 	t.true(
 		ajv.validate(schemas.request.certificate.request.body, {
@@ -160,16 +159,4 @@ test('Valid acknowledge body', t => {
 	t.true(ajv.validate(schemas.request.certificate.acknowledge.body, {}))
 
 	t.true(ajv.validate(schemas.request.certificate.acknowledge.body, null))
-})
-
-test('Valid remove body', t => {
-	t.true(
-		ajv.validate(schemas.request.certificate.remove.body, {
-			statusComment: 'Please abandon quickly!'
-		})
-	)
-
-	t.true(ajv.validate(schemas.request.certificate.remove.body, {}))
-
-	t.true(ajv.validate(schemas.request.certificate.remove.body, null))
 })

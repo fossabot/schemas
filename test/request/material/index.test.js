@@ -12,6 +12,13 @@ test('Create material valid schema', t => {
 	t.true(
 		ajv.validate(schemas.request.material.create.body, {
 			title: 'Super sticky leather 😅',
+			description: '# Super sticky leather (c)'
+		})
+	)
+
+	t.true(
+		ajv.validate(schemas.request.material.create.body, {
+			title: 'Super sticky leather 😅',
 			description: '# Super sticky leather (c)',
 			externalLink: null,
 			categories: ['VEGAN'],
@@ -19,8 +26,7 @@ test('Create material valid schema', t => {
 				{
 					id: 'PROD-picture'
 				}
-			],
-			statusComment: 'Need this material'
+			]
 		})
 	)
 })
@@ -125,14 +131,6 @@ test('Cannot set description to null in update', t => {
 	)
 })
 
-test('Can set status comment to null in update', t => {
-	t.true(
-		ajv.validate(schemas.request.material.update.body, {
-			statusComment: null
-		})
-	)
-})
-
 test('Cannot set title to null in update', t => {
 	t.false(
 		ajv.validate(schemas.request.material.update.body, {
@@ -187,16 +185,4 @@ test('Valid acknowledge body', t => {
 	t.true(ajv.validate(schemas.request.material.acknowledge.body, {}))
 
 	t.true(ajv.validate(schemas.request.material.acknowledge.body, null))
-})
-
-test('Valid remove body', t => {
-	t.true(
-		ajv.validate(schemas.request.material.remove.body, {
-			statusComment: 'Please abandon quickly!'
-		})
-	)
-
-	t.true(ajv.validate(schemas.request.material.remove.body, {}))
-
-	t.true(ajv.validate(schemas.request.material.remove.body, null))
 })

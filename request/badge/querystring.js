@@ -22,8 +22,8 @@ module.exports.list = {
 			pattern: generator.queryParamArrayPattern(constants.APPROVALSTATUS)
 		},
 		isMarkedForRemoval: {type: 'boolean', default: false},
-		isLatest: {type: 'boolean', default: true},
-		isDropDown: {type: 'boolean', default: false},
+		isActive: {type: 'boolean'},
+		isDropDown: {type: 'boolean'},
 		sort: {
 			type: 'string',
 			pattern: generator.queryParamSortingPattern(exports.SORT_COLUMNS)

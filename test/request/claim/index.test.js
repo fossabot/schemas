@@ -13,15 +13,15 @@ test('Valid minimal badge claim', t => {
 		ajv.validate(schemas.request.claim.create.body, {
 			type: 'BADGE',
 			claimingBadgeId: 'badge-id',
-			statusComment: 'Need this badge'
+			claimingBadgeVersion: 1
 		})
 	)
 
-	t.true(
+	t.false(
 		ajv.validate(schemas.request.claim.create.body, {
 			type: 'BADGE',
 			claimingBadgeId: 'badge-id',
-			statusComment: null
+			claimingBadgeVersion: '1'
 		})
 	)
 })
@@ -48,7 +48,6 @@ test('Valid extensive certificate claim', t => {
 			referenceClaimId: 'other-claim-id',
 			referenceClaimVersion: 1,
 			otherCompanyId: 'company-id',
-			statusComment: 'Would love to have it!',
 			files: [{id: 'file-id'}]
 		})
 	)
@@ -65,7 +64,6 @@ test('Valid extensive badge claim', t => {
 			referenceClaimId: 'other-claim-id',
 			referenceClaimVersion: 1,
 			otherCompanyId: 'company-id',
-			statusComment: 'Would love to have it!',
 			files: [{id: 'file-id'}]
 		})
 	)
@@ -77,16 +75,16 @@ test('Valid extensive certificate claim update', t => {
 			explanation: 'e',
 			referenceClaimId: 'certificate-id',
 			referenceClaimVersion: 1,
-			statusComment: 'Would love to have it!',
 			files: [{id: 'file-id'}]
 		})
 	)
-})
 
-test('Can set status comment to null in update', t => {
-	t.true(
+	t.false(
 		ajv.validate(schemas.request.claim.update.body, {
-			statusComment: null
+			explanation: 'e',
+			referenceClaimId: 'certificate-id',
+			referenceClaimVersion: '1',
+			files: [{id: 'file-id'}]
 		})
 	)
 })
@@ -137,16 +135,4 @@ test('Valid acknowledge body', t => {
 	t.true(ajv.validate(schemas.request.claim.acknowledge.body, {}))
 
 	t.true(ajv.validate(schemas.request.claim.acknowledge.body, null))
-})
-
-test('Valid remove body', t => {
-	t.true(
-		ajv.validate(schemas.request.claim.remove.body, {
-			statusComment: 'Please abandon quickly!'
-		})
-	)
-
-	t.true(ajv.validate(schemas.request.claim.remove.body, {}))
-
-	t.true(ajv.validate(schemas.request.claim.remove.body, null))
 })

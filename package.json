@@ -8,8 +8,8 @@
   "description": "All schemas used for validation that are shared between our projects",
   "scripts": {
     "test": "ava -v",
-    "test-ci": "nyc ava -v",
-    "report-coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov -t 1abc86ce-bb1e-4152-9d4b-4178dd93ef90",
+    "test-ci": "nyc ava -v -c 2",
+    "report-coverage": "nyc report --reporter=text-lcov > coverage.lcov && CODECOV_TOKEN=$CODECOV_TOKEN_SCHEMAS codecov",
     "lint": "xo",
     "autofix": "xo --fix"
   },

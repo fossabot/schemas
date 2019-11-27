@@ -15,8 +15,8 @@ test('List querystring find valid schema check', t => {
 			count: 10,
 			status: 'DRAFT,REQUESTED',
 			sort: 'version:ASC',
-			isLatest: true,
 			isMarkedForRemoval: false,
+			isActive: true,
 			isDropDown: true
 		})
 	)
@@ -25,12 +25,6 @@ test('List querystring find valid schema check', t => {
 })
 
 test('List querystring type validation', t => {
-	t.false(
-		ajv.validate(schemas.request.badge.list.querystring, {
-			isMarkedForRemoval: '1'
-		})
-	)
-
 	t.false(
 		ajv.validate(schemas.request.badge.list.querystring, {
 			sort: 'no-col:ASC'

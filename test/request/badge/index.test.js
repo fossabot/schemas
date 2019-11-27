@@ -16,7 +16,11 @@ test('Create badge schema', t => {
 			category: 'ENVIRONMENTAL',
 			description: 'Long lve the king',
 			rule: 'NO_CHILD_LABOUR',
-			statusComment: 'Need this badge in the system'
+			pictures: [
+				{
+					id: 'PROD-picture'
+				}
+			]
 		})
 	)
 })
@@ -94,15 +98,12 @@ test('Updates badge with valid data', t => {
 			icon: 'mdi-superb',
 			category: 'ENVIRONMENTAL',
 			description: 'Long lve the king',
-			rule: 'NO_CHILD_LABOUR'
-		})
-	)
-})
-
-test('Can set status comment to null in update', t => {
-	t.true(
-		ajv.validate(schemas.request.badge.update.body, {
-			statusComment: null
+			rule: 'NO_CHILD_LABOUR',
+			pictures: [
+				{
+					id: 'PROD-picture'
+				}
+			]
 		})
 	)
 })
@@ -165,16 +166,4 @@ test('Valid acknowledge body', t => {
 	t.true(ajv.validate(schemas.request.badge.acknowledge.body, {}))
 
 	t.true(ajv.validate(schemas.request.badge.acknowledge.body, null))
-})
-
-test('Valid remove body', t => {
-	t.true(
-		ajv.validate(schemas.request.badge.remove.body, {
-			statusComment: 'Please abandon quickly!'
-		})
-	)
-
-	t.true(ajv.validate(schemas.request.badge.remove.body, {}))
-
-	t.true(ajv.validate(schemas.request.badge.remove.body, null))
 })

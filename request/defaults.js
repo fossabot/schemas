@@ -69,21 +69,3 @@ module.exports.acknowledge = {
 		]
 	}
 }
-
-module.exports.remove = {
-	body: {
-		oneOf: [
-			{
-				type: 'object',
-				required: [],
-				additionalProperties: false,
-				properties: {
-					statusComment: {type: ['string', 'null'], minLength: 1, default: null}
-				}
-			},
-			{
-				type: 'null'
-			}
-		]
-	}
-}

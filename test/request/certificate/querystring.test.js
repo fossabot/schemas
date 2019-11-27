@@ -16,6 +16,7 @@ test('List querystring is valid', t => {
 			status: 'DRAFT,REQUESTED',
 			sort: 'version:ASC',
 			isMarkedForRemoval: false,
+			isActive: true,
 			isDropDown: true
 		})
 	)
