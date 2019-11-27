@@ -1,3 +1,10 @@
+# [1.15.0](https://github.com/retracedgmbh/schemas/compare/v1.14.1...v1.15.0) (2019-11-27)
+
+
+### Features
+
+* New approval flow schemas ([#23](https://github.com/retracedgmbh/schemas/issues/23)) ([77cfe8c](https://github.com/retracedgmbh/schemas/commit/77cfe8c794ccb688076d152e5ebf07dcd7895c4e))
+
 ## [1.14.1](https://github.com/retracedgmbh/schemas/compare/v1.14.0...v1.14.1) (2019-11-20)
 
 
