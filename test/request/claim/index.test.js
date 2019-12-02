@@ -69,6 +69,37 @@ test('Valid extensive badge claim', t => {
 	)
 })
 
+test('Valid extensive badge claim with geojson', t => {
+	t.true(
+		ajv.validate(schemas.request.claim.create.body, {
+			claimantId: 'claimant-id',
+			geojson: {
+				type: 'Feature',
+				geometry: {
+					type: 'Polygon',
+					coordinates: [
+						[
+							[14.853516, 53.173119],
+							[24.960938, 52.321911],
+							[23.730469, 48.283193],
+							[15.46875, 45.02695],
+							[4.21875, 46.255847],
+							[14.853516, 53.173119]
+						]
+					]
+				}
+			},
+			type: 'BADGE',
+			claimingBadgeId: 'badge-id',
+			explanation: 'E',
+			referenceClaimId: 'other-claim-id',
+			referenceClaimVersion: 1,
+			otherCompanyId: 'company-id',
+			files: [{id: 'file-id'}]
+		})
+	)
+})
+
 test('Valid extensive certificate claim update', t => {
 	t.true(
 		ajv.validate(schemas.request.claim.update.body, {
