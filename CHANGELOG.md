@@ -1,3 +1,10 @@
+## [1.15.1](https://github.com/retracedgmbh/schemas/compare/v1.15.0...v1.15.1) (2019-12-02)
+
+
+### Bug Fixes
+
+* Geojson type allows every enum ([#24](https://github.com/retracedgmbh/schemas/issues/24)) ([a45613f](https://github.com/retracedgmbh/schemas/commit/a45613f02f369d9796fed63c4c1495e8afc04efb))
+
 # [1.15.0](https://github.com/retracedgmbh/schemas/compare/v1.14.1...v1.15.0) (2019-11-27)
 
 
