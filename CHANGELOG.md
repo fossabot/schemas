@@ -1,3 +1,10 @@
+## [1.15.2](https://github.com/retracedgmbh/schemas/compare/v1.15.1...v1.15.2) (2019-12-03)
+
+
+### Bug Fixes
+
+* GeoJSON parsing ([#26](https://github.com/retracedgmbh/schemas/issues/26)) ([547fc5b](https://github.com/retracedgmbh/schemas/commit/547fc5b5ac045577f5c5f774ebfadc7cc50d72e3))
+
 ## [1.15.1](https://github.com/retracedgmbh/schemas/compare/v1.15.0...v1.15.1) (2019-12-02)
 
 
