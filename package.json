@@ -91,6 +91,25 @@
     ],
     "branch": "master"
   },
+  "renovate": {
+    "extends": [
+      "config:base"
+    ],
+    "timezone": "Europe/London",
+    "schedule": "before 3am",
+    "automerge": true,
+    "commitMessagePrefix": "chore: ",
+    "commitMessageAction": "Upgrade",
+    "commitMessageSuffix": ":seedling:",
+    "packageRules": [
+      {
+        "packagePatterns": [
+          "^@semantic-release"
+        ],
+        "groupName": "semantic-release packages"
+      }
+    ]
+  },
   "dependencies": {
     "ajv": "^6.10.2",
     "i18n-iso-countries": "^4.3.1"
