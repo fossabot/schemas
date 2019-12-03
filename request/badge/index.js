@@ -13,7 +13,7 @@ module.exports.create = {
 			icon: {type: 'string', minLength: 1},
 			category: {type: 'string', enum: constants.BADGE_CATEGORY},
 			description: {type: 'string', minLength: 1},
-			rule: {oneOf: [{type: 'string', enum: constants.BADGE_RULE}, {type: 'null'}]},
+			rule: {anyOf: [{type: 'string', enum: constants.BADGE_RULE}, {type: 'null'}]},
 			pictures: picture.list
 		}
 	}
@@ -29,7 +29,7 @@ module.exports.update = {
 			icon: {type: 'string', minLength: 1},
 			category: {type: 'string', enum: constants.BADGE_CATEGORY},
 			description: {type: 'string', minLength: 1},
-			rule: {oneOf: [{type: 'string', enum: constants.BADGE_RULE}, {type: 'null'}]},
+			rule: {anyOf: [{type: 'string', enum: constants.BADGE_RULE}, {type: 'null'}]},
 			pictures: picture.list
 		}
 	}

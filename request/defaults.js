@@ -1,6 +1,6 @@
 module.exports.request = {
 	body: {
-		oneOf: [
+		anyOf: [
 			{
 				type: 'object',
 				required: [],
@@ -18,7 +18,7 @@ module.exports.request = {
 
 module.exports.approve = {
 	body: {
-		oneOf: [
+		anyOf: [
 			{
 				type: 'object',
 				required: [],
@@ -36,7 +36,7 @@ module.exports.approve = {
 
 module.exports.reject = {
 	body: {
-		oneOf: [
+		anyOf: [
 			{
 				type: 'object',
 				required: [],
@@ -54,7 +54,7 @@ module.exports.reject = {
 
 module.exports.acknowledge = {
 	body: {
-		oneOf: [
+		anyOf: [
 			{
 				type: 'object',
 				required: [],
