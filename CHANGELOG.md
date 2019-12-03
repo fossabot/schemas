@@ -1,3 +1,10 @@
+## [1.15.6](https://github.com/retracedgmbh/schemas/compare/v1.15.5...v1.15.6) (2019-12-03)
+
+
+### Bug Fixes
+
+* Replaced oneOf with anyOf for fast-json-stringify to work ([#28](https://github.com/retracedgmbh/schemas/issues/28)) ([34126f1](https://github.com/retracedgmbh/schemas/commit/34126f1838d18caa2349999e344aacc1c548f913))
+
 ## [1.15.5](https://github.com/retracedgmbh/schemas/compare/v1.15.4...v1.15.5) (2019-12-03)
 
 ## [1.15.4](https://github.com/retracedgmbh/schemas/compare/v1.15.3...v1.15.4) (2019-12-03)
