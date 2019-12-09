@@ -1,3 +1,10 @@
+# [1.17.0](https://github.com/retracedgmbh/schemas/compare/v1.16.0...v1.17.0) (2019-12-09)
+
+
+### Features
+
+* Add isArchive flag to assets (materials, certificates, badges, claims) ([#33](https://github.com/retracedgmbh/schemas/issues/33)) ([54ea122](https://github.com/retracedgmbh/schemas/commit/54ea1223941069774170366056b1d2dd20ec988c))
+
 # [1.16.0](https://github.com/retracedgmbh/schemas/compare/v1.15.10...v1.16.0) (2019-12-09)
 
 
