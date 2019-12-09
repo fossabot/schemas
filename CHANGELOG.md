@@ -1,3 +1,10 @@
+# [1.16.0](https://github.com/retracedgmbh/schemas/compare/v1.15.10...v1.16.0) (2019-12-09)
+
+
+### Features
+
+* Add company type, employee count and video ([#34](https://github.com/retracedgmbh/schemas/issues/34)) ([caecd92](https://github.com/retracedgmbh/schemas/commit/caecd92555ffd33bfbcb751f2f7b8d2f08174a47))
+
 ## [1.15.10](https://github.com/retracedgmbh/schemas/compare/v1.15.9...v1.15.10) (2019-12-04)
 
 ## [1.15.9](https://github.com/retracedgmbh/schemas/compare/v1.15.8...v1.15.9) (2019-12-04)
