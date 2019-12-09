@@ -34,12 +34,26 @@ test('Find querystring without tax number is rejected', t => {
 	)
 })
 
-test('List querystring is valid', t => {
+test('List querystring', t => {
 	t.true(
 		ajv.validate(schemas.request.company.list.querystring, {
 			page: 1,
 			count: 10,
-			dropdownlist: true
+			isDropDown: true
+		})
+	)
+
+	t.true(
+		ajv.validate(schemas.request.company.list.querystring, {
+			page: 1,
+			count: 10,
+			isDropDown: true,
+			isMarkedForRemoval: false,
+			country: 'DE',
+			founded: 2014,
+			companySize: 'FROM_51_TO_200',
+			companyType: 'PUBLIC_COMPANY',
+			isArchived: false
 		})
 	)
 })

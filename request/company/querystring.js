@@ -17,14 +17,31 @@ module.exports.find = {
 	}
 }
 
-module.exports.get = {
-	type: 'object',
-	properties: {
-		statistics: {type: 'boolean', default: false}
-	}
+module.exports.SORT_COLUMNS_ENUM = {
+	isArchived: 'isArchived',
+	isMarkedForRemoval: 'isMarkedForRemoval',
+	name: 'name',
+	country: 'country',
+	updatedAt: 'updatedAt'
 }
 
+module.exports.SORT_COLUMNS = Object.keys(exports.SORT_COLUMNS_ENUM)
+
 module.exports.list = {
-	...generator.paginationParams,
-	dropdownlist: {type: 'boolean', default: false}
+	type: 'object',
+	additionalProperties: false,
+	properties: {
+		...generator.paginationParams,
+		isMarkedForRemoval: {type: 'boolean', default: false},
+		country: {type: 'string'},
+		founded: {type: 'number', minimum: 1200, maxiumum: 2200, multipleOf: 1},
+		companySize: {type: 'string', enum: constants.COMPANY_SIZE},
+		companyType: {type: 'string', enum: constants.COMPANY_TYPE},
+		isArchived: {type: 'boolean', default: false},
+		isDropDown: {type: 'boolean'},
+		sort: {
+			type: 'string',
+			pattern: generator.queryParamSortingPattern(exports.SORT_COLUMNS)
+		}
+	}
 }

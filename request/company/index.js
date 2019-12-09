@@ -1,17 +1,15 @@
 const constants = require('../../lib/constants')
+const generator = require('../../lib/generator')
 const picture = require('../picture')
 const querystring = require('./querystring')
-
-module.exports.get = {
-	querystring: querystring.get
-}
 
 module.exports.delete = {
 	querystring: querystring.delete
 }
 
 module.exports.list = {
-	querystring: querystring.list
+	querystring: querystring.list,
+	SORT_COLUMNS_ENUM: querystring.SORT_COLUMNS_ENUM
 }
 
 module.exports.find = {
@@ -21,7 +19,7 @@ module.exports.find = {
 module.exports.create = {
 	body: {
 		type: 'object',
-		required: ['taxNo', 'officialName', 'description', 'country', 'longitude', 'latitude', 'pictures'],
+		required: ['taxNo', 'officialName', 'description', 'country', 'geojson', 'pictures'],
 		additionalProperties: false,
 		properties: {
 			taxNo: {type: 'string', minLength: 1},
@@ -38,8 +36,11 @@ module.exports.create = {
 			phone2: {anyOf: [{type: 'string', minLength: 1}, {type: 'null'}]},
 			email: {anyOf: [{type: 'string', minLength: 1}, {type: 'null'}]},
 			website: {anyOf: [{type: 'string', minLength: 1}, {type: 'null'}]},
-			longitude: {type: 'number'},
-			latitude: {type: 'number'},
+			videoUrl: {anyOf: [{type: 'string', format: 'uri', minLength: 1}, {type: 'null'}]},
+			geojson: generator.geoJSONFeaturePoint,
+			companySize: {type: 'string', enum: constants.COMPANY_SIZE},
+			companyType: {type: 'string', enum: constants.COMPANY_TYPE},
+			founded: {type: 'number', minimum: 1200, maxiumum: 2200, multipleOf: 1},
 			pictures: picture.list
 		}
 	}
@@ -62,8 +63,11 @@ module.exports.update = {
 			phone2: {type: ['string', 'null'], minLength: 1},
 			email: {type: ['string', 'null'], minLength: 1},
 			website: {type: ['string', 'null'], minLength: 1},
-			longitude: {type: 'number'},
-			latitude: {type: 'number'},
+			videoUrl: {anyOf: [{type: 'string', format: 'uri', minLength: 1}, {type: 'null'}]},
+			geojson: generator.geoJSONFeaturePoint,
+			companySize: {type: 'string', enum: constants.COMPANY_SIZE},
+			companyType: {type: 'string', enum: constants.COMPANY_TYPE},
+			founded: {type: 'number', minimum: 1200, maxiumum: 2200, multipleOf: 1},
 			pictures: picture.list
 		}
 	}

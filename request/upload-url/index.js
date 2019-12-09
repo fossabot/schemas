@@ -1,4 +1,5 @@
 const constants = require('../../lib/constants')
+const generator = require('../../lib/generator')
 const querystring = require('./querystring')
 
 module.exports.create = {
@@ -12,12 +13,7 @@ module.exports.create = {
 				type: 'string',
 				pattern: `.(${constants.FILE_EXTENSIONS.join('|')})$`
 			},
-			longitude: {
-				type: 'number'
-			},
-			latitude: {
-				type: 'number'
-			}
+			geojson: generator.geoJSONFeaturePoint
 		}
 	}
 }
