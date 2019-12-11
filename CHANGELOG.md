@@ -1,3 +1,10 @@
+# [1.18.0](https://github.com/retracedgmbh/schemas/compare/v1.17.0...v1.18.0) (2019-12-11)
+
+
+### Features
+
+* Remove all i18n ([#35](https://github.com/retracedgmbh/schemas/issues/35)) ([9bfbb71](https://github.com/retracedgmbh/schemas/commit/9bfbb71cfb167dd29dd52a28028811bfa128f036))
+
 # [1.17.0](https://github.com/retracedgmbh/schemas/compare/v1.16.0...v1.17.0) (2019-12-09)
 
 
