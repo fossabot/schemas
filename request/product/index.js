@@ -1,4 +1,3 @@
-const generator = require('../../lib/generator')
 const picture = require('../picture')
 const attribute = require('./attribute')
 const variation = require('./variation')
@@ -13,9 +12,7 @@ module.exports.create = {
 			supplyChainId: {type: 'string', minLength: 1},
 			name: {type: 'string', minLength: 1, maxLength: 60},
 			pictures: picture.list,
-			i18n: generator.i18n({
-				description: {type: 'string', minLength: 1}
-			}),
+			description: {type: 'string', minLength: 1},
 			attributes: {
 				type: 'array',
 				items: attribute.create,
@@ -35,9 +32,7 @@ module.exports.update = {
 			supplyChainId: {type: 'string', minLength: 1},
 			name: {type: 'string', minLength: 1, maxLength: 60},
 			pictures: picture.list,
-			i18n: generator.i18n({
-				description: {type: 'string', minLength: 1}
-			}),
+			description: {type: 'string', minLength: 1},
 			attributes: {
 				type: 'array',
 				items: attribute.update

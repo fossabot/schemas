@@ -22,13 +22,8 @@ test('Valid create schema', t => {
 							id: 'FILE-ID'
 						}
 					],
-					i18n: [
-						{
-							language: 'en',
-							description: 'description',
-							title: 'title'
-						}
-					],
+					description: 'description',
+					title: 'title',
 					steps: []
 				},
 				{
@@ -39,13 +34,8 @@ test('Valid create schema', t => {
 							id: 'FILE-ID'
 						}
 					],
-					i18n: [
-						{
-							language: 'en',
-							description: 'description',
-							title: 'title'
-						}
-					],
+					description: 'description',
+					title: 'title',
 					steps: []
 				}
 			],
@@ -55,12 +45,7 @@ test('Valid create schema', t => {
 					unit: 'PRODUCT',
 					buyerNodeId: 'node-ID',
 					sellerNodeId: 'node-ID1',
-					i18n: [
-						{
-							language: 'en',
-							asset: 'Leather'
-						}
-					]
+					asset: 'Leather'
 				}
 			]
 		})
@@ -81,13 +66,8 @@ test('Supply node is invalid', t => {
 							id: 'FILE-ID'
 						}
 					],
-					i18n: [
-						{
-							language: 'en',
-							description: 'description',
-							title: 'title'
-						}
-					],
+					description: 'description',
+					title: 'title',
 					steps: []
 				},
 				{
@@ -98,13 +78,8 @@ test('Supply node is invalid', t => {
 							id: 'FILE-ID'
 						}
 					],
-					i18n: [
-						{
-							language: 'en',
-							description: 'description',
-							title: 'title'
-						}
-					],
+					description: 'description',
+					title: 'title',
 					steps: []
 				}
 			],
@@ -113,12 +88,7 @@ test('Supply node is invalid', t => {
 					quantity: 1,
 					buyerNodeId: 'node-ID',
 					sellerNodeId: 'node-ID1',
-					i18n: [
-						{
-							language: 'en',
-							asset: 'Leather'
-						}
-					]
+					asset: 'Leather'
 				}
 			]
 		})
@@ -138,13 +108,8 @@ test('Valid update schema', t => {
 							id: 'FILE-ID'
 						}
 					],
-					i18n: [
-						{
-							language: 'en',
-							description: 'description',
-							title: 'title'
-						}
-					],
+					description: 'description',
+					title: 'title',
 					steps: []
 				},
 				{
@@ -155,25 +120,15 @@ test('Valid update schema', t => {
 							id: 'FILE-ID'
 						}
 					],
-					i18n: [
-						{
-							language: 'en',
-							description: 'description',
-							title: 'title'
-						}
-					],
+					description: 'description',
+					title: 'title',
 					steps: []
 				}
 			],
 			links: [
 				{
 					id: 'link-id',
-					i18n: [
-						{
-							language: 'en',
-							asset: 'Leather update'
-						}
-					]
+					asset: 'Leather update'
 				}
 			]
 		})

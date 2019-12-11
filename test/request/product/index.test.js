@@ -18,12 +18,7 @@ test('Create product valid schema', t => {
 					id: 'FILE-ID'
 				}
 			],
-			i18n: [
-				{
-					language: 'en',
-					description: 'egg'
-				}
-			],
+			description: 'egg',
 			attributes: []
 		})
 	)
@@ -39,30 +34,15 @@ test('Valid product schema with attributes', t => {
 					id: 'FILE-ID'
 				}
 			],
-			i18n: [
-				{
-					language: 'en',
-					description: 'egg'
-				}
-			],
+			description: 'egg',
 			attributes: [
 				{
 					key: 'color',
-					i18n: [
-						{
-							language: 'en',
-							name: 'color'
-						}
-					],
+					name: 'color',
 					values: [
 						{
 							value: 'red',
-							i18n: [
-								{
-									language: 'en',
-									name: 'red'
-								}
-							]
+							name: 'red'
 						}
 					]
 				}
@@ -81,21 +61,11 @@ test('Products requires values for attributes', t => {
 					id: 'FILE-ID'
 				}
 			],
-			i18n: [
-				{
-					language: 'en',
-					description: 'egg'
-				}
-			],
+			description: 'egg',
 			attributes: [
 				{
 					key: 'color',
-					i18n: [
-						{
-							language: 'en',
-							name: 'color'
-						}
-					]
+					name: 'color'
 				}
 			]
 		})

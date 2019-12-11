@@ -16,13 +16,8 @@ test('Valid schema', t => {
 					id: 'FILE-ID'
 				}
 			],
-			i18n: [
-				{
-					language: 'en',
-					shortDescription: 'short',
-					longDescription: 'long'
-				}
-			],
+			shortDescription: 'short',
+			longDescription: 'long',
 			employees: [
 				{
 					id: 'employee-id'

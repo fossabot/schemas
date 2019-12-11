@@ -15,12 +15,7 @@ test('Valid user create schema', t => {
 			firstName: 'Test',
 			lastName: 'User',
 			role: 'EMPLOYEE',
-			i18n: [
-				{
-					language: 'en',
-					description: 'Description'
-				}
-			],
+			description: 'Description',
 			pictures: [
 				{
 					id: 'FILE-ID'
