@@ -47,6 +47,12 @@ test('Valid create URL body', t => {
 })
 
 test('File ending must obey the valid ones', t => {
+	t.true(
+		ajv.validate(schemas.request.uploadUrl.create.body, {
+			filename: 'test.mov'
+		})
+	)
+
 	t.false(
 		ajv.validate(schemas.request.uploadUrl.create.body, {
 			filename: 'test.doc'
