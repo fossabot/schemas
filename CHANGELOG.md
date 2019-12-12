@@ -1,3 +1,10 @@
+# [1.19.0](https://github.com/retracedgmbh/schemas/compare/v1.18.0...v1.19.0) (2019-12-12)
+
+
+### Features
+
+* Add video file extensions ([#36](https://github.com/retracedgmbh/schemas/issues/36)) ([5c8ee87](https://github.com/retracedgmbh/schemas/commit/5c8ee873f10bee5c2c6ca3c421c73e36f3488ab1))
+
 # [1.18.0](https://github.com/retracedgmbh/schemas/compare/v1.17.0...v1.18.0) (2019-12-11)
 
 
