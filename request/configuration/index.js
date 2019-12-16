@@ -7,6 +7,7 @@ module.exports.update = {
 		additionalProperties: false,
 		properties: {
 			imgHost: {type: 'string', format: 'uri', minLength: 1},
+			videoHost: {type: 'string', format: 'uri', minLength: 1},
 			businessAppMinVersion: {type: 'string', format: 'regex', pattern: semanticVersionRegex},
 			consumerAppMinVersion: {type: 'string', format: 'regex', pattern: semanticVersionRegex}
 		}

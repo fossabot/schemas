@@ -13,7 +13,8 @@ test('Configuration update schema', t => {
 		ajv.validate(schemas.request.configuration.update.body, {
 			consumerAppMinVersion: 'v1.0.0',
 			businessAppMinVersion: 'v1.0.0',
-			imgHost: 'https://retraced-dev.imgix.net/'
+			imgHost: 'https://retraced-dev.imgix.net/',
+			videoHost: 'https://retraceddev.b-cdn.net/'
 		})
 	)
 })
@@ -62,6 +63,22 @@ test('Requires img host to be URI', t => {
 	t.false(
 		ajv.validate(schemas.request.configuration.update.body, {
 			imgHost: 'Hello world!'
+		})
+	)
+})
+
+test('Does not allow null value for video host', t => {
+	t.false(
+		ajv.validate(schemas.request.configuration.update.body, {
+			videoHost: null
+		})
+	)
+})
+
+test('Requires video host to be URI', t => {
+	t.false(
+		ajv.validate(schemas.request.configuration.update.body, {
+			videoHost: 'Hello world!'
 		})
 	)
 })
