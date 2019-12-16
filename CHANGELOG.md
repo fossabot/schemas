@@ -1,3 +1,10 @@
+# [1.20.0](https://github.com/retracedgmbh/schemas/compare/v1.19.1...v1.20.0) (2019-12-16)
+
+
+### Features
+
+* Add file type constant and video host to configuration ([#37](https://github.com/retracedgmbh/schemas/issues/37)) ([c96ec1f](https://github.com/retracedgmbh/schemas/commit/c96ec1f44d4909ed3c8e31f456a6a8f8cec3f7f4))
+
 ## [1.19.1](https://github.com/retracedgmbh/schemas/compare/v1.19.0...v1.19.1) (2019-12-16)
 
 # [1.19.0](https://github.com/retracedgmbh/schemas/compare/v1.18.0...v1.19.0) (2019-12-12)
