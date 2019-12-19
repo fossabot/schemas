@@ -1,3 +1,10 @@
+# [1.21.0](https://github.com/retracedgmbh/schemas/compare/v1.20.0...v1.21.0) (2019-12-19)
+
+
+### Features
+
+* Blockchain asset status ([#39](https://github.com/retracedgmbh/schemas/issues/39)) ([3e2cf27](https://github.com/retracedgmbh/schemas/commit/3e2cf279fc7c6e6be29f02958c043238d61441b7))
+
 # [1.20.0](https://github.com/retracedgmbh/schemas/compare/v1.19.1...v1.20.0) (2019-12-16)
 
 
