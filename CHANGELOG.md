@@ -1,3 +1,10 @@
+# [1.22.0](https://github.com/retracedgmbh/schemas/compare/v1.21.3...v1.22.0) (2019-12-23)
+
+
+### Features
+
+* Add CANCELLED status for blockchain call ([#43](https://github.com/retracedgmbh/schemas/issues/43)) ([eb90a1b](https://github.com/retracedgmbh/schemas/commit/eb90a1bcc3c876028e96eaae05c1b6ad8bfa661f))
+
 ## [1.21.3](https://github.com/retracedgmbh/schemas/compare/v1.21.2...v1.21.3) (2019-12-23)
 
 ## [1.21.2](https://github.com/retracedgmbh/schemas/compare/v1.21.1...v1.21.2) (2019-12-22)
