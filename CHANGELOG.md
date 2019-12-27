@@ -1,3 +1,5 @@
+## [1.22.1](https://github.com/retracedgmbh/schemas/compare/v1.22.0...v1.22.1) (2019-12-27)
+
 # [1.22.0](https://github.com/retracedgmbh/schemas/compare/v1.21.3...v1.22.0) (2019-12-23)
 
 
