@@ -36,6 +36,7 @@ test('Company create schema', t => {
 			companyType: 'EDUCATIONAL_INSTITUTION',
 			geojson: {type: 'Feature', geometry: {type: 'Point', coordinates: [1, 1]}},
 			videoUrl: 'https://github.com/epoberezkin/ajv',
+			founders: 'King Arthur',
 			founded: 1990,
 			pictures: [
 				{

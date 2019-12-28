@@ -40,6 +40,7 @@ module.exports.create = {
 			geojson: generator.geoJSONFeaturePoint,
 			companySize: {type: 'string', enum: constants.COMPANY_SIZE},
 			companyType: {type: 'string', enum: constants.COMPANY_TYPE},
+			founders: {anyOf: [{type: 'string', minLength: 1}, {type: 'null'}]},
 			founded: {type: 'number', minimum: 1200, maxiumum: 2200, multipleOf: 1},
 			pictures: picture.list
 		}
