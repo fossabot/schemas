@@ -148,6 +148,7 @@ test('Valid update schema is accepted', t => {
 		ajv.validate(schemas.request.company.update.body, {
 			geojson: {type: 'Feature', geometry: {type: 'Point', coordinates: [1, 1]}},
 			description: 'egg',
+			founders: 'King Bethet',
 			pictures: [
 				{
 					id: 'FILE-ID'
