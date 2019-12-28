@@ -1,3 +1,11 @@
+# [1.23.0](https://github.com/retracedgmbh/schemas/compare/v1.22.1...v1.23.0) (2019-12-28)
+
+
+### Features
+
+* Add founders to company ([13aedb3](https://github.com/retracedgmbh/schemas/commit/13aedb379f108fa6bc465659da75fd6568389ff7))
+* Also allow update fo company with founders ([2ed519e](https://github.com/retracedgmbh/schemas/commit/2ed519e7a92e8b2f48b40bbb498408471b6f47ee))
+
 ## [1.22.1](https://github.com/retracedgmbh/schemas/compare/v1.22.0...v1.22.1) (2019-12-27)
 
 # [1.22.0](https://github.com/retracedgmbh/schemas/compare/v1.21.3...v1.22.0) (2019-12-23)
