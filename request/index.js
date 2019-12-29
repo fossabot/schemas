@@ -3,7 +3,7 @@ module.exports = {
 	item: require('./item'),
 	orderLine: require('./order-line'),
 	order: require('./order'),
-	picture: require('./picture'),
+	file: require('./file'),
 	product: require('./product'),
 	setting: require('./setting'),
 	supplychain: require('./supplychain'),

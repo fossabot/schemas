@@ -1,6 +1,6 @@
 const constants = require('../../lib/constants')
 const generator = require('../../lib/generator')
-const picture = require('../picture')
+const file = require('../file')
 const querystring = require('./querystring')
 
 module.exports.delete = {
@@ -42,7 +42,8 @@ module.exports.create = {
 			companyType: {type: 'string', enum: constants.COMPANY_TYPE},
 			founders: {anyOf: [{type: 'string', minLength: 1}, {type: 'null'}]},
 			founded: {type: 'number', minimum: 1200, maxiumum: 2200, multipleOf: 1},
-			pictures: picture.list
+			pictures: file.list,
+			videos: file.list
 		}
 	}
 }
@@ -70,7 +71,7 @@ module.exports.update = {
 			companyType: {type: 'string', enum: constants.COMPANY_TYPE},
 			founders: {anyOf: [{type: 'string', minLength: 1}, {type: 'null'}]},
 			founded: {type: 'number', minimum: 1200, maxiumum: 2200, multipleOf: 1},
-			pictures: picture.list
+			pictures: file.list
 		}
 	}
 }

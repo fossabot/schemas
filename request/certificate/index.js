@@ -1,4 +1,4 @@
-const picture = require('../picture')
+const file = require('../file')
 const defaults = require('../defaults')
 const querystring = require('./querystring')
 
@@ -11,7 +11,7 @@ module.exports.create = {
 			title: {type: 'string', minLength: 1},
 			description: {type: 'string', minLength: 1},
 			externalLink: {anyOf: [{type: 'string', format: 'uri', minLength: 1}, {type: 'null'}]},
-			pictures: picture.list
+			pictures: file.list
 		}
 	}
 }
@@ -24,7 +24,7 @@ module.exports.update = {
 			title: {type: 'string', minLength: 1},
 			description: {type: 'string', minLength: 1},
 			externalLink: {anyOf: [{type: 'string', format: 'uri', minLength: 1}, {type: 'null'}]},
-			pictures: picture.list
+			pictures: file.list
 		}
 	}
 }

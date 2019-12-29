@@ -1,7 +1,7 @@
 const constants = require('../../lib/constants')
 const generator = require('../../lib/generator')
 const defaults = require('../defaults')
-const picture = require('../picture')
+const file = require('../file')
 const querystring = require('./querystring')
 
 module.exports.create = {
@@ -21,7 +21,7 @@ module.exports.create = {
 			claimingCertificateVersion: {type: 'number', minimum: 1, multipleOf: 1},
 			otherCompanyId: {type: 'string', minLength: 1},
 			type: {type: 'string', enum: constants.CLAIM_TYPE},
-			files: picture.list
+			files: file.list
 		}
 	}
 }
@@ -38,7 +38,7 @@ module.exports.update = {
 			referenceClaimVersion: {type: 'number', minimum: 1, multipleOf: 1},
 			claimingBadgeVersion: {type: 'number', minimum: 1, multipleOf: 1},
 			claimingCertificateVersion: {type: 'number', minimum: 1, multipleOf: 1},
-			files: picture.list
+			files: file.list
 		}
 	}
 }

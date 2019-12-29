@@ -1,6 +1,6 @@
 const constants = require('../../lib/constants')
 const defaults = require('../defaults')
-const picture = require('../picture')
+const file = require('../file')
 const querystring = require('./querystring')
 
 module.exports.create = {
@@ -14,7 +14,7 @@ module.exports.create = {
 			category: {type: 'string', enum: constants.BADGE_CATEGORY},
 			description: {type: 'string', minLength: 1},
 			rule: {anyOf: [{type: 'string', enum: constants.BADGE_RULE}, {type: 'null'}]},
-			pictures: picture.list
+			pictures: file.list
 		}
 	}
 }
@@ -30,7 +30,7 @@ module.exports.update = {
 			category: {type: 'string', enum: constants.BADGE_CATEGORY},
 			description: {type: 'string', minLength: 1},
 			rule: {anyOf: [{type: 'string', enum: constants.BADGE_RULE}, {type: 'null'}]},
-			pictures: picture.list
+			pictures: file.list
 		}
 	}
 }

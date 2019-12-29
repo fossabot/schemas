@@ -1,4 +1,4 @@
-const picture = require('../picture')
+const file = require('../file')
 module.exports.single = {
 	type: 'object',
 	required: ['id'],
@@ -6,7 +6,7 @@ module.exports.single = {
 	properties: {
 		id: {type: 'string'},
 		sku: {type: ['string', 'null']},
-		pictures: picture.list
+		pictures: file.list
 	}
 }
 

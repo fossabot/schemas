@@ -1,4 +1,4 @@
-const picture = require('../picture')
+const file = require('../file')
 const attribute = require('./attribute')
 const variation = require('./variation')
 const querystring = require('./querystring')
@@ -11,7 +11,7 @@ module.exports.create = {
 		properties: {
 			supplyChainId: {type: 'string', minLength: 1},
 			name: {type: 'string', minLength: 1, maxLength: 60},
-			pictures: picture.list,
+			pictures: file.list,
 			description: {type: 'string', minLength: 1},
 			attributes: {
 				type: 'array',
@@ -31,7 +31,7 @@ module.exports.update = {
 			id: {type: 'string', minLength: 1},
 			supplyChainId: {type: 'string', minLength: 1},
 			name: {type: 'string', minLength: 1, maxLength: 60},
-			pictures: picture.list,
+			pictures: file.list,
 			description: {type: 'string', minLength: 1},
 			attributes: {
 				type: 'array',

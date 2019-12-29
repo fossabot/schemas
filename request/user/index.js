@@ -1,5 +1,5 @@
 const constants = require('../../lib/constants')
-const picture = require('../picture')
+const file = require('../file')
 const querystring = require('./querystring')
 
 module.exports.create = {
@@ -20,7 +20,7 @@ module.exports.create = {
 			isBlocked: {type: ['boolean', 'null']},
 			password: {type: ['string', 'null'], minLength: 1},
 			description: {type: 'string', minLength: 1},
-			pictures: picture.list
+			pictures: file.list
 		}
 	}
 }
@@ -41,7 +41,7 @@ module.exports.update = {
 			isBlocked: {type: ['boolean', 'null']},
 			passwordReset: {type: ['boolean', 'null']},
 			description: {type: 'string', minLength: 1},
-			pictures: picture.list
+			pictures: file.list
 		}
 	}
 }
@@ -62,7 +62,7 @@ module.exports.profile = {
 			isBlocked: {type: ['boolean', 'null']},
 			passwordReset: {type: ['boolean', 'null']},
 			description: {type: 'string', minLength: 1},
-			pictures: picture.list
+			pictures: file.list
 		}
 	}
 }

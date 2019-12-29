@@ -1,4 +1,4 @@
-const picture = require('../../picture')
+const file = require('../../file')
 const step = require('./step')
 
 module.exports.single = {
@@ -8,7 +8,7 @@ module.exports.single = {
 	properties: {
 		id: {type: 'string', minLength: 1},
 		companyId: {type: 'string', minLength: 1},
-		pictures: picture.list,
+		pictures: file.list,
 		description: {type: 'string', minLength: 1},
 		title: {type: 'string', minLength: 1},
 		steps: {
@@ -25,7 +25,7 @@ module.exports.singleUpdate = {
 	properties: {
 		id: {type: 'string', minLength: 1},
 		companyId: {type: 'string', minLength: 1},
-		pictures: picture.list,
+		pictures: file.list,
 		description: {type: 'string', minLength: 1},
 		title: {type: 'string', minLength: 1},
 		steps: {
