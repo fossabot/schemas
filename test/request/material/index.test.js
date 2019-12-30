@@ -12,7 +12,12 @@ test('Create material valid schema', t => {
 	t.true(
 		ajv.validate(schemas.request.material.create.body, {
 			title: 'Super sticky leather 😅',
-			description: '# Super sticky leather (c)'
+			description: '# Super sticky leather (c)',
+			pictures: [
+				{
+					id: 'PROD-picture'
+				}
+			]
 		})
 	)
 
@@ -21,7 +26,6 @@ test('Create material valid schema', t => {
 			title: 'Super sticky leather 😅',
 			description: '# Super sticky leather (c)',
 			externalLink: null,
-			category: 'LEATHER',
 			pictures: [
 				{
 					id: 'PROD-picture'
@@ -33,36 +37,19 @@ test('Create material valid schema', t => {
 
 test('Requires pictures to create material', t => {
 	t.false(
-		ajv.validate(schemas.request.product.create.body, {
+		ajv.validate(schemas.request.material.create.body, {
 			title: 'Super sticky leather 😅',
 			description: '# Super sticky leather (c)',
-			externalLink: null,
-			category: 'LEATHER'
-		})
-	)
-})
-
-test('Requires categories to create material', t => {
-	t.false(
-		ajv.validate(schemas.request.product.create.body, {
-			title: 'Super sticky leather 😅',
-			description: '# Super sticky leather (c)',
-			externalLink: null,
-			pictures: [
-				{
-					id: 'PROD-picture'
-				}
-			]
+			externalLink: null
 		})
 	)
 })
 
 test('Requires description for material', t => {
 	t.false(
-		ajv.validate(schemas.request.product.create.body, {
+		ajv.validate(schemas.request.material.create.body, {
 			title: 'Super sticky leather 😅',
 			externalLink: null,
-			category: 'LEATHER',
 			pictures: [
 				{
 					id: 'PROD-picture'
@@ -74,10 +61,9 @@ test('Requires description for material', t => {
 
 test('Requires title for material', t => {
 	t.false(
-		ajv.validate(schemas.request.product.create.body, {
+		ajv.validate(schemas.request.material.create.body, {
 			description: '# Super sticky leather (c)',
 			externalLink: null,
-			category: 'LEATHER',
 			pictures: [
 				{
 					id: 'PROD-picture'
@@ -99,14 +85,6 @@ test('Can update only description', t => {
 	t.true(
 		ajv.validate(schemas.request.material.update.body, {
 			description: 'New description'
-		})
-	)
-})
-
-test('Can update only category', t => {
-	t.true(
-		ajv.validate(schemas.request.material.update.body, {
-			category: 'LEATHER'
 		})
 	)
 })

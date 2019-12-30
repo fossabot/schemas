@@ -1,4 +1,3 @@
-const constants = require('../../lib/constants')
 const defaults = require('../defaults')
 const file = require('../file')
 const querystring = require('./querystring')
@@ -6,13 +5,12 @@ const querystring = require('./querystring')
 module.exports.create = {
 	body: {
 		type: 'object',
-		required: ['title', 'description'],
+		required: ['title', 'description', 'pictures'],
 		additionalProperties: false,
 		properties: {
 			title: {type: 'string', minLength: 1},
 			description: {type: 'string', minLength: 1},
 			externalLink: {anyOf: [{type: 'string', format: 'uri', minLength: 1}, {type: 'null'}]},
-			category: {anyOf: [{type: 'string', enum: constants.MATERIAL_CATEGORIES}, {type: 'null'}]},
 			pictures: file.list
 		}
 	}
@@ -26,7 +24,6 @@ module.exports.update = {
 			title: {type: 'string', minLength: 1},
 			description: {type: 'string', minLength: 1},
 			externalLink: {anyOf: [{type: 'string', format: 'uri', minLength: 1}, {type: 'null'}]},
-			category: {anyOf: [{type: 'string', enum: constants.MATERIAL_CATEGORIES}, {type: 'null'}]},
 			pictures: file.list
 		}
 	}

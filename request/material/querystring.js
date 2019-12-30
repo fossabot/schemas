@@ -21,7 +21,6 @@ module.exports.list = {
 			type: 'string',
 			pattern: generator.queryParamArrayPattern(constants.APPROVALSTATUS)
 		},
-		category: {type: 'string', enum: constants.MATERIAL_CATEGORIES},
 		isMarkedForRemoval: {type: 'boolean', default: false},
 		isArchived: {type: 'boolean', default: false},
 		isActive: {type: 'boolean'},
