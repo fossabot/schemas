@@ -12,7 +12,7 @@ module.exports.create = {
 			title: {type: 'string', minLength: 1},
 			description: {type: 'string', minLength: 1},
 			externalLink: {anyOf: [{type: 'string', format: 'uri', minLength: 1}, {type: 'null'}]},
-			categories: {type: 'array', items: {type: 'string', enum: constants.MATERIAL_CATEGORIES}},
+			category: {anyOf: [{type: 'string', enum: constants.MATERIAL_CATEGORIES}, {type: 'null'}]},
 			pictures: file.list
 		}
 	}
@@ -26,7 +26,7 @@ module.exports.update = {
 			title: {type: 'string', minLength: 1},
 			description: {type: 'string', minLength: 1},
 			externalLink: {anyOf: [{type: 'string', format: 'uri', minLength: 1}, {type: 'null'}]},
-			categories: {type: 'array', items: {type: 'string', enum: constants.MATERIAL_CATEGORIES}},
+			category: {anyOf: [{type: 'string', enum: constants.MATERIAL_CATEGORIES}, {type: 'null'}]},
 			pictures: file.list
 		}
 	}

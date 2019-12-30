@@ -21,7 +21,7 @@ test('Create material valid schema', t => {
 			title: 'Super sticky leather 😅',
 			description: '# Super sticky leather (c)',
 			externalLink: null,
-			categories: ['VEGAN'],
+			category: 'LEATHER',
 			pictures: [
 				{
 					id: 'PROD-picture'
@@ -37,7 +37,7 @@ test('Requires pictures to create material', t => {
 			title: 'Super sticky leather 😅',
 			description: '# Super sticky leather (c)',
 			externalLink: null,
-			categories: ['VEGAN']
+			category: 'LEATHER'
 		})
 	)
 })
@@ -62,7 +62,7 @@ test('Requires description for material', t => {
 		ajv.validate(schemas.request.product.create.body, {
 			title: 'Super sticky leather 😅',
 			externalLink: null,
-			categories: ['VEGAN'],
+			category: 'LEATHER',
 			pictures: [
 				{
 					id: 'PROD-picture'
@@ -77,7 +77,7 @@ test('Requires title for material', t => {
 		ajv.validate(schemas.request.product.create.body, {
 			description: '# Super sticky leather (c)',
 			externalLink: null,
-			categories: ['VEGAN'],
+			category: 'LEATHER',
 			pictures: [
 				{
 					id: 'PROD-picture'
@@ -103,10 +103,10 @@ test('Can update only description', t => {
 	)
 })
 
-test('Can update only categories', t => {
+test('Can update only category', t => {
 	t.true(
 		ajv.validate(schemas.request.material.update.body, {
-			categories: ['VEGAN']
+			category: 'LEATHER'
 		})
 	)
 })

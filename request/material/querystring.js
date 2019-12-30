@@ -3,6 +3,7 @@ const constants = require('../../lib/constants')
 
 module.exports.SORT_COLUMNS_ENUM = {
 	status: 'status',
+	category: 'category',
 	version: 'version',
 	title: 'title',
 	description: 'description',
@@ -20,6 +21,7 @@ module.exports.list = {
 			type: 'string',
 			pattern: generator.queryParamArrayPattern(constants.APPROVALSTATUS)
 		},
+		category: {type: 'string', enum: constants.MATERIAL_CATEGORIES},
 		isMarkedForRemoval: {type: 'boolean', default: false},
 		isArchived: {type: 'boolean', default: false},
 		isActive: {type: 'boolean'},

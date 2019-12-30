@@ -59,7 +59,7 @@ test('Requires title for certificate', t => {
 		ajv.validate(schemas.request.certificate.create.body, {
 			description: 'Description about certificate',
 			externalLink: null,
-			categories: ['VEGAN'],
+			category: 'LEATHER',
 			pictures: [
 				{
 					id: 'PROD-picture'
