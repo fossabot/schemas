@@ -14,9 +14,6 @@ module.exports.list = {
 	type: 'object',
 	properties: {
 		...generator.paginationParams,
-		supplyChainId: {
-			type: 'string'
-		},
 		dropdownlist: {
 			type: 'boolean',
 			default: false
