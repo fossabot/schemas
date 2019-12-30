@@ -10,7 +10,7 @@ test.before(() => {
 
 test('Valid create schema', t => {
 	t.true(
-		ajv.validate(schemas.request.item.create.body, {
+		ajv.validate(schemas.request.tag.create.body, {
 			lineId: 'line-id',
 			ids: ['id', 'id1']
 		})
@@ -19,7 +19,7 @@ test('Valid create schema', t => {
 
 test('Invalid schema without IDs', t => {
 	t.false(
-		ajv.validate(schemas.request.item.create.body, {
+		ajv.validate(schemas.request.tag.create.body, {
 			lineId: 'line-id'
 		})
 	)
@@ -27,7 +27,7 @@ test('Invalid schema without IDs', t => {
 
 test('Invalid schema without line ID', t => {
 	t.false(
-		ajv.validate(schemas.request.item.create.body, {
+		ajv.validate(schemas.request.tag.create.body, {
 			ids: ['id', 'id1']
 		})
 	)

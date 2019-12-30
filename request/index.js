@@ -1,6 +1,6 @@
 module.exports = {
 	company: require('./company'),
-	item: require('./item'),
+	tag: require('./tag'),
 	orderLine: require('./order-line'),
 	order: require('./order'),
 	file: require('./file'),

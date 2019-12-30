@@ -10,7 +10,7 @@ test.before(() => {
 
 test('Valid querystring get', t => {
 	t.true(
-		ajv.validate(schemas.request.item.get.querystring, {
+		ajv.validate(schemas.request.tag.get.querystring, {
 			existence: true
 		})
 	)
@@ -18,7 +18,7 @@ test('Valid querystring get', t => {
 
 test('Invalid schema with additional proeprties', t => {
 	t.false(
-		ajv.validate(schemas.request.item.get.querystring, {
+		ajv.validate(schemas.request.tag.get.querystring, {
 			existence: true,
 			additional: 'ok'
 		})
@@ -27,7 +27,7 @@ test('Invalid schema with additional proeprties', t => {
 
 test('Valid with SKU and Product ID', t => {
 	t.true(
-		ajv.validate(schemas.request.item.random.querystring, {
+		ajv.validate(schemas.request.tag.random.querystring, {
 			productId: 'product',
 			sku: 'sku'
 		})
@@ -36,7 +36,7 @@ test('Valid with SKU and Product ID', t => {
 
 test('Invalid if product ID is not a number', t => {
 	t.false(
-		ajv.validate(schemas.request.item.random.querystring, {
+		ajv.validate(schemas.request.tag.random.querystring, {
 			productId: 123,
 			sku: 'sku'
 		})
