@@ -5,7 +5,7 @@ const querystring = require('./querystring')
 module.exports.create = {
 	body: {
 		type: 'object',
-		required: ['title', 'description', 'pictures'],
+		required: ['title', 'description'],
 		additionalProperties: false,
 		properties: {
 			title: {type: 'string', minLength: 1},

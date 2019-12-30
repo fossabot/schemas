@@ -12,12 +12,7 @@ test('Create material valid schema', t => {
 	t.true(
 		ajv.validate(schemas.request.material.create.body, {
 			title: 'Super sticky leather 😅',
-			description: '# Super sticky leather (c)',
-			pictures: [
-				{
-					id: 'PROD-picture'
-				}
-			]
+			description: '# Super sticky leather (c)'
 		})
 	)
 
@@ -35,8 +30,8 @@ test('Create material valid schema', t => {
 	)
 })
 
-test('Requires pictures to create material', t => {
-	t.false(
+test('Does not requires pictures to create material', t => {
+	t.true(
 		ajv.validate(schemas.request.material.create.body, {
 			title: 'Super sticky leather 😅',
 			description: '# Super sticky leather (c)',
