@@ -19,3 +19,19 @@ module.exports.list = {
 		}
 	}
 }
+
+module.exports.remove = {
+	type: 'object',
+	additionalProperties: false,
+	properties: {
+		orderlines: {type: 'boolean', default: false}
+	}
+}
+
+module.exports.delete = {
+	type: 'object',
+	additionalProperties: false,
+	properties: {
+		orderlines: {type: 'boolean', default: false}
+	}
+}
