@@ -1,3 +1,10 @@
+## [1.23.3](https://github.com/retracedgmbh/schemas/compare/v1.23.2...v1.23.3) (2019-12-31)
+
+
+### Bug Fixes
+
+* Remove videoUrl from request and add videos ([#48](https://github.com/retracedgmbh/schemas/issues/48)) ([e8c43b3](https://github.com/retracedgmbh/schemas/commit/e8c43b3c4177e172f127b3b4dd1ad1ebf89544a9))
+
 ## [1.23.2](https://github.com/retracedgmbh/schemas/compare/v1.23.1...v1.23.2) (2019-12-30)
 
 ## [1.23.1](https://github.com/retracedgmbh/schemas/compare/v1.23.0...v1.23.1) (2019-12-29)
