@@ -42,3 +42,21 @@ test('Invalid if product ID is not a number', t => {
 		})
 	)
 })
+
+test('List', t => {
+	t.true(
+		ajv.validate(schemas.request.tag.list.querystring, {
+			page: 1,
+			count: 10,
+			lineId: 'orderline-42'
+		})
+	)
+
+	// Must have line ID
+	t.false(
+		ajv.validate(schemas.request.tag.list.querystring, {
+			page: 1,
+			count: 10
+		})
+	)
+})
