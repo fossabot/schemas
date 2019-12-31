@@ -35,10 +35,14 @@ test('Company create schema', t => {
 			companySize: 'FROM_2_TO_10',
 			companyType: 'EDUCATIONAL_INSTITUTION',
 			geojson: {type: 'Feature', geometry: {type: 'Point', coordinates: [1, 1]}},
-			videoUrl: 'https://github.com/epoberezkin/ajv',
 			founders: 'King Arthur',
 			founded: 1990,
 			pictures: [
+				{
+					id: 'FILE-ID'
+				}
+			],
+			videos: [
 				{
 					id: 'FILE-ID'
 				}
@@ -82,23 +86,6 @@ test('Company create schema', t => {
 			taxNo: 'tax',
 			officialName: 'official name',
 			description: null,
-			country: 'VI',
-			geojson: {type: 'Feature', geometry: {type: 'Point', coordinates: [1, 1]}},
-			pictures: [
-				{
-					id: 'FILE-ID'
-				}
-			]
-		})
-	)
-
-	// Invalid video URL
-	t.false(
-		ajv.validate(schemas.request.company.create.body, {
-			taxNo: 'tax',
-			officialName: 'official name',
-			description: 'd',
-			videoUrl: 'no-url',
 			country: 'VI',
 			geojson: {type: 'Feature', geometry: {type: 'Point', coordinates: [1, 1]}},
 			pictures: [
@@ -153,6 +140,11 @@ test('Valid update schema is accepted', t => {
 				{
 					id: 'FILE-ID'
 				}
+			],
+			videos: [
+				{
+					id: 'FILE-ID'
+				}
 			]
 		})
 	)
@@ -160,12 +152,6 @@ test('Valid update schema is accepted', t => {
 	t.false(
 		ajv.validate(schemas.request.company.update.body, {
 			description: null
-		})
-	)
-
-	t.false(
-		ajv.validate(schemas.request.company.update.body, {
-			videoUrl: 'ionvalid-url'
 		})
 	)
 })

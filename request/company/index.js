@@ -36,7 +36,6 @@ module.exports.create = {
 			phone2: {anyOf: [{type: 'string', minLength: 1}, {type: 'null'}]},
 			email: {anyOf: [{type: 'string', minLength: 1}, {type: 'null'}]},
 			website: {anyOf: [{type: 'string', minLength: 1}, {type: 'null'}]},
-			videoUrl: {anyOf: [{type: 'string', format: 'uri', minLength: 1}, {type: 'null'}]},
 			geojson: generator.geoJSONFeaturePoint,
 			companySize: {type: 'string', enum: constants.COMPANY_SIZE},
 			companyType: {type: 'string', enum: constants.COMPANY_TYPE},
@@ -65,13 +64,13 @@ module.exports.update = {
 			phone2: {type: ['string', 'null'], minLength: 1},
 			email: {type: ['string', 'null'], minLength: 1},
 			website: {type: ['string', 'null'], minLength: 1},
-			videoUrl: {anyOf: [{type: 'string', format: 'uri', minLength: 1}, {type: 'null'}]},
 			geojson: generator.geoJSONFeaturePoint,
 			companySize: {type: 'string', enum: constants.COMPANY_SIZE},
 			companyType: {type: 'string', enum: constants.COMPANY_TYPE},
 			founders: {anyOf: [{type: 'string', minLength: 1}, {type: 'null'}]},
 			founded: {type: 'number', minimum: 1200, maxiumum: 2200, multipleOf: 1},
-			pictures: file.list
+			pictures: file.list,
+			videos: file.list
 		}
 	}
 }
