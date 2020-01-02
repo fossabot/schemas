@@ -22,7 +22,8 @@ test('Extensive schema', t => {
 			id: 'id',
 			name: 'name',
 			unit: 'SQUARE_ROD',
-			materialId: 'id'
+			materialId: 'id',
+			materialVersion: 1
 		})
 	)
 })
