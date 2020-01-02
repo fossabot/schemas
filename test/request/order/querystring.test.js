@@ -31,19 +31,3 @@ test('Invalid list query string status', t => {
 		})
 	)
 })
-
-test('Query strings for remove', t => {
-	t.true(
-		ajv.validate(schemas.request.order.remove.querystring, {
-			orderlines: true
-		})
-	)
-})
-
-test('Query strings for delete', t => {
-	t.true(
-		ajv.validate(schemas.request.order.delete.querystring, {
-			orderlines: true
-		})
-	)
-})

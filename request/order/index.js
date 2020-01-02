@@ -64,11 +64,3 @@ module.exports.get = {
 module.exports.list = {
 	querystring: querystring.list
 }
-
-module.exports.remove = {
-	querystring: querystring.remove
-}
-
-module.exports.delete = {
-	querystring: querystring.delete
-}
