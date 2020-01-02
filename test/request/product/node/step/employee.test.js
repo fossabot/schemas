@@ -10,12 +10,12 @@ test.before(() => {
 
 test('Valid schema', t => {
 	t.true(
-		ajv.validate(schemas.request.supplychain.node.step.employee.single, {
+		ajv.validate(schemas.request.product.node.step.employee.create, {
 			id: 'id'
 		})
 	)
 })
 
 test('Employee requires ID', t => {
-	t.false(ajv.validate(schemas.request.supplychain.node.step.employee.single, {}))
+	t.false(ajv.validate(schemas.request.product.node.step.employee.create, {}))
 })

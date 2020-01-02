@@ -6,7 +6,6 @@ module.exports = {
 	file: require('./file'),
 	product: require('./product'),
 	setting: require('./setting'),
-	supplychain: require('./supplychain'),
 	user: require('./user'),
 	uploadUrl: require('./upload-url'),
 	material: require('./material'),
@@ -15,5 +14,6 @@ module.exports = {
 	configuration: require('./configuration'),
 	qrCode: require('./qr-code'),
 	badge: require('./badge'),
-	claim: require('./claim')
+	claim: require('./claim'),
+	item: require('./item')
 }

@@ -8,18 +8,102 @@ test.before(() => {
 	ajv = new AJV({allErrors: true})
 })
 
+const validSupplychain = {
+	nodes: [
+		{
+			id: 'node-ID',
+			companyId: 'COM-cano',
+			pictures: [{id: 'FILE-ID'}],
+			description: 'description',
+			title: 'title',
+			steps: []
+		},
+		{
+			id: 'node-ID1',
+			companyId: 'COM-calzado',
+			pictures: [{id: 'FILE-ID'}],
+			description: 'description',
+			title: 'title',
+			steps: []
+		}
+	],
+	links: [
+		{
+			buyerNodeId: 'node-ID',
+			sellerNodeId: 'node-ID1',
+			quantity: 1,
+			item: {
+				id: 'id'
+			}
+		}
+	]
+}
+
 test('Create product valid schema', t => {
 	t.true(
 		ajv.validate(schemas.request.product.create.body, {
-			supplyChainId: 'supplychain-id',
 			name: 'name',
-			pictures: [
-				{
-					id: 'FILE-ID'
-				}
-			],
+			pictures: [{id: 'FILE-ID'}],
+			description: 'egg',
+			attributes: [],
+			supplychain: validSupplychain
+		})
+	)
+})
+
+test('Validate supplychain', t => {
+	t.false(
+		ajv.validate(schemas.request.product.create.body, {
+			name: 'name',
+			pictures: [{id: 'FILE-ID'}],
 			description: 'egg',
 			attributes: []
+		})
+	)
+
+	t.false(
+		ajv.validate(schemas.request.product.create.body, {
+			name: 'name',
+			pictures: [{id: 'FILE-ID'}],
+			description: 'egg',
+			attributes: [],
+			supplychain: null
+		})
+	)
+
+	t.false(
+		ajv.validate(schemas.request.product.create.body, {
+			name: 'name',
+			pictures: [{id: 'FILE-ID'}],
+			description: 'egg',
+			attributes: [],
+			supplychain: {
+				nodes: [],
+				links: []
+			}
+		})
+	)
+
+	// Must have at least two nodes and one link
+	t.false(
+		ajv.validate(schemas.request.product.create.body, {
+			name: 'name',
+			pictures: [{id: 'FILE-ID'}],
+			description: 'egg',
+			attributes: [],
+			supplychain: {
+				nodes: [
+					{
+						id: 'node-ID',
+						companyId: 'COM-cano',
+						pictures: [{id: 'FILE-ID'}],
+						description: 'description',
+						title: 'title',
+						steps: []
+					}
+				],
+				links: []
+			}
 		})
 	)
 })
@@ -27,7 +111,6 @@ test('Create product valid schema', t => {
 test('Valid product schema with attributes', t => {
 	t.true(
 		ajv.validate(schemas.request.product.create.body, {
-			supplyChainId: 'supplychain-id',
 			name: 'name',
 			pictures: [
 				{
@@ -46,7 +129,8 @@ test('Valid product schema with attributes', t => {
 						}
 					]
 				}
-			]
+			],
+			supplychain: validSupplychain
 		})
 	)
 })
@@ -54,7 +138,6 @@ test('Valid product schema with attributes', t => {
 test('Products requires values for attributes', t => {
 	t.false(
 		ajv.validate(schemas.request.product.create.body, {
-			supplyChainId: 'supplychain-id',
 			name: 'name',
 			pictures: [
 				{
@@ -67,7 +150,8 @@ test('Products requires values for attributes', t => {
 					key: 'color',
 					name: 'color'
 				}
-			]
+			],
+			supplychain: validSupplychain
 		})
 	)
 })
@@ -103,6 +187,74 @@ test('Update product with variations', t => {
 					]
 				}
 			]
+		})
+	)
+})
+
+test('Update supplychain', t => {
+	t.true(
+		ajv.validate(schemas.request.product.update.body, {
+			supplychain: validSupplychain
+		})
+	)
+
+	t.false(
+		ajv.validate(schemas.request.product.update.body, {
+			supplychain: null
+		})
+	)
+
+	t.false(
+		ajv.validate(schemas.request.product.update.body, {
+			supplychain: {
+				nodes: [],
+				links: []
+			}
+		})
+	)
+
+	// Must have at least two nodes and one link
+	t.false(
+		ajv.validate(schemas.request.product.update.body, {
+			supplychain: {
+				nodes: [
+					{
+						id: 'node-ID',
+						companyId: 'COM-cano',
+						pictures: [{id: 'FILE-ID'}],
+						description: 'description',
+						title: 'title',
+						steps: []
+					}
+				],
+				links: []
+			}
+		})
+	)
+
+	t.false(
+		ajv.validate(schemas.request.product.update.body, {
+			supplychain: {
+				nodes: [
+					{
+						id: 'node-ID',
+						companyId: 'COM-cano',
+						pictures: [{id: 'FILE-ID'}],
+						description: 'description',
+						title: 'title',
+						steps: []
+					},
+					{
+						id: 'node-ID',
+						companyId: 'COM-cano',
+						pictures: [{id: 'FILE-ID'}],
+						description: 'description',
+						title: 'title',
+						steps: []
+					}
+				],
+				links: []
+			}
 		})
 	)
 })

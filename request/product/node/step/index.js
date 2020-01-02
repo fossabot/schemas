@@ -1,7 +1,7 @@
 const file = require('../../../file')
 const employee = require('./employee')
 
-module.exports.single = {
+module.exports.create = {
 	type: 'object',
 	required: ['pictures', 'shortDescription', 'longDescription', 'employees'],
 	additionalProperties: false,
@@ -11,7 +11,7 @@ module.exports.single = {
 		longDescription: {type: 'string', minLength: 1},
 		employees: {
 			type: 'array',
-			items: employee.single
+			items: employee.create
 		}
 	}
 }

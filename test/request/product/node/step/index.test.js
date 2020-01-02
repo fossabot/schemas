@@ -10,12 +10,8 @@ test.before(() => {
 
 test('Valid schema', t => {
 	t.true(
-		ajv.validate(schemas.request.supplychain.node.step.single, {
-			pictures: [
-				{
-					id: 'FILE-ID'
-				}
-			],
+		ajv.validate(schemas.request.product.node.step.create, {
+			pictures: [{id: 'FILE-ID'}],
 			shortDescription: 'short',
 			longDescription: 'long',
 			employees: [
