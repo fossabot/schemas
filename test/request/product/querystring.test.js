@@ -52,3 +52,32 @@ test('Valid data types', t => {
 		})
 	)
 })
+
+test('ET minimal', t => {
+	t.true(ajv.validate(schemas.request.product.get.querystring, {}))
+})
+
+test('GET extensive', t => {
+	t.true(
+		ajv.validate(schemas.request.product.get.querystring, {
+			supplychain: true,
+			attributes: true,
+			variations: true,
+			orders: true
+		})
+	)
+})
+
+test('GET invalid params', t => {
+	t.false(
+		ajv.validate(schemas.request.product.get.querystring, {
+			supplychain: 2
+		})
+	)
+
+	t.false(
+		ajv.validate(schemas.request.product.get.querystring, {
+			attributes: '2'
+		})
+	)
+})

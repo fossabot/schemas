@@ -4,7 +4,7 @@ const constants = require('../../lib/constants')
 module.exports.get = {
 	type: 'object',
 	properties: {
-		deep: {type: 'boolean', default: false},
+		supplychain: {type: 'boolean', default: false},
 		attributes: {type: 'boolean', default: false},
 		variations: {type: 'boolean', default: false},
 		orders: {type: 'boolean', default: false}
