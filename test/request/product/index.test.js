@@ -121,11 +121,9 @@ test('Valid product schema with attributes', t => {
 			attributes: [
 				{
 					key: 'color',
-					name: 'color',
 					values: [
 						{
-							value: 'red',
-							name: 'red'
+							value: 'red'
 						}
 					]
 				}
@@ -171,8 +169,7 @@ test('Products requires values for attributes', t => {
 			description: 'egg',
 			attributes: [
 				{
-					key: 'color',
-					name: 'color'
+					key: 'color'
 				}
 			],
 			supplyChain: validSupplyChain

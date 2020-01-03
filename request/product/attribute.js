@@ -3,8 +3,7 @@ const addAttributeValue = {
 	required: ['value'],
 	additionalProperties: false,
 	properties: {
-		value: {type: 'string', minLength: 1},
-		name: {type: 'string', minLength: 1}
+		value: {type: 'string', minLength: 1}
 	}
 }
 
@@ -14,8 +13,7 @@ const updateAttributeValue = {
 	additionalProperties: false,
 	properties: {
 		id: {type: 'string', minLength: 1},
-		value: {type: 'string', minLength: 1},
-		name: {type: 'string', minLength: 1}
+		value: {type: 'string', minLength: 1}
 	}
 }
 
@@ -25,7 +23,6 @@ module.exports.create = {
 	additionalProperties: false,
 	properties: {
 		key: {type: 'string', minLength: 1},
-		name: {type: 'string', minLength: 1},
 		values: {
 			type: 'array',
 			items: addAttributeValue
@@ -40,7 +37,6 @@ module.exports.update = {
 	properties: {
 		id: {type: 'string', minLength: 1},
 		key: {type: 'string', minLength: 1},
-		name: {type: 'string', minLength: 1},
 		values: {
 			type: 'array',
 			items: updateAttributeValue
