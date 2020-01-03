@@ -60,7 +60,7 @@ test('ET minimal', t => {
 test('GET extensive', t => {
 	t.true(
 		ajv.validate(schemas.request.product.get.querystring, {
-			supplychain: true,
+			supplyChain: true,
 			attributes: true,
 			variations: true,
 			orders: true
@@ -71,7 +71,7 @@ test('GET extensive', t => {
 test('GET invalid params', t => {
 	t.false(
 		ajv.validate(schemas.request.product.get.querystring, {
-			supplychain: 2
+			supplyChain: 2
 		})
 	)
 
