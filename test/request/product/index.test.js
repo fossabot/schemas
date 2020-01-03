@@ -133,6 +133,30 @@ test('Valid product schema with attributes', t => {
 			supplychain: validSupplychain
 		})
 	)
+
+	// Can leave out attribute name and attribute value name
+	t.true(
+		ajv.validate(schemas.request.product.create.body, {
+			name: 'name',
+			pictures: [
+				{
+					id: 'FILE-ID'
+				}
+			],
+			description: 'egg',
+			attributes: [
+				{
+					key: 'color',
+					values: [
+						{
+							value: 'red'
+						}
+					]
+				}
+			],
+			supplychain: validSupplychain
+		})
+	)
 })
 
 test('Products requires values for attributes', t => {

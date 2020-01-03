@@ -1,6 +1,6 @@
 const addAttributeValue = {
 	type: 'object',
-	required: ['value', 'name'],
+	required: ['value'],
 	additionalProperties: false,
 	properties: {
 		value: {type: 'string', minLength: 1},
@@ -21,7 +21,7 @@ const updateAttributeValue = {
 
 module.exports.create = {
 	type: 'object',
-	required: ['key', 'name', 'values'],
+	required: ['key', 'values'],
 	additionalProperties: false,
 	properties: {
 		key: {type: 'string', minLength: 1},
