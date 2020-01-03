@@ -9,7 +9,7 @@ const link = require('./link')
 module.exports.create = {
 	body: {
 		type: 'object',
-		required: ['name', 'pictures', 'attributes', 'supplychain'],
+		required: ['name', 'pictures', 'attributes', 'supplyChain'],
 		additionalProperties: false,
 		properties: {
 			name: {type: 'string', minLength: 1, maxLength: 60},
@@ -20,7 +20,7 @@ module.exports.create = {
 				items: attribute.create,
 				default: []
 			},
-			supplychain: {
+			supplyChain: {
 				type: 'object',
 				required: ['nodes', 'links'],
 				additionalProperties: false,
@@ -49,7 +49,7 @@ module.exports.update = {
 			variations: variation.list,
 			// The whole supply chain must be provided if there is even a single small change.
 			// The item IDs of the links can match and will be reused then.
-			supplychain: {
+			supplyChain: {
 				type: 'object',
 				required: ['nodes', 'links'],
 				additionalProperties: false,

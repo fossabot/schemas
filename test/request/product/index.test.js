@@ -8,7 +8,7 @@ test.before(() => {
 	ajv = new AJV({allErrors: true})
 })
 
-const validSupplychain = {
+const validSupplyChain = {
 	nodes: [
 		{
 			id: 'node-ID',
@@ -46,12 +46,12 @@ test('Create product valid schema', t => {
 			pictures: [{id: 'FILE-ID'}],
 			description: 'egg',
 			attributes: [],
-			supplychain: validSupplychain
+			supplyChain: validSupplyChain
 		})
 	)
 })
 
-test('Validate supplychain', t => {
+test('Validate supplyChain', t => {
 	t.false(
 		ajv.validate(schemas.request.product.create.body, {
 			name: 'name',
@@ -67,7 +67,7 @@ test('Validate supplychain', t => {
 			pictures: [{id: 'FILE-ID'}],
 			description: 'egg',
 			attributes: [],
-			supplychain: null
+			supplyChain: null
 		})
 	)
 
@@ -77,7 +77,7 @@ test('Validate supplychain', t => {
 			pictures: [{id: 'FILE-ID'}],
 			description: 'egg',
 			attributes: [],
-			supplychain: {
+			supplyChain: {
 				nodes: [],
 				links: []
 			}
@@ -91,7 +91,7 @@ test('Validate supplychain', t => {
 			pictures: [{id: 'FILE-ID'}],
 			description: 'egg',
 			attributes: [],
-			supplychain: {
+			supplyChain: {
 				nodes: [
 					{
 						id: 'node-ID',
@@ -130,7 +130,7 @@ test('Valid product schema with attributes', t => {
 					]
 				}
 			],
-			supplychain: validSupplychain
+			supplyChain: validSupplyChain
 		})
 	)
 
@@ -154,7 +154,7 @@ test('Valid product schema with attributes', t => {
 					]
 				}
 			],
-			supplychain: validSupplychain
+			supplyChain: validSupplyChain
 		})
 	)
 })
@@ -175,7 +175,7 @@ test('Products requires values for attributes', t => {
 					name: 'color'
 				}
 			],
-			supplychain: validSupplychain
+			supplyChain: validSupplyChain
 		})
 	)
 })
@@ -215,22 +215,22 @@ test('Update product with variations', t => {
 	)
 })
 
-test('Update supplychain', t => {
+test('Update supplyChain', t => {
 	t.true(
 		ajv.validate(schemas.request.product.update.body, {
-			supplychain: validSupplychain
+			supplyChain: validSupplyChain
 		})
 	)
 
 	t.false(
 		ajv.validate(schemas.request.product.update.body, {
-			supplychain: null
+			supplyChain: null
 		})
 	)
 
 	t.false(
 		ajv.validate(schemas.request.product.update.body, {
-			supplychain: {
+			supplyChain: {
 				nodes: [],
 				links: []
 			}
@@ -240,7 +240,7 @@ test('Update supplychain', t => {
 	// Must have at least two nodes and one link
 	t.false(
 		ajv.validate(schemas.request.product.update.body, {
-			supplychain: {
+			supplyChain: {
 				nodes: [
 					{
 						id: 'node-ID',
@@ -258,7 +258,7 @@ test('Update supplychain', t => {
 
 	t.false(
 		ajv.validate(schemas.request.product.update.body, {
-			supplychain: {
+			supplyChain: {
 				nodes: [
 					{
 						id: 'node-ID',
