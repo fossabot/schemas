@@ -18,7 +18,7 @@ module.exports.create = {
 				additionalProperties: false,
 				properties: {
 					name: {type: 'string', minLength: 1},
-					unit: {anyOf: [{type: 'null'}, {enum: constants.UNITS}]},
+					unit: {enum: constants.UNITS},
 					materialId: {type: 'string', minLength: 1},
 					materialVersion: {type: 'number', minimum: 1, multipleOf: 1}
 				}

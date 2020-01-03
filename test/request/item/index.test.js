@@ -39,9 +39,7 @@ test('Extensive schema', t => {
 		ajv.validate(schemas.request.item.create.body, {
 			id: 'id',
 			name: 'name',
-			unit: 'SQUARE_ROD',
-			materialId: 'id',
-			materialVersion: 1
+			unit: 'SQUARE_ROD'
 		})
 	)
 })
