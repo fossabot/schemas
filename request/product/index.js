@@ -15,11 +15,7 @@ module.exports.create = {
 			name: {type: 'string', minLength: 1, maxLength: 60},
 			pictures: file.list,
 			description: {type: 'string', minLength: 1},
-			attributes: {
-				type: 'array',
-				items: attribute.create,
-				default: []
-			},
+			attributes: {type: 'array', items: attribute.create, default: []},
 			supplyChain: {
 				type: 'object',
 				required: ['nodes', 'links'],

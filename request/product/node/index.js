@@ -3,7 +3,7 @@ const step = require('./step')
 
 module.exports.create = {
 	type: 'object',
-	required: ['id', 'companyId', 'steps'],
+	required: ['id', 'companyId'],
 	additionalProperties: false,
 	properties: {
 		id: {type: 'string', minLength: 1},
@@ -13,10 +13,7 @@ module.exports.create = {
 		title: {type: 'string', minLength: 1},
 		// Default: Description is the item name leading to this node
 		description: {type: 'string', minLength: 1},
-		steps: {
-			type: 'array',
-			items: step.create
-		}
+		steps: {type: 'array', items: step.create}
 	}
 }
 

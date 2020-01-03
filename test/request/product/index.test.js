@@ -15,16 +15,14 @@ const validSupplyChain = {
 			companyId: 'COM-cano',
 			pictures: [{id: 'FILE-ID'}],
 			description: 'description',
-			title: 'title',
-			steps: []
+			title: 'title'
 		},
 		{
 			id: 'node-ID1',
 			companyId: 'COM-calzado',
 			pictures: [{id: 'FILE-ID'}],
 			description: 'description',
-			title: 'title',
-			steps: []
+			title: 'title'
 		}
 	],
 	links: [
@@ -98,8 +96,7 @@ test('Validate supplyChain', t => {
 						companyId: 'COM-cano',
 						pictures: [{id: 'FILE-ID'}],
 						description: 'description',
-						title: 'title',
-						steps: []
+						title: 'title'
 					}
 				],
 				links: []
@@ -244,8 +241,7 @@ test('Update supplyChain', t => {
 						companyId: 'COM-cano',
 						pictures: [{id: 'FILE-ID'}],
 						description: 'description',
-						title: 'title',
-						steps: []
+						title: 'title'
 					}
 				],
 				links: []
@@ -262,16 +258,14 @@ test('Update supplyChain', t => {
 						companyId: 'COM-cano',
 						pictures: [{id: 'FILE-ID'}],
 						description: 'description',
-						title: 'title',
-						steps: []
+						title: 'title'
 					},
 					{
 						id: 'node-ID',
 						companyId: 'COM-cano',
 						pictures: [{id: 'FILE-ID'}],
 						description: 'description',
-						title: 'title',
-						steps: []
+						title: 'title'
 					}
 				],
 				links: []

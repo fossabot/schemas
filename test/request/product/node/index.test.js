@@ -12,8 +12,7 @@ test('Minimal schema', t => {
 	t.true(
 		ajv.validate(schemas.request.product.node.create, {
 			id: 'node-ID',
-			companyId: 'COM-cano',
-			steps: []
+			companyId: 'COM-cano'
 		})
 	)
 })
@@ -40,22 +39,13 @@ test('Extensive schema', t => {
 test('Missing parameters', t => {
 	t.false(
 		ajv.validate(schemas.request.product.node.create, {
-			companyId: 'id',
-			steps: []
-		})
-	)
-
-	t.false(
-		ajv.validate(schemas.request.product.node.create, {
-			id: 'id',
-			steps: []
-		})
-	)
-
-	t.false(
-		ajv.validate(schemas.request.product.node.create, {
-			id: 'id',
 			companyId: 'id'
+		})
+	)
+
+	t.false(
+		ajv.validate(schemas.request.product.node.create, {
+			id: 'id'
 		})
 	)
 })
