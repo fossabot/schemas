@@ -9,9 +9,17 @@ test.before(() => {
 })
 
 test('Minimal schema', t => {
+	// Item has two options to be valid minimally
 	t.true(
 		ajv.validate(schemas.request.item.create.body, {
 			id: 'id'
+		})
+	)
+
+	t.true(
+		ajv.validate(schemas.request.item.create.body, {
+			name: 'name',
+			unit: 'SQUARE_ROD'
 		})
 	)
 })
@@ -19,7 +27,6 @@ test('Minimal schema', t => {
 test('Extensive schema', t => {
 	t.true(
 		ajv.validate(schemas.request.item.create.body, {
-			id: 'id',
 			name: 'name',
 			unit: 'SQUARE_ROD',
 			materialId: 'id',
@@ -31,6 +38,20 @@ test('Extensive schema', t => {
 test('Missing parameters', t => {
 	// Requires an ID
 	t.false(ajv.validate(schemas.request.item.create.body, {}))
+
+	// Missing unit
+	t.false(
+		ajv.validate(schemas.request.item.create.body, {
+			name: 'name'
+		})
+	)
+
+	// Missing name
+	t.false(
+		ajv.validate(schemas.request.item.create.body, {
+			unit: 'SQUARE_ROD'
+		})
+	)
 })
 
 test('Invalid parameters', t => {
