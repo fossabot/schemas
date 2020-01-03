@@ -33,6 +33,17 @@ test('Extensive schema', t => {
 			materialVersion: 1
 		})
 	)
+
+	// Providing all details will fail (because either ID or other details)
+	t.false(
+		ajv.validate(schemas.request.item.create.body, {
+			id: 'id',
+			name: 'name',
+			unit: 'SQUARE_ROD',
+			materialId: 'id',
+			materialVersion: 1
+		})
+	)
 })
 
 test('Missing parameters', t => {
