@@ -1,3 +1,4 @@
+const defaults = require('../defaults')
 const file = require('../file')
 const attribute = require('./attribute')
 const variation = require('./variation')
@@ -65,8 +66,13 @@ module.exports.get = {
 	querystring: querystring.get
 }
 
+module.exports.request = defaults.request
+module.exports.approve = defaults.approve
+module.exports.reject = defaults.reject
+
 module.exports.list = {
-	querystring: querystring.list
+	querystring: querystring.list,
+	SORT_COLUMNS_ENUM: querystring.SORT_COLUMNS_ENUM
 }
 
 module.exports.attribute = attribute
