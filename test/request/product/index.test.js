@@ -216,13 +216,7 @@ test('Update supplyChain', t => {
 		})
 	)
 
-	t.false(
-		ajv.validate(schemas.request.product.update.body, {
-			supplyChain: null
-		})
-	)
-
-	t.false(
+	t.true(
 		ajv.validate(schemas.request.product.update.body, {
 			supplyChain: {
 				nodes: [],
@@ -231,8 +225,13 @@ test('Update supplyChain', t => {
 		})
 	)
 
-	// Must have at least two nodes and one link
 	t.false(
+		ajv.validate(schemas.request.product.update.body, {
+			supplyChain: null
+		})
+	)
+
+	t.true(
 		ajv.validate(schemas.request.product.update.body, {
 			supplyChain: {
 				nodes: [
@@ -249,26 +248,19 @@ test('Update supplyChain', t => {
 		})
 	)
 
-	t.false(
+	t.true(
 		ajv.validate(schemas.request.product.update.body, {
 			supplyChain: {
-				nodes: [
+				links: [
 					{
-						id: 'node-ID',
-						companyId: 'COM-cano',
-						pictures: [{id: 'FILE-ID'}],
-						description: 'description',
-						title: 'title'
-					},
-					{
-						id: 'node-ID',
-						companyId: 'COM-cano',
-						pictures: [{id: 'FILE-ID'}],
-						description: 'description',
-						title: 'title'
+						buyerNodeId: 'node-ID',
+						sellerNodeId: 'node-ID1',
+						quantity: 1,
+						item: {
+							id: 'id'
+						}
 					}
-				],
-				links: []
+				]
 			}
 		})
 	)
