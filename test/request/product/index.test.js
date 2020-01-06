@@ -41,6 +41,13 @@ test('Create product valid schema', t => {
 	t.true(
 		ajv.validate(schemas.request.product.create.body, {
 			name: 'name',
+			supplyChain: validSupplyChain
+		})
+	)
+
+	t.true(
+		ajv.validate(schemas.request.product.create.body, {
+			name: 'name',
 			pictures: [{id: 'FILE-ID'}],
 			description: 'egg',
 			attributes: [],

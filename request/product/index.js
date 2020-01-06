@@ -9,7 +9,7 @@ const link = require('./link')
 module.exports.create = {
 	body: {
 		type: 'object',
-		required: ['name', 'pictures', 'supplyChain'],
+		required: ['name', 'supplyChain'],
 		additionalProperties: false,
 		properties: {
 			name: {type: 'string', minLength: 1, maxLength: 60},
