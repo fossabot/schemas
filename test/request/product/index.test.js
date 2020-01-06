@@ -255,6 +255,22 @@ test('Update supplyChain', t => {
 		})
 	)
 
+	// Update works without changing the company of the node
+	t.true(
+		ajv.validate(schemas.request.product.update.body, {
+			supplyChain: {
+				nodes: [
+					{
+						id: 'node-ID',
+						pictures: [{id: 'FILE-ID'}],
+						description: 'description',
+						title: 'title'
+					}
+				]
+			}
+		})
+	)
+
 	t.true(
 		ajv.validate(schemas.request.product.update.body, {
 			supplyChain: {

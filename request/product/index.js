@@ -47,7 +47,9 @@ module.exports.update = {
 				required: [],
 				additionalProperties: false,
 				properties: {
-					nodes: {type: 'array', items: node.create},
+					nodes: {type: 'array', items: node.update},
+					// If links are given, they can only be recreated. Thus, the elements
+					// will be new links
 					links: {type: 'array', items: link.create}
 				}
 			}
