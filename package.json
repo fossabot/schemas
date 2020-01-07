@@ -44,6 +44,10 @@
         {
           "releaseRules": [
             {
+              "type": "breaking",
+              "release": "major"
+            },
+            {
               "type": "fix",
               "release": "patch"
             },
