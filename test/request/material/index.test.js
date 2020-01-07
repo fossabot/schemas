@@ -21,7 +21,6 @@ test('Create material valid schema', t => {
 			title: 'Super sticky leather 😅',
 			description: '# Super sticky leather (c)',
 			externalLink: null,
-			categories: ['VEGAN'],
 			pictures: [
 				{
 					id: 'PROD-picture'
@@ -31,38 +30,21 @@ test('Create material valid schema', t => {
 	)
 })
 
-test('Requires pictures to create material', t => {
-	t.false(
-		ajv.validate(schemas.request.product.create.body, {
+test('Does not requires pictures to create material', t => {
+	t.true(
+		ajv.validate(schemas.request.material.create.body, {
 			title: 'Super sticky leather 😅',
 			description: '# Super sticky leather (c)',
-			externalLink: null,
-			categories: ['VEGAN']
-		})
-	)
-})
-
-test('Requires categories to create material', t => {
-	t.false(
-		ajv.validate(schemas.request.product.create.body, {
-			title: 'Super sticky leather 😅',
-			description: '# Super sticky leather (c)',
-			externalLink: null,
-			pictures: [
-				{
-					id: 'PROD-picture'
-				}
-			]
+			externalLink: null
 		})
 	)
 })
 
 test('Requires description for material', t => {
 	t.false(
-		ajv.validate(schemas.request.product.create.body, {
+		ajv.validate(schemas.request.material.create.body, {
 			title: 'Super sticky leather 😅',
 			externalLink: null,
-			categories: ['VEGAN'],
 			pictures: [
 				{
 					id: 'PROD-picture'
@@ -74,10 +56,9 @@ test('Requires description for material', t => {
 
 test('Requires title for material', t => {
 	t.false(
-		ajv.validate(schemas.request.product.create.body, {
+		ajv.validate(schemas.request.material.create.body, {
 			description: '# Super sticky leather (c)',
 			externalLink: null,
-			categories: ['VEGAN'],
 			pictures: [
 				{
 					id: 'PROD-picture'
@@ -99,14 +80,6 @@ test('Can update only description', t => {
 	t.true(
 		ajv.validate(schemas.request.material.update.body, {
 			description: 'New description'
-		})
-	)
-})
-
-test('Can update only categories', t => {
-	t.true(
-		ajv.validate(schemas.request.material.update.body, {
-			categories: ['VEGAN']
 		})
 	)
 })

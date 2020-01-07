@@ -3,6 +3,7 @@ const constants = require('../../lib/constants')
 
 module.exports.SORT_COLUMNS_ENUM = {
 	status: 'status',
+	category: 'category',
 	version: 'version',
 	title: 'title',
 	description: 'description',

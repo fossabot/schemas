@@ -1,4 +1,4 @@
-module.exports.single = {
+module.exports.create = {
 	type: 'object',
 	required: ['id'],
 	additionalProperties: false,

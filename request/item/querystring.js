@@ -1,16 +1,14 @@
-module.exports.get = {
-	type: 'object',
-	additionalProperties: false,
-	properties: {
-		existence: {type: 'boolean', default: false}
-	}
-}
+const generator = require('../../lib/generator')
 
-module.exports.random = {
+module.exports.list = {
 	type: 'object',
 	additionalProperties: false,
 	properties: {
-		productId: {type: 'string'},
-		sku: {type: 'string'}
+		...generator.paginationParams,
+		isDropDown: {
+			type: 'boolean',
+			default: false
+		},
+		isMarkedForRemoval: {type: 'boolean', default: false}
 	}
 }
