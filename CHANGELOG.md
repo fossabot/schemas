@@ -1,3 +1,10 @@
+# [1.24.0](https://github.com/retracedgmbh/schemas/compare/v1.23.4...v1.24.0) (2020-01-07)
+
+
+### Features
+
+* Rename items to tags + Merge Product and Supply Chain [BREAKING CHANGE] ([#46](https://github.com/retracedgmbh/schemas/issues/46)) ([70aff5a](https://github.com/retracedgmbh/schemas/commit/70aff5a1db78c4d5cc83b139e8221bb7c582164f))
+
 ## [1.23.4](https://github.com/retracedgmbh/schemas/compare/v1.23.3...v1.23.4) (2020-01-07)
 
 ## [1.23.3](https://github.com/retracedgmbh/schemas/compare/v1.23.2...v1.23.3) (2019-12-31)
