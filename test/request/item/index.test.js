@@ -74,7 +74,7 @@ test('Update', t => {
 	)
 
 	t.true(
-		ajv.validate(schemas.request.item.create.body, {
+		ajv.validate(schemas.request.item.update.body, {
 			name: 'name'
 		})
 	)
