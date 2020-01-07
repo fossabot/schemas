@@ -8,6 +8,7 @@ module.exports.list = {
 		isDropDown: {
 			type: 'boolean',
 			default: false
-		}
+		},
+		isMarkedForRemoval: {type: 'boolean', default: false}
 	}
 }
