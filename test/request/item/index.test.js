@@ -63,6 +63,23 @@ test('Missing parameters', t => {
 	)
 })
 
+test('Update', t => {
+	t.true(
+		ajv.validate(schemas.request.item.update.body, {
+			name: 'name',
+			unit: 'SQUARE_ROD',
+			materialId: 'id',
+			materialVersion: 1
+		})
+	)
+
+	t.true(
+		ajv.validate(schemas.request.item.create.body, {
+			name: 'name'
+		})
+	)
+})
+
 test('Invalid parameters', t => {
 	// ID must be string
 	t.false(ajv.validate(schemas.request.item.create.body, {id: 42}))

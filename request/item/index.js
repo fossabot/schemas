@@ -16,6 +16,20 @@ module.exports.create = {
 	}
 }
 
+module.exports.update = {
+	body: {
+		type: 'object',
+		oneOf: [],
+		additionalProperties: false,
+		properties: {
+			name: {type: 'string', minLength: 1},
+			unit: {enum: constants.UNITS},
+			materialId: {type: 'string', minLength: 1},
+			materialVersion: {type: 'number', minimum: 1, multipleOf: 1}
+		}
+	}
+}
+
 module.exports.list = {
 	querystring: querystring.list
 }
