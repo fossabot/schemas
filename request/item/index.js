@@ -19,7 +19,7 @@ module.exports.create = {
 module.exports.update = {
 	body: {
 		type: 'object',
-		oneOf: [],
+		required: [],
 		additionalProperties: false,
 		properties: {
 			name: {type: 'string', minLength: 1},
