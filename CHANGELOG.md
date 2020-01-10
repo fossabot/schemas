@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/retracedgmbh/schemas/compare/v2.0.4...v2.1.0) (2020-01-10)
+
+
+### Features
+
+* Add link ID when creating supply chain and graph serialization ([#51](https://github.com/retracedgmbh/schemas/issues/51)) ([842037d](https://github.com/retracedgmbh/schemas/commit/842037d7796b71e670a7863223e37126c795e3d4))
+
 ## [2.0.4](https://github.com/retracedgmbh/schemas/compare/v2.0.3...v2.0.4) (2020-01-10)
 
 ## [2.0.3](https://github.com/retracedgmbh/schemas/compare/v2.0.2...v2.0.3) (2020-01-10)
