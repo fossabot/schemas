@@ -21,6 +21,7 @@ module.exports.create = {
 				required: ['nodes', 'links'],
 				additionalProperties: false,
 				properties: {
+					graphSerialization: {type: 'string'},
 					nodes: {type: 'array', minItems: 2, items: node.create},
 					links: {type: 'array', minItems: 1, items: link.create}
 				}
@@ -47,6 +48,7 @@ module.exports.update = {
 				required: [],
 				additionalProperties: false,
 				properties: {
+					graphSerialization: {type: 'string'},
 					nodes: {type: 'array', items: node.update},
 					// If links are given, they can only be recreated. Thus, the elements
 					// will be new links

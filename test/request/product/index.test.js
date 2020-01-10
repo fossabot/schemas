@@ -9,6 +9,7 @@ test.before(() => {
 })
 
 const validSupplyChain = {
+	graphSerialization: '{"id":"d84d7ab0-84e5-4193-9711-d1fc7d655f75","offsetX":0,"offsetY":0}',
 	nodes: [
 		{
 			id: 'node-ID',
@@ -27,6 +28,7 @@ const validSupplyChain = {
 	],
 	links: [
 		{
+			id: 'id',
 			buyerNodeId: 'node-ID',
 			sellerNodeId: 'node-ID1',
 			quantity: 1,
@@ -232,6 +234,14 @@ test('Update supplyChain', t => {
 		})
 	)
 
+	t.true(
+		ajv.validate(schemas.request.product.update.body, {
+			supplyChain: {
+				graphSerialization: '{"id":"d84d7ab0-84e5-4193-9711-d1fc7d655f75","offsetX":0,"offsetY":0}'
+			}
+		})
+	)
+
 	t.false(
 		ajv.validate(schemas.request.product.update.body, {
 			supplyChain: null
@@ -276,6 +286,7 @@ test('Update supplyChain', t => {
 			supplyChain: {
 				links: [
 					{
+						id: 'id',
 						buyerNodeId: 'node-ID',
 						sellerNodeId: 'node-ID1',
 						quantity: 1,
