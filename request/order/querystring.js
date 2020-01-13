@@ -13,6 +13,6 @@ module.exports.list = {
 	additionalProperties: false,
 	properties: {
 		...generator.paginationParams,
-		status: {anyOf: [{type: 'null'}, {enum: ['recently-changed', 'history', 'to-seperate']}]}
+		status: {anyOf: [{type: 'null'}, {enum: ['recently-changed', 'history', 'to-separate']}]}
 	}
 }

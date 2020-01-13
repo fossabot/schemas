@@ -4,6 +4,6 @@ module.exports.list = {
 	required: ['orderId'],
 	properties: {
 		orderId: {type: 'string'},
-		status: {enum: ['to-seperate']}
+		status: {enum: ['to-separate']}
 	}
 }
