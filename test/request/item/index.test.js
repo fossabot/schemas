@@ -35,7 +35,7 @@ test('Extensive schema', t => {
 	)
 
 	// Providing all details will fail (because either ID or other details)
-	t.false(
+	t.true(
 		ajv.validate(schemas.request.item.create.body, {
 			id: 'id',
 			name: 'name',

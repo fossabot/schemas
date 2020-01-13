@@ -4,7 +4,7 @@ const querystring = require('./querystring')
 module.exports.create = {
 	body: {
 		type: 'object',
-		oneOf: [{required: ['id']}, {required: ['name', 'unit']}],
+		anyOf: [{required: ['id']}, {required: ['name', 'unit']}],
 		additionalProperties: false,
 		properties: {
 			id: {type: 'string', minLength: 1},
