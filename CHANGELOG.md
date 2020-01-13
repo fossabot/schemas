@@ -1,3 +1,10 @@
+## [2.1.6](https://github.com/retracedgmbh/schemas/compare/v2.1.5...v2.1.6) (2020-01-13)
+
+
+### Bug Fixes
+
+* Item can be anyof ([#60](https://github.com/retracedgmbh/schemas/issues/60)) ([9e1db6a](https://github.com/retracedgmbh/schemas/commit/9e1db6a2260d58a5f80b902e14c1f00e49619ab9))
+
 ## [2.1.5](https://github.com/retracedgmbh/schemas/compare/v2.1.4...v2.1.5) (2020-01-13)
 
 ## [2.1.4](https://github.com/retracedgmbh/schemas/compare/v2.1.3...v2.1.4) (2020-01-13)
