@@ -1,3 +1,10 @@
+## [2.1.4](https://github.com/retracedgmbh/schemas/compare/v2.1.3...v2.1.4) (2020-01-13)
+
+
+### Bug Fixes
+
+* Make extra object schema for product update when it is locked ([#55](https://github.com/retracedgmbh/schemas/issues/55)) ([41ea311](https://github.com/retracedgmbh/schemas/commit/41ea311f7aba31f6290d7b9deed246a99a72bf6f))
+
 ## [2.1.3](https://github.com/retracedgmbh/schemas/compare/v2.1.2...v2.1.3) (2020-01-13)
 
 ## [2.1.2](https://github.com/retracedgmbh/schemas/compare/v2.1.1...v2.1.2) (2020-01-11)
