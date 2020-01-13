@@ -299,3 +299,137 @@ test('Update supplyChain', t => {
 		})
 	)
 })
+
+test('Update product with attributes', t => {
+	t.true(
+		ajv.validate(schemas.request.product.update.body, {
+			attributes: [
+				{
+					id: '12',
+					key: 'key',
+					values: [{id: '12', value: 'value'}]
+				}
+			]
+		})
+	)
+})
+
+test('Update locked product minimal valid schema', t => {
+	t.true(
+		ajv.validate(schemas.request.product.updateLocked.body, {
+			name: 'product update when product not DRAFT'
+		})
+	)
+})
+
+test('Update locked product with variations', t => {
+	t.true(
+		ajv.validate(schemas.request.product.updateLocked.body, {
+			variations: [
+				{
+					id: 'variation-id',
+					sku: 'variation-sku',
+					pictures: [{id: 'id'}]
+				},
+				{
+					id: 'variation-id-2',
+					sku: 'variation-sku-2',
+					pictures: [{id: 'id'}]
+				}
+			]
+		})
+	)
+})
+
+test('Update locked product with attributes', t => {
+	t.true(
+		ajv.validate(schemas.request.product.updateLocked.body, {
+			attributes: [
+				{
+					id: '12',
+					key: 'key',
+					values: [{id: '12', value: 'value'}]
+				}
+			]
+		})
+	)
+})
+
+test('Update locked products supplyChain', t => {
+	t.true(
+		ajv.validate(schemas.request.product.updateLocked.body, {
+			supplyChain: {
+				graphSerialization: '{"id":"d84d7ab0-84e5-4193-9711-d1fc7d655f75","offsetX":0,"offsetY":0}',
+				nodes: [
+					{
+						id: 'node-ID',
+						pictures: [{id: 'FILE-ID'}],
+						description: 'description',
+						title: 'title'
+					},
+					{
+						id: 'node-ID1',
+						pictures: [{id: 'FILE-ID'}],
+						description: 'description',
+						title: 'title'
+					}
+				]
+			}
+		})
+	)
+
+	t.true(
+		ajv.validate(schemas.request.product.updateLocked.body, {
+			supplyChain: {
+				graphSerialization: '{"id":"d84d7ab0-84e5-4193-9711-d1fc7d655f75","offsetX":0,"offsetY":0}'
+			}
+		})
+	)
+
+	t.false(
+		ajv.validate(schemas.request.product.updateLocked.body, {
+			supplyChain: null
+		})
+	)
+
+	// Update works without changing the company of the node
+	t.true(
+		ajv.validate(schemas.request.product.updateLocked.body, {
+			supplyChain: {
+				nodes: [
+					{
+						id: 'node-ID',
+						pictures: [{id: 'FILE-ID'}],
+						description: 'description',
+						title: 'title'
+					}
+				]
+			}
+		})
+	)
+})
+
+test('Update locked products supplychain is limited', t => {
+	// Not allowed to send company ID in nodes
+	t.false(
+		ajv.validate(schemas.request.product.updateLocked.body, {
+			supplyChain: {
+				nodes: [
+					{
+						id: 'node-ID',
+						companyId: 'id'
+					}
+				]
+			}
+		})
+	)
+
+	// Does not allow sending links
+	t.false(
+		ajv.validate(schemas.request.product.updateLocked.body, {
+			supplyChain: {
+				links: []
+			}
+		})
+	)
+})

@@ -4,7 +4,7 @@
   "license": "UNLICENSED",
   "homepage": "http://retraced.co",
   "repository": "retracedgmbh/schemas",
-  "author": "Retraced GmbH",
+  "author": "retraced GmbH",
   "description": "All schemas used for validation that are shared between our projects",
   "scripts": {
     "test": "ava -v",
@@ -66,14 +66,12 @@
             {
               "type": "feat",
               "release": "minor"
+            },
+            {
+              "type": "rel",
+              "release": "major"
             }
-          ],
-          "parserOpts": {
-            "noteKeywords": [
-              "BREAKING CHANGE",
-              "BREAKING CHANGES"
-            ]
-          }
+          ]
         }
       ],
       "@semantic-release/release-notes-generator",

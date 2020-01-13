@@ -59,6 +59,32 @@ module.exports.update = {
 	}
 }
 
+// A more precises update dropping all possibilities of changing critical supplychain
+// elemenst after the product as such was locked (since it's not a DRAFT any more).
+module.exports.updateLocked = {
+	body: {
+		type: 'object',
+		required: [],
+		additionalProperties: false,
+		properties: {
+			name: {type: 'string', minLength: 1, maxLength: 60},
+			pictures: file.list,
+			description: {type: 'string', minLength: 1},
+			attributes: {type: 'array', items: attribute.update},
+			variations: variation.list,
+			supplyChain: {
+				type: 'object',
+				required: [],
+				additionalProperties: false,
+				properties: {
+					graphSerialization: {type: 'string'},
+					nodes: {type: 'array', items: node.updateLocked}
+				}
+			}
+		}
+	}
+}
+
 module.exports.get = {
 	querystring: querystring.get
 }
