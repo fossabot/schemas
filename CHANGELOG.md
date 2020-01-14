@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/retracedgmbh/schemas/compare/v2.1.6...v2.2.0) (2020-01-14)
+
+
+### Features
+
+* Add Family business company type ([#62](https://github.com/retracedgmbh/schemas/issues/62)) ([f3d0bf3](https://github.com/retracedgmbh/schemas/commit/f3d0bf3639968568a1eac24699ed108e7989ea79))
+
 ## [2.1.6](https://github.com/retracedgmbh/schemas/compare/v2.1.5...v2.1.6) (2020-01-13)
 
 
