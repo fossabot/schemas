@@ -1,3 +1,10 @@
+## [2.2.1](https://github.com/retracedgmbh/schemas/compare/v2.2.0...v2.2.1) (2020-01-14)
+
+
+### Bug Fixes
+
+* Random tag now has product version as query param ([#61](https://github.com/retracedgmbh/schemas/issues/61)) ([82ef0e8](https://github.com/retracedgmbh/schemas/commit/82ef0e8b39e03aa90b8e4c47e090e0418fd19409))
+
 # [2.2.0](https://github.com/retracedgmbh/schemas/compare/v2.1.6...v2.2.0) (2020-01-14)
 
 
