@@ -22,7 +22,8 @@ module.exports.random = {
 	type: 'object',
 	additionalProperties: false,
 	properties: {
-		productId: {type: 'string'},
-		sku: {type: 'string'}
+		productId: {type: 'string', minLength: 1},
+		productVersion: {type: 'number', minimum: 1, multipleOf: 1},
+		sku: {type: 'string', minLength: 1}
 	}
 }

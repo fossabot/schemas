@@ -32,12 +32,37 @@ test('Valid with SKU and Product ID', t => {
 			sku: 'sku'
 		})
 	)
+
+	t.true(
+		ajv.validate(schemas.request.tag.random.querystring, {
+			productId: 'product',
+			productVersion: 2,
+			sku: 'sku'
+		})
+	)
+
+	// It is possible to query product version without ID
+	t.true(
+		ajv.validate(schemas.request.tag.random.querystring, {
+			productVersion: 2
+		})
+	)
 })
 
-test('Invalid if product ID is not a number', t => {
+test('Random invalid query params', t => {
+	// Product ID must be string
 	t.false(
 		ajv.validate(schemas.request.tag.random.querystring, {
 			productId: 123,
+			sku: 'sku'
+		})
+	)
+
+	// Product version must be number
+	t.false(
+		ajv.validate(schemas.request.tag.random.querystring, {
+			productId: 'id',
+			productVersion: '1',
 			sku: 'sku'
 		})
 	)
