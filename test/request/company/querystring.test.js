@@ -56,4 +56,18 @@ test('List querystring', t => {
 			isArchived: false
 		})
 	)
+
+	// Null will result in either true or false
+	t.true(
+		ajv.validate(schemas.request.company.list.querystring, {
+			isMarkedForRemoval: null
+		})
+	)
+
+	// Undefined is falling back to false
+	t.true(
+		ajv.validate(schemas.request.company.list.querystring, {
+			isMarkedForRemoval: undefined
+		})
+	)
 })

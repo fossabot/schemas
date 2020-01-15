@@ -9,6 +9,6 @@ module.exports.list = {
 			type: 'boolean',
 			default: false
 		},
-		isMarkedForRemoval: {type: 'boolean', default: false}
+		isMarkedForRemoval: {type: ['boolean', 'null'], default: false}
 	}
 }

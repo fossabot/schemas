@@ -32,12 +32,12 @@ module.exports.list = {
 	additionalProperties: false,
 	properties: {
 		...generator.paginationParams,
-		isMarkedForRemoval: {type: 'boolean', default: false},
+		isMarkedForRemoval: {type: ['boolean', 'null'], default: false},
 		country: {type: 'string'},
 		founded: {type: 'number', minimum: 1200, maxiumum: 2200, multipleOf: 1},
 		companySize: {type: 'string', enum: constants.COMPANY_SIZE},
 		companyType: {type: 'string', enum: constants.COMPANY_TYPE},
-		isArchived: {type: 'boolean', default: false},
+		isArchived: {type: 'boolean'},
 		isDropDown: {type: 'boolean'},
 		sort: {
 			type: 'string',

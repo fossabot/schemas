@@ -31,3 +31,23 @@ test('Invalid list query string status', t => {
 		})
 	)
 })
+
+test('Removed status', t => {
+	t.true(
+		ajv.validate(schemas.request.order.list.querystring, {
+			isMarkedForRemoval: true
+		})
+	)
+
+	t.true(
+		ajv.validate(schemas.request.order.list.querystring, {
+			isMarkedForRemoval: undefined
+		})
+	)
+
+	t.true(
+		ajv.validate(schemas.request.order.list.querystring, {
+			isMarkedForRemoval: null
+		})
+	)
+})

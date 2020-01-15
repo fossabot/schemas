@@ -21,7 +21,7 @@ module.exports.list = {
 			type: 'string',
 			pattern: generator.queryParamArrayPattern(constants.APPROVALSTATUS)
 		},
-		isMarkedForRemoval: {type: 'boolean', default: false},
+		isMarkedForRemoval: {type: ['boolean', 'null'], default: false},
 		isArchived: {type: 'boolean', default: false},
 		isActive: {type: 'boolean'},
 		isDropDown: {type: 'boolean'},
