@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/retracedgmbh/schemas/compare/v2.2.5...v2.3.0) (2020-01-16)
+
+
+### Features
+
+* Add logo for certificate ([#67](https://github.com/retracedgmbh/schemas/issues/67)) ([70226f5](https://github.com/retracedgmbh/schemas/commit/70226f5b0f8ce9efe77808012613babe769a4576))
+
 ## [2.2.5](https://github.com/retracedgmbh/schemas/compare/v2.2.4...v2.2.5) (2020-01-16)
 
 ## [2.2.4](https://github.com/retracedgmbh/schemas/compare/v2.2.3...v2.2.4) (2020-01-16)
