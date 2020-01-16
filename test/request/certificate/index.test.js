@@ -14,6 +14,7 @@ test('Accepts certificate creation with all attributes', t => {
 			title: 'Fantastic certificate 😅',
 			description: 'Description about certificate',
 			externalLink: 'https://othersource.com',
+			logoFileId: 'FLE-ID',
 			pictures: [
 				{
 					id: 'FLE-ID'
@@ -93,6 +94,14 @@ test('Can update only pictures', t => {
 					id: 'FLE-NEW-ID'
 				}
 			]
+		})
+	)
+})
+
+test('Update logo', t => {
+	t.true(
+		ajv.validate(schemas.request.certificate.update.body, {
+			logoFileId: 'id'
 		})
 	)
 })

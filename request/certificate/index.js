@@ -11,6 +11,7 @@ module.exports.create = {
 			title: {type: 'string', minLength: 1},
 			description: {type: 'string', minLength: 1},
 			externalLink: {anyOf: [{type: 'string', format: 'uri', minLength: 1}, {type: 'null'}]},
+			logoFileId: {type: ['string', 'null']},
 			pictures: file.list
 		}
 	}
@@ -24,6 +25,7 @@ module.exports.update = {
 			title: {type: 'string', minLength: 1},
 			description: {type: 'string', minLength: 1},
 			externalLink: {anyOf: [{type: 'string', format: 'uri', minLength: 1}, {type: 'null'}]},
+			logoFileId: {type: ['string', 'null']},
 			pictures: file.list
 		}
 	}
