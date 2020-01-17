@@ -1,3 +1,10 @@
+# [2.4.0](https://github.com/retracedgmbh/schemas/compare/v2.3.0...v2.4.0) (2020-01-17)
+
+
+### Features
+
+* Add translations to configuration endpoint ([#68](https://github.com/retracedgmbh/schemas/issues/68)) ([4e91aed](https://github.com/retracedgmbh/schemas/commit/4e91aed34fe5d5eaa1172a8602d080033b2c790f))
+
 # [2.3.0](https://github.com/retracedgmbh/schemas/compare/v2.2.5...v2.3.0) (2020-01-16)
 
 
