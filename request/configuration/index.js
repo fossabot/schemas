@@ -1,4 +1,10 @@
+const querystring = require('./querystring')
+
 const semanticVersionRegex = 'v(\\d+\\.)?(\\d+\\.)?(\\d+)'
+
+module.exports.get = {
+	querystring: querystring.get
+}
 
 module.exports.update = {
 	body: {
