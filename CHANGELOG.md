@@ -1,3 +1,10 @@
+# [2.5.0](https://github.com/retracedgmbh/schemas/compare/v2.4.6...v2.5.0) (2020-01-24)
+
+
+### Features
+
+* Add optional receiver company ID for supply link ([#75](https://github.com/retracedgmbh/schemas/issues/75)) ([f45c1f5](https://github.com/retracedgmbh/schemas/commit/f45c1f5470cc1f26c2d0c4ccff7c6f165f02b78f))
+
 ## [2.4.6](https://github.com/retracedgmbh/schemas/compare/v2.4.5...v2.4.6) (2020-01-24)
 
 ## [2.4.5](https://github.com/retracedgmbh/schemas/compare/v2.4.4...v2.4.5) (2020-01-24)
