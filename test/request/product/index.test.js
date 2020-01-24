@@ -298,6 +298,26 @@ test('Update supplyChain', t => {
 			}
 		})
 	)
+
+	// Can also set a receiver company ID
+	t.true(
+		ajv.validate(schemas.request.product.update.body, {
+			supplyChain: {
+				links: [
+					{
+						id: 'id',
+						buyerNodeId: 'node-ID',
+						sellerNodeId: 'node-ID1',
+						receiverCompanyId: 'id',
+						quantity: 1,
+						item: {
+							id: 'id'
+						}
+					}
+				]
+			}
+		})
+	)
 })
 
 test('Update product with attributes', t => {

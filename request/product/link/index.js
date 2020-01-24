@@ -8,6 +8,7 @@ module.exports.create = {
 		id: {type: 'string', minLength: 1},
 		buyerNodeId: {type: 'string', minLength: 1},
 		sellerNodeId: {type: 'string', minLength: 1},
+		receiverCompanyId: {type: 'string', minLength: 1},
 		quantity: {type: 'number', exclusiveMinimum: 0},
 		item: item.create.body
 	}
