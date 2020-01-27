@@ -8,9 +8,9 @@ module.exports.create = {
 		required: ['title', 'description'],
 		additionalProperties: false,
 		properties: {
-			title: {type: 'string', minLength: 1},
+			title: {type: 'string', minLength: 1, maxLength: 255},
 			description: {type: 'string', minLength: 1},
-			externalLink: {anyOf: [{type: 'string', format: 'uri', minLength: 1}, {type: 'null'}]},
+			externalLink: {anyOf: [{type: 'string', format: 'uri', minLength: 1, maxLength: 255}, {type: 'null'}]},
 			logoFileId: {type: ['string', 'null']},
 			pictures: file.list
 		}
@@ -22,9 +22,9 @@ module.exports.update = {
 		type: 'object',
 		additionalProperties: false,
 		properties: {
-			title: {type: 'string', minLength: 1},
+			title: {type: 'string', minLength: 1, maxLength: 255},
 			description: {type: 'string', minLength: 1},
-			externalLink: {anyOf: [{type: 'string', format: 'uri', minLength: 1}, {type: 'null'}]},
+			externalLink: {anyOf: [{type: 'string', format: 'uri', minLength: 1, maxLength: 255}, {type: 'null'}]},
 			logoFileId: {type: ['string', 'null']},
 			pictures: file.list
 		}

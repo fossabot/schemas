@@ -8,7 +8,7 @@ module.exports.create = {
 		additionalProperties: false,
 		properties: {
 			id: {type: 'string', minLength: 1},
-			name: {type: 'string', minLength: 1},
+			name: {type: 'string', minLength: 1, maxLength: 300},
 			unit: {enum: constants.UNITS},
 			materialId: {type: 'string', minLength: 1},
 			materialVersion: {type: 'number', minimum: 1, multipleOf: 1}
@@ -22,7 +22,7 @@ module.exports.update = {
 		required: [],
 		additionalProperties: false,
 		properties: {
-			name: {type: 'string', minLength: 1},
+			name: {type: 'string', minLength: 1, maxLength: 300},
 			unit: {enum: constants.UNITS},
 			materialId: {type: 'string', minLength: 1},
 			materialVersion: {type: 'number', minimum: 1, multipleOf: 1}

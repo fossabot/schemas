@@ -9,8 +9,8 @@ module.exports.create = {
 		required: ['title', 'icon', 'category', 'description'],
 		additionalProperties: false,
 		properties: {
-			title: {type: 'string', minLength: 1},
-			icon: {type: 'string', minLength: 1},
+			title: {type: 'string', minLength: 1, maxLength: 255},
+			icon: {type: 'string', minLength: 1, maxLength: 100},
 			category: {type: 'string', enum: constants.BADGE_CATEGORY},
 			description: {type: 'string', minLength: 1},
 			rule: {anyOf: [{type: 'string', enum: constants.BADGE_RULE}, {type: 'null'}]},
@@ -25,8 +25,8 @@ module.exports.update = {
 		required: [],
 		additionalProperties: false,
 		properties: {
-			title: {type: 'string', minLength: 1},
-			icon: {type: 'string', minLength: 1},
+			title: {type: 'string', minLength: 1, maxLength: 255},
+			icon: {type: 'string', minLength: 1, maxLength: 100},
 			category: {type: 'string', enum: constants.BADGE_CATEGORY},
 			description: {type: 'string', minLength: 1},
 			rule: {anyOf: [{type: 'string', enum: constants.BADGE_RULE}, {type: 'null'}]},
