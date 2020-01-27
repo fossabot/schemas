@@ -15,5 +15,6 @@ module.exports = {
 	qrCode: require('./qr-code'),
 	badge: require('./badge'),
 	claim: require('./claim'),
-	item: require('./item')
+	item: require('./item'),
+	analytics: require('./analytics')
 }
