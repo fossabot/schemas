@@ -1,3 +1,10 @@
+# [2.6.0](https://github.com/retracedgmbh/schemas/compare/v2.5.1...v2.6.0) (2020-01-27)
+
+
+### Features
+
+* Add analytics endpoints ([#77](https://github.com/retracedgmbh/schemas/issues/77)) ([fa8b286](https://github.com/retracedgmbh/schemas/commit/fa8b28611df76d6b93837faf03f07b86ef6991d9))
+
 ## [2.5.1](https://github.com/retracedgmbh/schemas/compare/v2.5.0...v2.5.1) (2020-01-27)
 
 # [2.5.0](https://github.com/retracedgmbh/schemas/compare/v2.4.6...v2.5.0) (2020-01-24)
