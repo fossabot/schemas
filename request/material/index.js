@@ -10,7 +10,6 @@ module.exports.create = {
 		properties: {
 			title: {type: 'string', minLength: 1},
 			description: {type: 'string', minLength: 1},
-			externalLink: {anyOf: [{type: 'string', format: 'uri', minLength: 1}, {type: 'null'}]},
 			pictures: file.list
 		}
 	}
@@ -23,7 +22,6 @@ module.exports.update = {
 		properties: {
 			title: {type: 'string', minLength: 1},
 			description: {type: 'string', minLength: 1},
-			externalLink: {anyOf: [{type: 'string', format: 'uri', minLength: 1}, {type: 'null'}]},
 			pictures: file.list
 		}
 	}

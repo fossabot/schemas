@@ -20,7 +20,6 @@ test('Create material valid schema', t => {
 		ajv.validate(schemas.request.material.create.body, {
 			title: 'Super sticky leather 😅',
 			description: '# Super sticky leather (c)',
-			externalLink: null,
 			pictures: [
 				{
 					id: 'PROD-picture'
@@ -34,8 +33,7 @@ test('Does not requires pictures to create material', t => {
 	t.true(
 		ajv.validate(schemas.request.material.create.body, {
 			title: 'Super sticky leather 😅',
-			description: '# Super sticky leather (c)',
-			externalLink: null
+			description: '# Super sticky leather (c)'
 		})
 	)
 })
@@ -44,7 +42,6 @@ test('Requires description for material', t => {
 	t.false(
 		ajv.validate(schemas.request.material.create.body, {
 			title: 'Super sticky leather 😅',
-			externalLink: null,
 			pictures: [
 				{
 					id: 'PROD-picture'
@@ -58,7 +55,6 @@ test('Requires title for material', t => {
 	t.false(
 		ajv.validate(schemas.request.material.create.body, {
 			description: '# Super sticky leather (c)',
-			externalLink: null,
 			pictures: [
 				{
 					id: 'PROD-picture'
