@@ -1,3 +1,10 @@
+# [2.7.0](https://github.com/retracedgmbh/schemas/compare/v2.6.5...v2.7.0) (2020-01-29)
+
+
+### Features
+
+* Add reason to skip order ([#83](https://github.com/retracedgmbh/schemas/issues/83)) ([c72f6a4](https://github.com/retracedgmbh/schemas/commit/c72f6a425ed9052960dfeaa742751cc8dc500832))
+
 ## [2.6.5](https://github.com/retracedgmbh/schemas/compare/v2.6.4...v2.6.5) (2020-01-29)
 
 ## [2.6.4](https://github.com/retracedgmbh/schemas/compare/v2.6.3...v2.6.4) (2020-01-28)
