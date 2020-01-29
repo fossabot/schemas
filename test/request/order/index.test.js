@@ -47,6 +47,30 @@ test('Valid status update schema', t => {
 	)
 })
 
+test('Skip', t => {
+	t.true(
+		ajv.validate(schemas.request.order.skip.body, {
+			fileId: 'FILE-ID',
+			reason: 'IN_STOCK',
+			updatedAt: '2019-10-13T20:20:39+00:00'
+		})
+	)
+
+	t.true(
+		ajv.validate(schemas.request.order.skip.body, {
+			reason: 'IN_STOCK',
+			updatedAt: '2019-10-13T20:20:39+00:00'
+		})
+	)
+
+	// Must have a reason for skipping
+	t.false(
+		ajv.validate(schemas.request.order.skip.body, {
+			updatedAt: '2019-10-13T20:20:39+00:00'
+		})
+	)
+})
+
 test('Update date must be provided for status change', t => {
 	t.false(
 		ajv.validate(schemas.request.order.accept.body, {

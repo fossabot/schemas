@@ -1,3 +1,4 @@
+const constants = require('../../lib/constants')
 const querystring = require('./querystring')
 
 module.exports.create = {
@@ -54,7 +55,16 @@ module.exports.ship = {
 }
 
 module.exports.skip = {
-	body: exports.statusChange
+	body: {
+		type: 'object',
+		required: ['updatedAt', 'reason'],
+		additionalProperties: false,
+		properties: {
+			fileId: {type: ['string', 'null'], minLength: 1},
+			reason: {type: 'string', enum: constants.ORDERLINESTATUS_SKIP_REASON},
+			updatedAt: {type: ['string', 'null'], format: 'date-time'}
+		}
+	}
 }
 
 module.exports.get = {
