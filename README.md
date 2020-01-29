@@ -1,4 +1,3 @@
-
 <p align="center">
   <a aria-label="retraced logo" href="https://github.com/retracedgmbh/schemas">
     <img src="http://retraced-static.imgix.net/Retraced_Secondary-Logo_Black.png?w=500">
@@ -11,6 +10,7 @@
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square)](https://github.com/semantic-release/semantic-release)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg?style=flat-square)](https://github.com/xojs/xo)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier) [![Greenkeeper badge](https://badges.greenkeeper.io/retracedgmbh/schemas.svg)](https://greenkeeper.io/)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fretracedgmbh%2Fschemas.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fretracedgmbh%2Fschemas?ref=badge_shield)
 
 # Retraced's schemas
 
@@ -36,3 +36,7 @@ Add the dependency to your `package.json` with:
    schemas.request.company.create
    ```
    
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fretracedgmbh%2Fschemas.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fretracedgmbh%2Fschemas?ref=badge_large)
